@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-poppins: Poppins, sans-serif;
+  --font-rajdhani: Rajdhani, sans-serif;
+}
+
+
+:root {
+  --color-nexaut-gray: linear-gradient(135deg, #22272b, #484d53);
+  --color-nexaut-white: linear-gradient(135deg,#f2f2f2, #e6e6e6);
+  --color-nexaut-light-gray: #99a0a5;
+  --color-nexaut-blue: #81f5fb;
+}
+
+.rajdhani-semibold {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.bg-nexaut-gray {
+  background-image: var(--color-nexaut-gray);
+}
+
+.bg-nexaut-blue {
+  background-image: var(--color-nexaut-blue);
+}
+
+.text-nexaut-blue {
+  color: var(--color-nexaut-blue);
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.text-nexaut-blue:hover {
+  text-shadow: 0 0 10px var(--color-nexaut-blue);
+}
+
+
+a.hover\:underline {
+  position: relative;
+  transition: all 0.3s ease;
+}
+a.hover\:underline:hover {
+  top: -2px;
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.card-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  background-color: #52575e;
+}
+
+.hover\:text-shadow:hover {
+  text-shadow: 0 0 8px var(--color-nexaut-blue);
+}
+
+#intro {
+  position: fixed;
+  z-index: 1;
+}
+
+.logo-intro {
+  visibility: hidden;
+  opacity: 0;
+  width: 50vw;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  z-index: 20;
+}
+
+.fade-in-anim {
+  animation: fadeInScale 2s forwards;
+}
+
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.fade-out {
+  animation: fadeOutUp 1s forwards;
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+#main-content {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  padding-top: 120px;
+}
+
+#main-content.visible {
+  opacity: 1;
+  padding-top: 120px;
+}
+
+
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  line-height: 1.5;
+  font-weight: 400;
+  background-image: var(--color-nexaut-gray);
+  color: white;
+}
+
+/* Podświetlenie aktywnego elementu menu */
+.nav-link {
+  color: var(--color-nexaut-blue);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: white;
+  text-shadow: 0 0 8px var(--color-nexaut-blue);
+}
+
+.nav-link.active {
+  color: white !important;
+  text-shadow: 0 0 8px var(--color-nexaut-blue);
+}
+
+.nav-link svg {
+  transition: color 0.3s ease, filter 0.3s ease;
+}
+
+.nav-link.active svg {
+  color: white !important;
+  filter: drop-shadow(0 0 8px var(--color-nexaut-blue));
+}
+
+.nav-link:hover svg {
+  color: white;
+  filter: drop-shadow(0 0 8px var(--color-nexaut-blue));
+}
+
+.gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+.glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+.contact-card {
+            transition: all 0.3s ease;
+        }
+.contact-card:hover {
+            transform: translateY(-5px);
+        }
+.social-icon {
+            transition: all 0.3s ease;
+        }
+.social-icon:hover {
+            transform: scale(1.1);
+        }
