@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
-  base: 'spkwap.github.io/nexautsite/',
+  base: '/nexautsite/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
