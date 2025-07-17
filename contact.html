@@ -30,17 +30,19 @@
     <div id="header-container"></div>
 
     <!-- Główna treść -->
-    <main class="pt-20 relative bg-gray-950 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-600/5 pointer-events-none"></div>
-        <!-- SVG siatka -->
-  <svg class="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5" />
-      </pattern>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#grid)" />
-  </svg>
+    <main class="pt-24 relative bg-gray-950 overflow-hidden">
+      <!-- Tło gradientowe -->
+<div class="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-600/5 pointer-events-none"></div>
+
+<!-- SVG siatka -->
+<svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#81f5fb" stroke-width="1.2" />
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
       
       <!-- Sekcja Kontaktu -->
     <section class="py-20 relative overflow-hidden">
@@ -48,7 +50,7 @@
         <div class="container mx-auto px-6 relative z-10">
             <!-- Nagłówek -->
             <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-[#81f5fb] bg-clip-text text-transparent pb-[50px]">
+                <h2 class="text-5xl font-bold mb-6 text-[#81f5fb] pb-[50px]">
                     Skontaktuj się z nami
                 </h2>
             </div>
@@ -58,11 +60,11 @@
                 <div class="lg:col-span-1">
                     <div class="glass-effect rounded-2xl p-8 h-full">
                         <div class="mb-8">
-                            <h3 class="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-[#81f5fb] bg-clip-text text-transparent">NexAut sp. z o.o.</h3>
+                            <h3 class="text-2xl font-bold mb-6 text-[#81f5fb]">NexAut sp. z o.o.</h3>
                             
                             <div class="space-y-4">
                                 <div class="flex items-center">
-                                    <i class="fas fa-map-marker-alt text-blue-400 w-6 text-center mr-4"></i>
+                                    <i class="fas fa-map-marker-alt text-[#81f5fb] w-6 text-center mr-4"></i>
                                     <div>
                                         <p class="text-sm text-gray-400">Adres</p>
                                         <p>Bielsko- Biała</p>
@@ -70,7 +72,7 @@
                                 </div>
                                 
                                 <div class="flex items-center">
-                                    <i class="fas fa-building text-blue-400 w-6 text-center mr-4"></i>
+                                    <i class="fas fa-building text-[#81f5fb] w-6 text-center mr-4"></i>
                                     <div>
                                         <p class="text-sm text-gray-400">KRS</p>
                                         <p>0001147092</p>
@@ -83,7 +85,7 @@
                         
                         <!-- Godziny pracy -->
                         <div class="border-t border-gray-600 pt-6">
-                            <h4 class="text-lg font-semibold mb-4 bg-gradient-to-r from-blue-400 to-[#81f5fb] bg-clip-text text-transparent">Godziny pracy</h4>
+                            <h4 class="text-lg font-semibold mb-4 text-[#81f5fb]">Godziny pracy</h4>
                             <div class="space-y-2 text-sm">
                                 <div class="flex justify-between">
                                     <span class="text-gray-400">Poniedziałek - Piątek</span>

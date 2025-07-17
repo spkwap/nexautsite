@@ -82,11 +82,11 @@ function setupNavbarLogic() {
 
     if (scrollY > 50) {
       logo?.classList.add('h-10')
-      logo?.classList.remove('h-20')
+      logo?.classList.remove('h-22')
       nav?.classList.add('hidden')
       hamburger?.classList.remove('hidden')
     } else {
-      logo?.classList.add('h-20')
+      logo?.classList.add('h-22')
       logo?.classList.remove('h-10')
       nav?.classList.remove('hidden')
       hamburger?.classList.add('hidden')

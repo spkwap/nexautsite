@@ -14,24 +14,26 @@
     <div id="header-container"></div>
 
     <!-- Główna treść -->
-    <main class="pt-20 relative bg-gray-950 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-600/5 pointer-events-none"></div>
-        <!-- SVG siatka -->
-  <svg class="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5" />
-      </pattern>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#grid)" />
-  </svg>
+    <main class="pt-24 relative bg-gray-950 overflow-hidden">
+      <!-- Tło gradientowe -->
+<div class="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-600/5 pointer-events-none"></div>
+
+<!-- SVG siatka -->
+<svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#81f5fb" stroke-width="1.2" />
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>
       
 
 
       <!-- Sekcja: Nasze projekty -->
 <section class="py-24 text-gray-300" id="projekty" data-aos="fade-up" data-aos-delay="100">
   <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-[#81f5fb] bg-clip-text text-transparent pb-[50px] text-center">
+    <h2 class="text-5xl font-bold mb-6 text-[#81f5fb] pb-[50px] text-center">
       Nasze doświadczenie
     </h2>
 
