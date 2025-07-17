@@ -12,8 +12,8 @@ async function loadPartial(id, url) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  await loadPartial('header-container', '/partials/header.html')
-  await loadPartial('footer-container', '/partials/footer.html')
+  await loadPartial('header-container', './partials/header.html')
+  await loadPartial('footer-container', './partials/footer.html')
 
   requestAnimationFrame(() => {
     setupNavbarLogic()
@@ -129,8 +129,8 @@ function setActiveNavItem() {
     
     // Sprawdzamy czy aktualny path pasuje do linku
     if (href === currentPath || 
-        (currentPath === '/' && href === '/index.html') ||
-        (currentPath === '/index.html' && href === '/index.html') ||
+        (currentPath === '/' && href === './index.html') ||
+        (currentPath === './index.html' && href === './index.html') ||
         (currentPath.endsWith(href.substring(1)))) {
       
       link.classList.add('active')
