@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       AOS.init({ duration: 1000, once: true })
     }, 50)
   }
-})
 
 function setupNavbarLogic() {
   const logo = document.getElementById('logo')
