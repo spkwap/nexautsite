@@ -63,17 +63,33 @@ document.addEventListener('DOMContentLoaded', async () => {
     )
   }
 
-  if (intro) {
-    setTimeout(() => hideIntro(), 3000)
-    window.addEventListener('wheel', hideIntro, { once: true })
-    window.addEventListener('touchstart', hideIntro, { once: true })
-  } else {
-    mainContent?.style.setProperty('display', 'block')
-    setTimeout(() => {
-      mainContent?.classList.add('visible')
-      AOS.init({ duration: 1000, once: true })
-    }, 50)
-  }
+  const hasSeenIntro = sessionStorage.getItem('introSeen') === 'true'
+
+if (intro && !hasSeenIntro) {
+  setTimeout(() => {
+    hideIntro()
+    sessionStorage.setItem('introSeen', 'true')
+  }, 3000)
+
+  window.addEventListener('wheel', () => {
+    hideIntro()
+    sessionStorage.setItem('introSeen', 'true')
+  }, { once: true })
+
+  window.addEventListener('touchstart', () => {
+    hideIntro()
+    sessionStorage.setItem('introSeen', 'true')
+  }, { once: true })
+
+} else {
+  intro?.style.setProperty('display', 'none')
+  mainContent?.style.setProperty('display', 'block')
+  setTimeout(() => {
+    mainContent?.classList.add('visible')
+    AOS.init({ duration: 1000, once: true })
+  }, 50)
+}
+
 
 function setupNavbarLogic() {
   const logo = document.getElementById('logo')
