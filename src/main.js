@@ -4,22 +4,27 @@ import 'aos/dist/aos.css'
 
 async function loadPartial(id, url) {
   const container = document.getElementById(id)
-  if (container) {
+  try {
     const res = await fetch(url)
+    if (!res.ok) throw new Error('Failed to load ' + url)
     const html = await res.text()
     container.innerHTML = html
+  } catch (err) {
+    console.error('Error loading partial:', err)
   }
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  await loadPartial('header-container', './partials/header.html')
-  await loadPartial('footer-container', './partials/footer.html')
+  await loadPartial('header-container', '/partials/header.html')
+  await loadPartial('footer-container', '/partials/footer.html')
 
   requestAnimationFrame(() => {
-    setupNavbarLogic()
-    setupMobileMenuCloseOnClick()
-    setActiveNavItem()
+    setupNavbarLogic?.()
+    setupMobileMenuCloseOnClick?.()
+    setActiveNavItem?.()
   })
+})
+
 
   const intro = document.getElementById('intro')
   const mainContent = document.getElementById('main-content')
