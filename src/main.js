@@ -15,8 +15,8 @@ async function loadPartial(id, url) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  await loadPartial('header-container', '/partials/header.html')
-  await loadPartial('footer-container', '/partials/footer.html')
+  await loadPartial('header-container', './partials/header.html')
+  await loadPartial('footer-container', './partials/footer.html')
 
   requestAnimationFrame(() => {
     setupNavbarLogic?.()
