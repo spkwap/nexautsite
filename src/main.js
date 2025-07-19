@@ -92,7 +92,7 @@ if (intro && !hasSeenIntro) {
 
 function setupNavbarLogic() {
   const logo = document.getElementById('logo')
-  const header = document.getElementById('header') // musisz mieć id="header" w headerze
+  const header = document.getElementById('header')
   const nav = document.getElementById('nav-full')
   const hamburger = document.getElementById('hamburger')
   const mobileMenu = document.getElementById('mobile-menu')
@@ -111,7 +111,6 @@ function setupNavbarLogic() {
         logo?.classList.remove('h-22')
         header?.classList.add('h-16')
         header?.classList.remove('h-20')
-
         nav?.classList.add('hidden')
         hamburger?.classList.remove('hidden')
       } else {

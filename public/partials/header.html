@@ -2,7 +2,7 @@
   <img id="logo" src="./logo-nb.png" alt="Logo NEXAUT" class="h-22 w-auto transition-all duration-500" />
 
   <div class="flex items-center space-x-4">
-    <nav id="nav-full" class="font-mono text-lg transition-opacity duration-300 flex space-x-6 items-center">
+    <nav id="nav-full" class="hidden md:flex font-mono text-lg transition-opacity duration-300 space-x-6 items-center">
       <a href="./index.html" class="nav-link flex items-center group">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 transition group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -16,7 +16,7 @@
     </nav>
 
 
-    <button id="hamburger" class="text-nexaut-blue text-3xl focus:outline-none z-60 hidden">
+    <button id="hamburger" class="block md:hidden text-nexaut-blue text-3xl focus:outline-none z-60 absolute top-1/2 -translate-y-1/2 right-0">
       ☰
     </button>
   </div>
