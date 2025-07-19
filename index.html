@@ -72,31 +72,34 @@
 
     <main id="app" class="mx-auto ">
      <section id="about" class="relative overflow-hidden">
-  <!-- Tło rozciągnięte na całą szerokość i wysokość sekcji -->
+  <!-- Tło -->
   <div
     class="absolute inset-0 bg-cover bg-center"
-    style="background-image: url('./automotive/aut10.jpg'); filter: blur(8px); transform: scale(1.05);"
+    style="background-image: url('./automotive/aut10.jpg'); filter: blur(4px) brightness(0.6); transform: scale(1.05);"
   ></div>
 
-  <!-- Kontener treści -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- Treść -->
   <div
-    class="relative z-10 max-w-6xl mx-auto px-6  sm:py-32 flex flex-col md:flex-row items-center md:items-start gap-12"
+    class="relative z-10 max-w-6xl mx-auto px-6 sm:py-32 flex flex-col md:flex-row items-center md:items-start gap-12"
     data-aos="fade-up"
     data-aos-duration="1200"
     data-aos-easing="ease-in-out"
   >
-    <!-- Lewa część - duży tekst, 2 linie -->
-    <div class="flex flex-col text-white font-mono tracking-widest drop-shadow-lg text-6xl md:text-7xl leading-tight md:leading-snug text-left whitespace-nowrap">
+    <!-- Lewa część -->
+    <div class="flex flex-col text-white font-mono tracking-widest text-5xl md:text-6xl leading-tight text-left whitespace-nowrap py-8">
       <span>KIM</span>
       <span>JESTEŚMY?</span>
     </div>
 
-    <!-- Prawa część - tekst wyjustowany -->
-    <p class="text-nexaut-light-gray text-base md:text-lg max-w-xl ml-auto text-justify leading-relaxed drop-shadow">
+    <!-- Prawa część -->
+    <p class="text-gray-200 text-base md:text-lg max-w-xl ml-auto text-justify leading-relaxed py-8">
       Jako firma NexAut sp. z o.o. specjalizujemy się w rozwiązywaniu problemów z zakresu automatyzacji procesów przemysłowych. Wspieramy naszych partnerów poprzez kompleksowe wdrażanie i optymalizację zarówno pojedynczych stacji, maszyn, jak i całych linii produkcyjnych. Działamy na każdym etapie realizacji projektu – od analizy wymagań, przez projektowanie i implementację, aż po wsparcie techniczne i serwis.
     </p>
   </div>
 </section>
+
 
 
 
@@ -109,9 +112,9 @@
       <!-- Blok 1 -->
       <div class="flex flex-col md:flex-row items-stretch min-h-[500px]">
         <div class="md:w-2/5 flex items-center justify-center px-6 md:px-12 py-8">
-          <div class="text-left" data-aos="fade-right" data-aos-duration="600">
+          <div class="text-right" data-aos="fade-right" data-aos-duration="600">
             <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">SYSTEMY AUTOMATYKI</h3>
-            <p class="text-gray-300 text-lg md:text-xl leading-relaxed">
+            <p class="text-gray-300 text-lg md:text-xl leading-relaxed text-justify">
               Projektujemy i wdrażamy zaawansowane systemy automatyki przemysłowej, które zwiększają efektywność, bezpieczeństwo i niezawodność produkcji. Nasze rozwiązania są dopasowane do indywidualnych potrzeb klienta i z powodzeniem znajdują zastosowanie w różnych gałęziach przemysłu. Oferujemy pełne wsparcie – od koncepcji i projektowania, aż po uruchomienie i serwis systemu.
             </p>
           </div>
@@ -126,7 +129,7 @@
         <div class="md:w-2/5 flex items-center justify-center px-6 md:px-12 py-8">
           <div class="text-left" data-aos="fade-left" data-aos-duration="600">
             <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">INTEGRACJE I SERWIS</h3>
-            <p class="text-gray-300 text-lg md:text-xl leading-relaxed">
+            <p class="text-gray-300 text-lg md:text-xl leading-relaxed text-justify">
               Zapewniamy płynną integrację nowych rozwiązań z istniejącą infrastrukturą automatyki, niezależnie od jej stopnia złożoności. Działamy sprawnie i elastycznie, minimalizując przestoje w produkcji. Gwarantujemy szybkie wsparcie techniczne, konserwację oraz serwis systemów na każdym etapie ich eksploatacji, dbając o ich ciągłość i niezawodność działania.
                         </p>
           </div>
@@ -139,9 +142,9 @@
       <!-- Blok 3 - Programowanie PLC -->
       <div class="flex flex-col md:flex-row items-stretch min-h-[500px]">
         <div class="md:w-2/5 flex items-center justify-center px-6 md:px-12 py-8">
-          <div class="text-left" data-aos="fade-right" data-aos-duration="600">
-            <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">PROGRAMOWANIE PLC</h3>
-            <p class="text-gray-300 text-lg md:text-xl leading-relaxed">
+          <div class="text-right" data-aos="fade-right" data-aos-duration="600">
+            <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">PLC</h3>
+            <p class="text-gray-300 text-lg md:text-xl leading-relaxed text-justify">
               Tworzymy i optymalizujemy oprogramowanie sterowników PLC, dostosowane do konkretnych procesów i wymagań technologicznych. Nasze programy zapewniają stabilną, wydajną i bezpieczną pracę maszyn oraz linii produkcyjnych. Realizujemy zarówno nowe wdrożenia, jak i modyfikacje istniejących układów, podnosząc ich funkcjonalność i efektywność.
             </p>
           </div>
@@ -158,6 +161,9 @@
   <h2 class="w-full px-6 md:px-12 text-4xl md:text-7xl font-mono text-white mb-12" data-aos="fade-up">Zaufali nam</h2>
 
   <div class="flex gap-8 md:gap-12 justify-start md:justify-center overflow-x-auto md:overflow-visible px-6 md:px-0">
+    <a href="https://www.zf.com/poland/pl/home/home.html" target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
+      <img src="./ZF_logo.svg" alt="ZF" class="h-20 md:h-30 transition-transform duration-300 transform hover:scale-110 hover:opacity-80" />
+    </a>
     <a href="https://www.audi.pl/pl/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
       <img src="./aud.png" alt="Audi" class="h-20 md:h-30 transition-transform duration-300 transform hover:scale-110 hover:opacity-80" />
     </a>
@@ -183,7 +189,7 @@
 
 <section id="contact" data-aos="fade-up" class="text-center mb-20 pt-20">
 
-  <h2 class="text-6xl md:text-7xl font-mono text-white mb-16">Skontaktuj się z nami</h2>
+  <h2 class="text-6xl md:text-7xl font-mono text-white mb-16 text-center">Skontaktuj się z nami</h2>
   
 
   <div class="flex flex-col md:flex-row justify-center items-center gap-20 mb-16">
