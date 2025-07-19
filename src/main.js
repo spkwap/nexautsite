@@ -90,36 +90,55 @@ if (intro && !hasSeenIntro) {
   }, 50)
 }
 
-
 function setupNavbarLogic() {
   const logo = document.getElementById('logo')
+  const header = document.getElementById('header') // musisz mieć id="header" w headerze
   const nav = document.getElementById('nav-full')
   const hamburger = document.getElementById('hamburger')
   const mobileMenu = document.getElementById('mobile-menu')
 
-  window.addEventListener('scroll', () => {
+  function updateNavbarBySize() {
+    const screenWidth = window.innerWidth
     const scrollY = window.scrollY
 
-    if (scrollY > 50) {
-      logo?.classList.add('h-10')
-      logo?.classList.remove('h-22')
-      nav?.classList.add('hidden')
-      hamburger?.classList.remove('hidden')
+    if (screenWidth < 768) {
+        nav?.classList.add('hidden')
+        hamburger?.classList.remove('hidden')
     } else {
-      logo?.classList.add('h-22')
-      logo?.classList.remove('h-10')
-      nav?.classList.remove('hidden')
-      hamburger?.classList.add('hidden')
-      mobileMenu?.classList.add('hidden')
+      // Duży ekran
+      if (scrollY > 50) {
+        logo?.classList.add('h-10')
+        logo?.classList.remove('h-22')
+        header?.classList.add('h-16')
+        header?.classList.remove('h-20')
+
+        nav?.classList.add('hidden')
+        hamburger?.classList.remove('hidden')
+      } else {
+        logo?.classList.add('h-22')
+        logo?.classList.remove('h-10')
+        header?.classList.add('h-20')
+        header?.classList.remove('h-16')
+
+        nav?.classList.remove('hidden')
+        hamburger?.classList.add('hidden')
+        mobileMenu?.classList.add('hidden')
+      }
     }
-  })
+  }
+
+  window.addEventListener('resize', updateNavbarBySize)
+  window.addEventListener('scroll', updateNavbarBySize)
 
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden')
     })
   }
+
+  updateNavbarBySize()
 }
+
 
 function setupMobileMenuCloseOnClick() {
   const hamburger = document.getElementById('hamburger')
