@@ -240,3 +240,64 @@ canvas#cosmos {
     transform: translateY(-5px);
 }
 
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.partner-carousel {
+  overflow: hidden;
+  padding: 60px 0;
+  position: relative;
+  white-space: nowrap;
+}
+
+.partner-carousel:before,
+.partner-carousel:after {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+  pointer-events: none;
+}
+
+.partner-carousel:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), #000);
+}
+
+.partner-carousel:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #000);
+}
+
+.partner-carousel:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: slide 40s linear infinite;
+}
+
+.logos-slide a {
+  display: inline-block;
+  margin: 0 40px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.logos-slide img {
+  height: 80px;
+  object-fit: contain;
+}
+
+.logos-slide a:hover {
+  transform: scale(1.2);
+  opacity: 0.85;
+}

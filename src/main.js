@@ -221,56 +221,6 @@ function stopSlider() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const carousel = document.querySelector('#partners .flex');
-const logos = carousel.querySelectorAll('a');
-const logoWidth = logos[0].offsetWidth + parseInt(getComputedStyle(carousel).gap);
-const totalWidth = logoWidth * logos.length;
-let position = 0;
-let speed = 0.5; // Adjust speed (pixels per frame)
-
-// Clone logos multiple times to ensure seamless looping
-const cloneLogos = () => {
-    // Add enough clones to fill at least twice the viewport width
-    const numClones = Math.ceil(window.innerWidth / totalWidth) + 1;
-    for (let i = 0; i < numClones; i++) {
-        logos.forEach(logo => {
-            const clone = logo.cloneNode(true);
-            carousel.appendChild(clone);
-        });
-    }
-};
-cloneLogos();
-
-// Animation loop
-function animate() {
-    position -= speed;
-    carousel.style.transform = `translateX(${position}px)`;
-
-    // Reset position seamlessly when the first set of clones is out of view
-    if (Math.abs(position) >= totalWidth) {
-        position += totalWidth; // Move back by the width of original logos
-        carousel.style.transition = 'none';
-        carousel.style.transform = `translateX(${position}px)`;
-        // Force reflow
-        carousel.offsetHeight;
-        carousel.style.transition = 'transform 0.3s linear';
-    }
-
-    requestAnimationFrame(animate);
-}
-
-// Start animation
-carousel.style.transition = 'transform 0.3s linear';
-requestAnimationFrame(animate);
-
-// Pause on hover
-carousel.addEventListener('mouseenter', () => {
-    speed = 0;
-});
-
-carousel.addEventListener('mouseleave', () => {
-    speed = 0.5;
-});
   if (slides.length > 0 && dots.length > 0) {
     showSlide(currentIndex);
     startSlider();
