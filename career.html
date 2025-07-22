@@ -4,66 +4,53 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="./logo-nb.png" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nasze doświadczenie – NEXAUT</title>
+    <title>Oferta – NEXAUT</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   </head>
   <body class="bg-nexaut-gray text-white font-sans">
+        <canvas id="cosmos"></canvas>
 
     <!-- Header -->
     <div id="header-container"></div>
 
     <!-- Główna treść -->
-    <main class="pt-24 relative bg-gray-950 overflow-hidden">
-      <!-- Tło gradientowe -->
-<div class="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-600/5 pointer-events-none"></div>
-
-<!-- SVG siatka -->
-<svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#81f5fb" stroke-width="1.2" />
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
+    <main class="pt-24 relative overflow-hidden">
       
-
-
-      <!-- Sekcja: Nasze projekty -->
-<section class="py-24 text-gray-300" id="projekty" data-aos="fade-up" data-aos-delay="100">
+      
+      <section class="py-24 text-gray-300" id="projekty" data-aos="fade-up" data-aos-delay="100">
 
     <section id="kariera" class="py-16 px-6 md:px-12 text-center">
   <div class="max-w-7xl mx-auto px-6">
     <h2 class="text-5xl font-bold mb-6 text-[#81f5fb] pb-[50px] text-center">Dołącz do naszego zespołu</h2>
-    <p class="text-gray-300 text-lg mb-8">
+    <p class="text-white text-lg mb-8">
       Tworzymy nowoczesne rozwiązania przemysłowe i szukamy ludzi, którzy chcą razem z nami kształtować przyszłość automatyki.
     </p>
 
     <div class="grid gap-4 md:grid-cols-2 text-center max-w-5xl mx-auto mb-10 ">
-      <div class="p-4 bg-gray-800 rounded-xl shadow-sm">
-        <h3 class="font-semibold text-nexaut-blue mb-1">Automatyk / Programista PLC</h3>
-        <p class="text-sm text-gray-400">Siemens, Allen-Bradley, Phoenix Contact</p>
+      <div class="p-4 neon-card rounded-xl shadow-sm">
+        <h3 class="font-semibold neon-title mb-1">Automatyk / Programista PLC</h3>
+        <p class="text-sm text-gray-300">Siemens, Allen-Bradley, Phoenix Contact</p>
       </div>
-      <div class="p-4 bg-gray-800 rounded-xl shadow-sm">
-        <h3 class="font-semibold text-nexaut-blue mb-1">Robotyk przemysłowy</h3>
-        <p class="text-sm text-gray-400">KUKA, FANUC, Staubli</p>
+      <div class="p-4 neon-card rounded-xl shadow-sm">
+        <h3 class="font-semibold neon-title mb-1">Robotyk przemysłowy</h3>
+        <p class="text-sm text-gray-300">KUKA, FANUC, Staubli</p>
       </div>
-      <div class="p-4 bg-gray-800 rounded-xl shadow-sm">
-        <h3 class="font-semibold text-nexaut-blue mb-1">Elektryk / Elektromonter</h3>
-        <p class="text-sm text-gray-400">Szafy sterownicze, schematy, montaż</p>
+      <div class="p-4 neon-card rounded-xl shadow-sm">
+        <h3 class="font-semibold neon-title mb-1">Elektryk / Elektromonter</h3>
+        <p class="text-sm text-gray-300">Szafy sterownicze, schematy, montaż</p>
       </div>
-      <div class="p-4 bg-gray-800 rounded-xl shadow-sm">
-        <h3 class="font-semibold text-nexaut-blue mb-1">Projektant EPLAN</h3>
-        <p class="text-sm text-gray-400">Schematy elektryczne i szafy zasilające</p>
+      <div class="p-4 neon-card rounded-xl shadow-sm">
+        <h3 class="font-semibold neon-title mb-1">Projektant EPLAN</h3>
+        <p class="text-sm text-gray-300">Schematy elektryczne i szafy zasilające</p>
       </div>
-      <div class="p-4 bg-gray-800 rounded-xl shadow-sm">
-        <h3 class="font-semibold text-nexaut-blue mb-1">Projektant CAD (SolidWorks / Inventor)</h3>
-        <p class="text-sm text-gray-400">Mechanika, elementy maszyn, konstrukcje</p>
+      <div class="p-4 neon-card rounded-xl shadow-sm">
+        <h3 class="font-semibold neon-title mb-1">Projektant CAD (SolidWorks / Inventor)</h3>
+        <p class="text-sm text-gray-300">Mechanika, elementy maszyn, konstrukcje</p>
       </div>
-      <div class="p-4 bg-gray-800 rounded-xl shadow-sm">
-        <h3 class="font-semibold text-nexaut-blue mb-1">Mechanik / UR</h3>
-        <p class="text-sm text-gray-400">Utrzymanie ruchu, serwis, prefabrykacja</p>
+      <div class="p-4 neon-card rounded-xl shadow-sm">
+        <h3 class="font-semibold neon-title mb-1">Mechanik / UR</h3>
+        <p class="text-sm text-gray-300">Utrzymanie ruchu, serwis, prefabrykacja</p>
       </div>
     </div>
 
@@ -71,12 +58,11 @@
 Prześlij swoje CV na adres: <strong>rekrutacja@nexaut.pl</strong>
     </p>
 
-    <a href="mailto:rekrutacja@nexaut.pl" class="inline-block bg-gray-800 text-white font-semibold py-3 px-6 rounded-xl shadow hover:bg-blue-700 transition">
+    <a href="mailto:rekrutacja@nexaut.pl" class="neon-card inline-block font-semibold py-3 px-6 rounded-xl">
       Aplikuj teraz
     </a>
   </div>
 </section>
-
 
     </main>
 
@@ -85,6 +71,7 @@ Prześlij swoje CV na adres: <strong>rekrutacja@nexaut.pl</strong>
 
     <!-- Skrypty -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>

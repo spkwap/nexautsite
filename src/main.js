@@ -221,6 +221,56 @@ function stopSlider() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.querySelector('#partners .flex');
+const logos = carousel.querySelectorAll('a');
+const logoWidth = logos[0].offsetWidth + parseInt(getComputedStyle(carousel).gap);
+const totalWidth = logoWidth * logos.length;
+let position = 0;
+let speed = 0.5; // Adjust speed (pixels per frame)
+
+// Clone logos multiple times to ensure seamless looping
+const cloneLogos = () => {
+    // Add enough clones to fill at least twice the viewport width
+    const numClones = Math.ceil(window.innerWidth / totalWidth) + 1;
+    for (let i = 0; i < numClones; i++) {
+        logos.forEach(logo => {
+            const clone = logo.cloneNode(true);
+            carousel.appendChild(clone);
+        });
+    }
+};
+cloneLogos();
+
+// Animation loop
+function animate() {
+    position -= speed;
+    carousel.style.transform = `translateX(${position}px)`;
+
+    // Reset position seamlessly when the first set of clones is out of view
+    if (Math.abs(position) >= totalWidth) {
+        position += totalWidth; // Move back by the width of original logos
+        carousel.style.transition = 'none';
+        carousel.style.transform = `translateX(${position}px)`;
+        // Force reflow
+        carousel.offsetHeight;
+        carousel.style.transition = 'transform 0.3s linear';
+    }
+
+    requestAnimationFrame(animate);
+}
+
+// Start animation
+carousel.style.transition = 'transform 0.3s linear';
+requestAnimationFrame(animate);
+
+// Pause on hover
+carousel.addEventListener('mouseenter', () => {
+    speed = 0;
+});
+
+carousel.addEventListener('mouseleave', () => {
+    speed = 0.5;
+});
   if (slides.length > 0 && dots.length > 0) {
     showSlide(currentIndex);
     startSlider();
@@ -240,3 +290,137 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 lucide.createIcons();
+
+
+// Cosmos background
+const canvas = document.getElementById('cosmos');
+if (canvas) {
+  const ctx = canvas.getContext('2d');
+
+  function setCanvasSize() {
+    const dpi = window.devicePixelRatio || 1;
+    canvas.width = window.innerWidth * dpi;
+    canvas.height = window.innerHeight * dpi;
+    canvas.style.width = window.innerWidth + 'px';
+    canvas.style.height = window.innerHeight + 'px';
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpi, dpi);
+  }
+
+  setCanvasSize();
+
+  const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+  const numStars = isMobile ? 50 : 100;
+  const tailLength = 75;
+  const stars = [];
+  let mouseX = 0.5, mouseY = 0.5;
+
+  class Star {
+    constructor() {
+      this.reset();
+    }
+    reset() {
+      this.x = Math.random() * window.innerWidth;
+      this.y = Math.random() * window.innerHeight;
+      this.z = Math.random() * window.innerWidth;
+      this.speed = Math.random() * 0.27 + 0.03;
+      this.prevX = this.x;
+      this.prevY = this.y;
+      this.hue = 0;
+      this.colorShift = Math.random() < 0.1;
+    }
+    update() {
+      this.z -= this.speed;
+      if (this.z <= 0) {
+        this.reset();
+        return;
+      }
+      const sx = (this.x / this.z) * window.innerWidth;
+      const sy = (this.y / this.z) * window.innerHeight;
+      this.prevX = sx;
+      this.prevY = sy;
+      if (this.colorShift && Math.random() < 0.01) {
+        this.hue = (this.hue + 60) % 360;
+      }
+      if (sx < 0 || sx > window.innerWidth || sy < 0 || sy > window.innerHeight) {
+        this.reset();
+      }
+    }
+    draw() {
+      const sx = (this.x / this.z) * window.innerWidth;
+      const sy = (this.y / this.z) * window.innerHeight;
+      const radius = (1 - this.z / window.innerWidth) * 2;
+
+      let dx = sx - this.prevX;
+      let dy = sy - this.prevY;
+      let dist = Math.sqrt(dx * dx + dy * dy);
+
+      let prevXAdj = this.prevX;
+      let prevYAdj = this.prevY;
+
+      if (dist > tailLength) {
+        let ratio = tailLength / dist;
+        prevXAdj = sx - dx * ratio;
+        prevYAdj = sy - dy * ratio;
+      }
+
+      const alpha = 0.2 * (1 - this.z / window.innerWidth);
+      const fillAlpha = 0.5;
+
+      const strokeColor = this.colorShift ? `hsla(${this.hue}, 80%, 80%, ${alpha})` : `rgba(255,255,255,${alpha})`;
+      const fillColor = this.colorShift ? `hsla(${this.hue}, 80%, 80%, ${fillAlpha})` : `rgba(255,255,255,${fillAlpha})`;
+
+      ctx.beginPath();
+      ctx.moveTo(prevXAdj, prevYAdj);
+      ctx.lineTo(sx, sy);
+      ctx.strokeStyle = strokeColor;
+      ctx.lineWidth = radius;
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(sx, sy, radius, 0, Math.PI * 2);
+      ctx.fillStyle = fillColor;
+      ctx.fill();
+    }
+  }
+
+  function createStars() {
+    stars.length = 0;
+    for (let i = 0; i < numStars; i++) {
+      stars.push(new Star());
+    }
+  }
+
+  createStars();
+
+  function animate() {
+    ctx.fillStyle = 'rgba(10, 10, 10, 0.2)';
+    ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+    stars.forEach(star => {
+      star.x += (mouseX - 0.5) * 0.5;
+      star.y += (mouseY - 0.5) * 0.5;
+      star.update();
+      star.draw();
+    });
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  window.addEventListener('mousemove', e => {
+    mouseX = e.clientX / window.innerWidth;
+    mouseY = e.clientY / window.innerHeight;
+  });
+
+  window.addEventListener('deviceorientation', e => {
+    if (e.gamma != null && e.beta != null) {
+      mouseX = (e.gamma + 90) / 180;
+      mouseY = (e.beta + 90) / 180;
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    setCanvasSize();
+    createStars();
+  });
+}

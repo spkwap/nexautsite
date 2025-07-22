@@ -128,8 +128,6 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   font-weight: 400;
-  background-image: var(--color-nexaut-gray);
-  color: white;
 }
 
 /* Podświetlenie aktywnego elementu menu */
@@ -183,3 +181,62 @@ body {
 .social-icon:hover {
             transform: scale(1.1);
         }
+
+canvas#cosmos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  pointer-events: none;
+}
+
+
+/* Alternative - Intense neon effect */
+.neon-card {
+    position: relative;
+    background: rgba(0, 0, 0, 0.8);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.neon-card:hover {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: #81f5fb;
+    box-shadow: 
+        0 0 30px rgba(100, 181, 246, 0.3),
+        inset 0 0 30px rgba(100, 181, 246, 0.1);
+    transform: translateY(-5px);
+}
+
+.neon-card:hover .neon-icon {
+    color: #81f5fb;
+    filter: drop-shadow(0 0 15px #81f5fb);
+    transform: scale(1.1) rotateY(10deg);
+}
+
+.neon-card:hover .neon-title {
+    color: #81f5fb;
+    text-shadow: 0 0 10px rgba(100, 181, 246, 0.8);
+}
+
+.neon-icon, .neon-title {
+    transition: all 0.4s ease;
+}
+
+.neon-number {
+    position: relative;
+    background: #81f5fb;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.neon-number:hover {
+    background: #81f5fb;
+    border-color: #81f5fb;
+    box-shadow: 
+        0 0 30px rgba(100, 181, 246, 0.3),
+        inset 0 0 30px rgba(100, 181, 246, 0.1);
+    transform: translateY(-5px);
+}
+

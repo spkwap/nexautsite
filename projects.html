@@ -4,32 +4,20 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="./logo-nb.png" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nasze doświadczenie – NEXAUT</title>
+    <title>Oferta – NEXAUT</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   </head>
   <body class="bg-nexaut-gray text-white font-sans">
+        <canvas id="cosmos"></canvas>
 
     <!-- Header -->
     <div id="header-container"></div>
 
     <!-- Główna treść -->
-    <main class="pt-24 relative bg-gray-950 overflow-hidden">
-      <!-- Tło gradientowe -->
-<div class="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-600/5 pointer-events-none"></div>
-
-<!-- SVG siatka -->
-<svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#81f5fb" stroke-width="1.2" />
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
+    <main class="pt-24 relative overflow-hidden">
       
-
-
+      
       <!-- Sekcja: Nasze projekty -->
 <section class="py-24 text-gray-300" id="projekty" data-aos="fade-up" data-aos-delay="100">
   <div class="max-w-7xl mx-auto px-6">
@@ -39,63 +27,63 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
       <!-- Projekt 1 -->
-      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
         <div class="h-48 overflow-hidden">
           <img src="./automotive/car-camera.jpg" alt="Projekt 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         </div>
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 h-16 flex items-center justify-center">Linie montażowe kamer samochodowych – Niemcy</h3>
-          <p class="text-sm text-gray-400 h-35 flex items-center justify-center">
+          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Montaż kamer samochodowych<br>Niemcy</h3>
+          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
             Kompleksowa automatyzacja linii produkcyjnych kamer samochodowych. Zastosowanie PLC Siemens S7-1500, robotów Staubli, systemów wizyjnych KEYENCE 2D/3D, skanerów kodów, stacji skręcających, nitujących, spawających, grawerujących oraz komunikacji z LabVIEW.
           </p>
         </div>
       </div>
 
       <!-- Projekt 2 -->
-      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
         <div class="h-48 overflow-hidden">
           <img src="./automotive/motor.jpg" alt="Projekt 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         </div>
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 h-16 flex items-center justify-center">Linie montażowe i VIBN – Hiszpania</h3>
-          <p class="text-sm text-gray-400 h-35 flex items-center justify-center">
+          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Linie montażowe i VIBN<br>Hiszpania</h3>
+          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
 Integracja oraz uruchomienie linii zgodnie ze standardem VASS 6. Wykorzystanie PLC Siemens TIA Portal v17, komunikacji z robotami KUKA, napędów SEW MoviDrive oraz skanerów bezpieczeństwa SICK.          </p>
         </div>
       </div>
 
       <!-- Projekt 3 -->
-      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
         <div class="h-48 overflow-hidden">
           <img src="./automotive/car-body.jpg" alt="Projekt 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         </div>
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 h-16 flex items-center justify-center">Zrobotyzowane linie karoserii – Słowacja</h3>
-          <p class="text-sm text-gray-400 h-35 flex items-center justify-center">
+          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Zrobotyzowane linie karoserii<br>Słowacja</h3>
+          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
 Implementacja sekcji linii montażowych w standardzie VASS 6 (STIL, STIR, STAL, STAR). Wykorzystanie PLC Siemens, robotów FANUC, napędów SEW oraz systemów bezpieczeństwa SICK.          </p>
         </div>
       </div>
 
       <!-- Projekt 4 -->
-      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
         <div class="h-48 overflow-hidden">
           <img src="./automotive/engine.jpg" alt="Projekt 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         </div>
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 h-16 flex items-center justify-center">Linie produkcyjne – Węgry</h3>
-          <p class="text-sm text-gray-400 h-35 flex items-center justify-center">
+          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Linie produkcyjne<br>Węgry</h3>
+          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
 Realizacja integracji linii w standardzie VASS 6 (ESF6, ESF7) z użyciem Phoenix Contact PLCnext. Zastosowanie robotów KUKA, napędów SEW MoviDrive oraz systemów SICK. Wykonanie testów VIBN oraz pełnej konfiguracji.
           </p>
         </div>
       </div>
 
       <!-- Projekt 5 -->
-      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
         <div class="h-48 overflow-hidden">
           <img src="./automotive/welding1.jpg" alt="Projekt 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         </div>
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 h-16 flex items-center justify-center">Transport karoserii w spawalni – Polska</h3>
-          <p class="text-sm text-gray-400 h-35 flex items-center justify-center">
+          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Transport karoserii w spawalni<br>Polska</h3>
+          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
 Implementacja systemu transportu karoserii w hali spawalni. Wykorzystanie Allen-Bradley, napędów SEW MoviDrive, identyfikacji RFID Balluff, szkolenie operatorów i wsparcie uruchomieniowe.
 
           </p>
@@ -103,13 +91,13 @@ Implementacja systemu transportu karoserii w hali spawalni. Wykorzystanie Allen-
       </div>
 
       <!-- Projekt 6 -->
-      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
         <div class="h-48 overflow-hidden">
           <img src="./automotive/power-plant.jpg" alt="Projekt 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         </div>
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 h-16 flex items-center justify-center">Programowanie PLC offline – Chiny</h3>
-          <p class="text-sm text-gray-400 h-35 flex items-center justify-center">
+          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Programowanie PLC offline<br>Chiny</h3>
+          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
 Opracowanie programu PLC w standardzie VASS 6 z wykorzystaniem Phoenix Contact PLCnext na potrzeby nowej fabryki. Przygotowanie i weryfikacja kodu w środowisku offline.
 
           </p>
@@ -117,13 +105,13 @@ Opracowanie programu PLC w standardzie VASS 6 z wykorzystaniem Phoenix Contact P
       </div>
       
       <!-- Projekt 7 -->
-      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
         <div class="h-48 overflow-hidden">
           <img src="./automotive/work.jpg" alt="Projekt 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         </div>
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 h-16 flex items-center justify-center">Modernizacja maszyny przemysłowej – Polska</h3>
-          <p class="text-sm text-gray-400 h-35 flex items-center justify-center">
+          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Modernizacja maszyny przemysłowej<br>Polska</h3>
+          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
 Przeprowadzenie kompleksowej modernizacji maszyny przemysłowej. Zastosowanie PLC VisiLogic, projektowanie w EPLAN, konfiguracja systemów bezpieczeństwa Mosaic oraz przygotowanie dokumentacji i komponentów.
 
           </p>
@@ -131,25 +119,25 @@ Przeprowadzenie kompleksowej modernizacji maszyny przemysłowej. Zastosowanie PL
       </div>
 
       <!-- Projekt 8 -->
-      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
         <div class="h-48 overflow-hidden">
           <img src="./automotive/welding.jpg" alt="Projekt 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         </div>
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 h-16 flex items-center justify-center">Cele spawalnicze – Polska</h3>
-          <p class="text-sm text-gray-400 h-35 flex items-center justify-center">
+          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Cele spawalnicze<br>Polska</h3>
+          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
 Automatyzacja cel spawalniczych z wykorzystaniem Allen-Bradley Studio 5000 v33, interfejsów FactoryTalk View v12, robotów FANUC, napędów SEW oraz systemów bezpieczeństwa SICK.          </p>
         </div>
       </div>
 
       <!-- Projekt 9 -->
-      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
         <div class="h-48 overflow-hidden">
           <img src="./automotive/industry.jpg" alt="Projekt 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         </div>
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2 h-16 flex items-center justify-center">Zrobotyzowany załadunek materiału – Niemcy</h3>
-          <p class="text-sm text-gray-400 h-35 flex items-center justify-center">
+          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Zrobotyzowany załadunek materiału<br>Niemcy</h3>
+          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
 Modernizacja zrobotyzowanej linii załadunku rolek materiału. Zastosowanie Allen-Bradley Studio 5000 v32, FactoryTalk View v11 oraz integracja z systemem HMI.          </p>
         </div>
       </div>
@@ -159,7 +147,6 @@ Modernizacja zrobotyzowanej linii załadunku rolek materiału. Zastosowanie Alle
   </div>
 </section>
 
-      
     </main>
 
     <!-- Footer -->
@@ -167,6 +154,7 @@ Modernizacja zrobotyzowanej linii załadunku rolek materiału. Zastosowanie Alle
 
     <!-- Skrypty -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>

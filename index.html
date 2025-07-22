@@ -10,34 +10,23 @@
     <title>NEXAUT – Automatyzacja Przemysłowa</title>
     
   </head>
-  <body style="position: relative; background-image: linear-gradient(135deg, #22272b, #484d53);" class="text-white font-sans">
-<!-- logo na start................-->
-    <div id="intro" class="fixed inset-0 flex items-center justify-center bg-nexaut-gray z-50">
+  <body style="position: relative;" class="text-white font-sans">
+    <canvas id="cosmos"></canvas>
+    <!-- logo na start................-->
+    <div id="intro" class="fixed inset-0 flex items-center justify-center z-50">
+      
     <img src="./logo-nb.png" alt="Logo NEXAUT" class="logo-intro">
   </div>
+  
  
 
 
 
 
-    <div id="main-content" class="pt-24 relative bg-gray-950 overflow-hidden" style="display:none;">
+    <div id="main-content" class="pt-24 relative  overflow-hidden" style="display:none;">
       <!-- Header -->
+       
     <div id="header-container"></div>
-    
-      <!-- Tło gradientowe -->
-<div class="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-600/5 pointer-events-none"></div>
-
-<!-- SVG siatka -->
-<svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#81f5fb" stroke-width="1.2" />
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-
-    
       
 
     <section id="hero-slider" class="relative h-[80vh] overflow-hidden">
@@ -105,10 +94,6 @@
 
      <!-- Rozbudowana sekcja Usługi -->
     <section id="services" class="text-center">
-       <!--<h2 class="w-full px-6 md:px-12 text-6xl md:text-7xl font-mono text-white mb-12" data-aos="fade-up">
-        USŁUGI
-      </h2>
--->
       <!-- Blok 1 -->
       <div class="flex flex-col md:flex-row items-stretch min-h-[500px]">
         <div class="md:w-2/5 flex items-center justify-center px-6 md:px-12 py-8">
@@ -158,25 +143,27 @@
 
       <!-- Sekcja Partnerzy -->
 <section id="partners" data-aos="fade-up" class="text-center pt-20 pb-20">
-  <h2 class="w-full px-6 md:px-12 text-4xl md:text-7xl font-mono text-white mb-12" data-aos="fade-up">Zaufali nam</h2>
+    <h2 class="w-full px-6 md:px-12 text-4xl md:text-7xl font-mono text-white mb-12" data-aos="fade-up">Zaufali nam</h2>
 
-  <div class="flex gap-8 md:gap-12 justify-start md:justify-center overflow-x-auto md:overflow-visible px-6 md:px-0">
-    <a href="https://www.zf.com/poland/pl/home/home.html" target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
-      <img src="./ZF_logo.svg" alt="ZF" class="h-20 md:h-30 transition-transform duration-300 transform hover:scale-110 hover:opacity-80" />
-    </a>
-    <a href="https://www.audi.pl/pl/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
-      <img src="./aud.png" alt="Audi" class="h-20 md:h-30 transition-transform duration-300 transform hover:scale-110 hover:opacity-80" />
-    </a>
-    <a href="https://www.valeo.com/pl/polska/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
-      <img src="./val.png" alt="Valeo" class="h-20 md:h-30 transition-transform duration-300 transform hover:scale-110 hover:opacity-80" />
-    </a>
-    <a href="https://www.stellantis.com/en" target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
-      <img src="./stell.png" alt="Stellantis" class="h-20 md:h-30 transition-transform duration-300 transform hover:scale-110 hover:opacity-80" />
-    </a>
-    <a href="https://www.volkswagen.pl/pl.html" target="_blank" rel="noopener noreferrer" class="flex-shrink-0">
-      <img src="./wol.png" alt="Volkswagen" class="h-20 md:h-30 transition-transform duration-300 transform hover:scale-110 hover:opacity-80" />
-    </a>
-  </div>
+    <div class="relative overflow-hidden">
+      <div class="flex gap-8 md:gap-12 justify-start md:justify-center whitespace-nowrap">
+        <a href="https://www.zf.com/poland/pl/home/home.html" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 inline-block">
+          <img src="./ZF_logo.svg" alt="ZF" class="h-20 md:h-30 transition-transform duration-300 transform hover:scale-110 hover:opacity-80" />
+        </a>
+        <a href="https://www.audi.pl/pl/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 inline-block">
+          <img src="./aud.png" alt="Audi" class="h-20 md:h-30 transition-transform duration-300 transform hover:scale-110 hover:opacity-80" />
+        </a>
+        <a href="https://www.valeo.com/pl/polska/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 inline-block">
+          <img src="./val.png" alt="Valeo" class="h-20 md:h-30 transition-transform duration-300 transform hover:scale-110 hover:opacity-80" />
+        </a>
+        <a href="https://www.stellantis.com/en" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 inline-block">
+          <img src="./stell.png" alt="Stellantis" class="h-20 md:h-30 transition-transform duration-300 transform hover:scale-110 hover:opacity-80" />
+        </a>
+        <a href="https://www.volkswagen.pl/pl.html" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 inline-block">
+          <img src="./wol.png" alt="Volkswagen" class="h-20 md:h-30 transition-transform duration-300 transform hover:scale-110 hover:opacity-80" />
+        </a>
+      </div>
+    </div>
 </section>
 
 
@@ -195,19 +182,19 @@
   <div class="flex flex-col md:flex-row justify-center items-center gap-20 mb-16">
     <!-- Pytania -->
     <div class="flex flex-col items-center w-40 text-center" data-aos="fade-up" data-aos-delay="100">
-      <i data-lucide="help-circle" class="w-20 h-20 text-nexaut-blue mb-4"></i>
+      <i data-lucide="help-circle" class="w-20 h-20 text-nexaut-blue mb-4 transition duration-300 transform hover:scale-110 hover:opacity-80 cursor-pointer"></i>
       <span class="text-gray-300 text-2xl leading-snug">Masz pytania?</span>
     </div>
 
     <!-- Wycena -->
     <div class="flex flex-col items-center w-40 text-center" data-aos="fade-up" data-aos-delay="200">
-      <i data-lucide="dollar-sign" class="w-20 h-20 text-nexaut-blue mb-4"></i>
+      <i data-lucide="dollar-sign" class="w-20 h-20 text-nexaut-blue mb-4 transition duration-300 transform hover:scale-110 hover:opacity-80 cursor-pointer"></i>
       <span class="text-gray-300 text-2xl leading-snug">Potrzebujesz wyceny?</span>
     </div>
 
     <!-- Pomoc -->
     <div class="flex flex-col items-center w-40 text-center" data-aos="fade-up" data-aos-delay="300">
-      <i data-lucide="handshake" class="w-20 h-20 text-nexaut-blue mb-4"></i>
+      <i data-lucide="handshake" class="w-20 h-20 text-nexaut-blue mb-4 transition duration-300 transform hover:scale-110 hover:opacity-80 cursor-pointer"></i>
       <span class="text-gray-300 text-2xl leading-snug">Chętnie pomożemy.</span>
     </div>
   </div>
@@ -217,7 +204,9 @@
   <!-- Kontakt: koperta i e-mail -->
   <div class="flex flex-col items-center gap-4" data-aos="fade-up">
     <div class="w-20 h-20 bg-nexaut-blue rounded-full flex items-center justify-center">
-      <i data-lucide="mail" class="w-15 h-15 text-nexaut-blue"></i>
+      <a href="mailto:kontakt@nexaut.pl">
+      <i data-lucide="mail" class="w-15 h-15 text-nexaut-blue transition duration-300 transform hover:scale-110 hover:opacity-80 cursor-pointer"></i>
+    </a>
     </div>
     <a href="mailto:kontakt@nexaut.pl" class="text-white text-2xl font-semibold hover:scale-110 hover:opacity-80 transition-all">
       kontakt@nexaut.pl

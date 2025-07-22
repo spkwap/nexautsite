@@ -9,24 +9,13 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   </head>
   <body class="bg-nexaut-gray text-white font-sans">
+        <canvas id="cosmos"></canvas>
 
     <!-- Header -->
     <div id="header-container"></div>
 
     <!-- Główna treść -->
-    <main class="pt-24 relative bg-gray-950 overflow-hidden">
-      <!-- Tło gradientowe -->
-<div class="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-600/5 pointer-events-none"></div>
-
-<!-- SVG siatka -->
-<svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#81f5fb" stroke-width="1.2" />
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
+    <main class="pt-24 relative overflow-hidden">
       
       
       <section class="text-white py-16 px-6 md:px-20">
@@ -45,60 +34,60 @@
 
     <!-- Sekcja: Co oferujemy -->
 <div data-aos="fade-up" data-aos-delay="100">
-  <h3 class="text-4xl font-semibold mb-8 border-b border-gray-700 pb-2 max-w-max mx-auto">Co oferujemy</h3>
+  <h3 class="text-4xl font-semibold mb-8 text-white pb-2 max-w-max mx-auto">Co oferujemy</h3>
   
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
     
     <!-- Karta 1 -->
-    <div class="bg-gray-800 rounded-xl p-6 shadow-lg transition duration-300 transform hover:shadow-3xl hover:scale-105 cursor-pointer flex flex-col h-full">
-      <div class="mb-4 text-nexaut-blue">
-        <i data-lucide="settings" class="h-10 w-10 mx-auto"></i>
-      </div>
-      <h4 class="text-xl font-semibold mb-2 text-center">Projektowanie</h4>
-      <p class="text-gray-400 text-sm text-center mt-auto">
-        Tworzymy nowoczesne i wydajne systemy dopasowane do Twoich potrzeb.
-      </p>
-    </div>
-
+<div class="neon-card rounded-xl p-6 shadow-lg cursor-pointer flex flex-col h-full">
+  <div class="mb-4 text-nexaut-blue">
+    <i data-lucide="settings" class="h-10 w-10 mx-auto neon-icon"></i>
+  </div>
+  <h4 class="neon-title text-xl font-semibold mb-2 text-center text-white">Projektowanie</h4>
+  <p class="text-gray-400 text-sm text-center mt-auto transition-colors duration-300">
+    Tworzymy nowoczesne i wydajne systemy dopasowane do Twoich potrzeb.
+  </p>
+</div>
     <!-- Karta 2 -->
-    <div class="bg-gray-800 rounded-xl p-6 shadow-lg transition duration-300 transform hover:shadow-3xl hover:scale-105 cursor-pointer flex flex-col h-full">
-      <div class="mb-4 text-nexaut-blue">
-        <i data-lucide="cpu" class="h-10 w-10 mx-auto"></i>
-      </div>
-      <h4 class="text-xl font-semibold mb-2 text-center">Programowanie PLC</h4>
-      <p class="text-gray-400 text-sm text-center mt-auto">
-        Programujemy sterowniki Siemens, Phoenix Contact, Allen-Bradley, Unitronics i inne.
-      </p>
-    </div>
+
+    <div class="neon-card rounded-xl p-6 shadow-lg cursor-pointer flex flex-col h-full">
+  <div class="mb-4 text-nexaut-blue">
+    <i data-lucide="cpu" class="h-10 w-10 mx-auto neon-icon"></i>
+  </div>
+  <h4 class="neon-title text-xl font-semibold mb-2 text-center text-white">Programowanie PLC</h4>
+  <p class="text-gray-400 text-sm text-center mt-auto transition-colors duration-300">
+    Programujemy sterowniki Siemens, Phoenix Contact, Allen-Bradley, Unitronics i inne.
+  </p>
+</div>
 
     <!-- Karta 3 -->
-    <div class="bg-gray-800 rounded-xl p-6 shadow-lg transition duration-300 transform hover:shadow-3xl hover:scale-105 cursor-pointer flex flex-col h-full">
-      <div class="mb-4 text-nexaut-blue">
-        <i data-lucide="bot" class="h-10 w-10 mx-auto"></i>
-      </div>
-      <h4 class="text-xl font-semibold mb-2 text-center">Robotyka</h4>
-      <p class="text-gray-400 text-sm text-center mt-auto">
-        KUKA, FANUC, Staubli – automatyzujemy nawet najbardziej złożone linie produkcyjne.
-      </p>
-    </div>
+    <div class="neon-card rounded-xl p-6 shadow-lg cursor-pointer flex flex-col h-full">
+  <div class="mb-4 text-nexaut-blue">
+    <i data-lucide="bot" class="h-10 w-10 mx-auto neon-icon"></i>
+  </div>
+  <h4 class="neon-title text-xl font-semibold mb-2 text-center text-white">Robotyka</h4>
+  <p class="text-gray-400 text-sm text-center mt-auto transition-colors duration-300">
+    KUKA, FANUC, Staubli – robotyzujemy nawet najbardziej złożone linie produkcyjne.
+  </p>
+</div>
 
     <!-- Karta 4 -->
-    <div class="bg-gray-800 rounded-xl p-6 shadow-lg transition duration-300 transform hover:shadow-3xl hover:scale-105 cursor-pointer flex flex-col h-full">
-      <div class="mb-4 text-nexaut-blue">
-        <i data-lucide="monitor" class="h-10 w-10 mx-auto"></i>
-      </div>
-      <h4 class="text-xl font-semibold mb-2 text-center">HMI i SCADA</h4>
-      <p class="text-gray-400 text-sm text-center mt-auto">
-        Intuicyjne interfejsy i systemy nadzoru do łatwego sterowania i monitoringu w aplikacjach przemysłowych.
-      </p>
-    </div>
+    <div class="neon-card rounded-xl p-6 shadow-lg cursor-pointer flex flex-col h-full">
+  <div class="mb-4 text-nexaut-blue">
+    <i data-lucide="monitor" class="h-10 w-10 mx-auto neon-icon"></i>
+  </div>
+  <h4 class="neon-title text-xl font-semibold mb-2 text-center text-white">HMI i SCADA</h4>
+  <p class="text-gray-400 text-sm text-center mt-auto transition-colors duration-300">
+    Intuicyjne interfejsy i systemy nadzoru do łatwego sterowania i monitoringu w aplikacjach przemysłowych.
+  </p>
+</div>
 
   </div>
 </div>
 
     <!-- Sekcja: Dla kogo pracujemy -->
     <div data-aos="fade-up" data-aos-delay="200">
-  <h3 class="text-4xl font-semibold mb-8 border-b border-gray-700 pb-2 max-w-max mx-auto">Dla kogo pracujemy</h3>
+  <h3 class="text-4xl font-semibold mb-8 pb-2 max-w-max mx-auto">Dla kogo pracujemy</h3>
   <div class="text-gray-300 max-w-6xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
       
@@ -106,8 +95,8 @@
       <div class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-30">
         <img src="./ind1.jpg" alt="Zakłady produkcyjne" class="w-full h-full object-cover" />
       </div>
-      <div class="bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-xl h-30 transition-shadow duration-300 text-center">
-        <h4 class="text-xl font-semibold mb-3">Zakłady produkcyjne</h4>
+      <div class="neon-card rounded-lg p-6 shadow-md hover:shadow-xl h-30 transition-shadow duration-300 text-center">
+        <h4 class="neon-title text-white text-xl font-semibold mb-3">Zakłady produkcyjne</h4>
         <p class="text-sm">Optymalizacja i automatyzacja linii produkcyjnych.</p>
       </div>
       <div class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-30">
@@ -115,15 +104,15 @@
       </div>
       
       <!-- Drugi wiersz -->
-      <div class="bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 text-center h-30">
-        <h4 class="text-xl font-semibold mb-3">Przemysł motoryzacyjny</h4>
+      <div class="neon-card rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 text-center h-30">
+        <h4 class="neon-title text-white text-xl font-semibold mb-3">Przemysł motoryzacyjny</h4>
         <p class="text-sm">Wsparcie dla liderów branży – od Audi po Stellantis.</p>
       </div>
       <div class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-30">
         <img src="./eng.jpg" alt="Firmy inżynieryjne" class="w-full h-full object-cover" />
       </div>
-      <div class="bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 text-center h-30">
-        <h4 class="text-xl font-semibold mb-3">Firmy inżynieryjne</h4>
+      <div class="neon-card rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 text-center h-30">
+        <h4 class="neon-title text-white text-xl font-semibold mb-3">Firmy inżynieryjne</h4>
         <p class="text-sm">Kompleksowa integracja i realizacja projektów.</p>
       </div>
       
@@ -131,8 +120,8 @@
       <div class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-30">
         <img src="./steel.jpg" alt="Huty stali" class="w-full h-full object-cover" />
       </div>
-      <div class="bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 text-center h-30">
-        <h4 class="text-xl font-semibold mb-3">Huty stali</h4>
+      <div class="neon-card rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 text-center h-30">
+        <h4 class="neon-title text-white text-xl font-semibold mb-3">Huty stali</h4>
         <p class="text-sm">Automatyzacja w trudnych warunkach.</p>
       </div>
       <div class="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-30">
@@ -146,35 +135,35 @@
 
     <!-- Sekcja: Jak działamy -->
     <div data-aos="fade-up" data-aos-delay="300">
-      <h3 class="text-4xl font-semibold mb-8 border-b border-gray-700 pb-2 max-w-max mx-auto">Jak działamy</h3>
+      <h3 class="text-4xl font-semibold mb-8 pb-2 max-w-max mx-auto">Jak działamy</h3>
       <div class="max-w-3xl mx-auto space-y-6 text-gray-300 text-lg leading-relaxed">
         <div class="flex items-center gap-4">
           <div class="flex-shrink-0 mt-1">
-            <div class="h-10 w-10 flex items-center justify-center rounded-full bg-[#81f5fb] text-black font-bold">1</div>
+            <div class="neon-number h-10 w-10 flex items-center justify-center rounded-full bg-[#81f5fb] text-black font-bold">1</div>
           </div>
           <p><strong>Analiza potrzeb i audyt techniczny</strong> – poznajemy procesy, cele i oczekiwania klienta.</p>
         </div>
         <div class="flex items-center gap-4">
           <div class="flex-shrink-0 mt-1">
-            <div class="h-10 w-10 flex items-center justify-center rounded-full bg-[#81f5fb] text-black font-bold">2</div>
+            <div class="neon-number h-10 w-10 flex items-center justify-center rounded-full bg-[#81f5fb] text-black font-bold">2</div>
           </div>
           <p><strong>Projekt i wycena</strong> – opracowujemy koncepcję techniczną i harmonogram.</p>
         </div>
         <div class="flex items-center gap-4">
           <div class="flex-shrink-0 mt-1">
-            <div class="h-10 w-10 flex items-center justify-center rounded-full bg-[#81f5fb] text-black font-bold">3</div>
+            <div class="neon-number h-10 w-10 flex items-center justify-center rounded-full bg-[#81f5fb] text-black font-bold">3</div>
           </div>
           <p><strong>Realizacja i wdrożenie</strong> – tworzymy rozwiązanie, montujemy, programujemy i uruchamiamy.</p>
         </div>
         <div class="flex items-center gap-4">
           <div class="flex-shrink-0 mt-1">
-            <div class="h-10 w-10 flex items-center justify-center rounded-full bg-[#81f5fb] text-black font-bold">4</div>
+            <div class="neon-number h-10 w-10 flex items-center justify-center rounded-full bg-[#81f5fb] text-black font-bold">4</div>
           </div>
           <p><strong>Testy, optymalizacja i szkolenie</strong> – sprawdzamy, dostrajamy i uczymy obsługi.</p>
         </div>
         <div class="flex items-center gap-4">
           <div class="flex-shrink-0 mt-1">
-            <div class="h-10 w-10 flex items-center justify-center rounded-full bg-[#81f5fb] text-black font-bold">5</div>
+            <div class="neon-number h-10 w-10 flex items-center justify-center rounded-full bg-[#81f5fb] text-black font-bold">5</div>
           </div>
           <p><strong>Serwis i rozwój</strong> – zapewniamy wsparcie techniczne oraz aktualizacje systemów.</p>
         </div>

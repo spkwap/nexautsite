@@ -4,37 +4,30 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="./logo-nb.png" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>O nas – NEXAUT</title>
+    <title>Oferta – NEXAUT</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   </head>
   <body class="bg-nexaut-gray text-white font-sans">
+        <canvas id="cosmos"></canvas>
 
     <!-- Header -->
     <div id="header-container"></div>
 
     <!-- Główna treść -->
-    <main class="pt-24 relative bg-gray-950 overflow-hidden">
-        <!-- Tło gradientowe -->
-<div class="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-600/5 pointer-events-none"></div>
+    <main class="pt-24 relative overflow-hidden">
+      
+      
+      <section class="text-white py-16 px-6 md:px-20">
+  <div class="max-w-7xl mx-auto space-y-16">
 
-<!-- SVG siatka -->
-<svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#81f5fb" stroke-width="1.2" />
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-
-      <section id="about-full" class="py-24 px-6 md:px-12 bg-gray-950 text-gray-200">
+    <section id="about-full" class="py-24 px-6 md:px-12 text-gray-200">
   <div class="max-w-7xl mx-auto space-y-24">
 
     <!-- Nagłówek -->
     <div class="text-center" data-aos="fade-up">
       <h2 class="text-5xl font-bold mb-6 text-[#81f5fb] pb-[50px]">NexAut Sp. z o.o.</h2>
-      <p class="text-xl max-w-3xl mx-auto text-gray-400">
+      <p class="text-xl max-w-3xl mx-auto text-white">
         Poznaj NexAut – firmę tworzoną przez pasjonatów automatyki przemysłowej.
       </p>
     </div>
@@ -101,6 +94,7 @@
 
     <!-- Skrypty -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>

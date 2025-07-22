@@ -23,26 +23,15 @@
   <!-- Prevent FOUC (optional) -->
   <style>body { visibility: hidden; }</style>
 </head>
-
   <body class="bg-nexaut-gray text-white font-sans">
+        <canvas id="cosmos"></canvas>
 
     <!-- Header -->
     <div id="header-container"></div>
 
     <!-- Główna treść -->
-    <main class="pt-24 relative bg-gray-950 overflow-hidden">
-      <!-- Tło gradientowe -->
-<div class="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-600/5 pointer-events-none"></div>
-
-<!-- SVG siatka -->
-<svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#81f5fb" stroke-width="1.2" />
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
+    <main class="pt-24 relative overflow-hidden">
+      
       
       <!-- Sekcja Kontaktu -->
     <section class="py-20 relative overflow-hidden">
@@ -57,14 +46,14 @@
 
             <div class="grid lg:grid-cols-3 gap-8">
                 <!-- Informacje o firmie -->
-                <div class="lg:col-span-1">
-                    <div class="glass-effect rounded-2xl p-8 h-full">
+                <div class="neon-card lg:col-span-1">
+                    <div class="rounded-2xl p-8 h-full">
                         <div class="mb-8">
-                            <h3 class="text-2xl font-bold mb-6 text-[#81f5fb]">NexAut sp. z o.o.</h3>
+                            <h3 class="text-2xl font-bold mb-6 neon-title ">NexAut sp. z o.o.</h3>
                             
                             <div class="space-y-4">
                                 <div class="flex items-center">
-                                    <i class="fas fa-map-marker-alt text-[#81f5fb] w-6 text-center mr-4"></i>
+                                    <i class="fas fa-map-marker-alt w-6 text-center mr-4 neon-icon"></i>
                                     <div>
                                         <p class="text-sm text-gray-400">Adres</p>
                                         <p>Bielsko- Biała</p>
@@ -72,7 +61,7 @@
                                 </div>
                                 
                                 <div class="flex items-center">
-                                    <i class="fas fa-building text-[#81f5fb] w-6 text-center mr-4"></i>
+                                    <i class="fas fa-building neon-icon w-6 text-center mr-4"></i>
                                     <div>
                                         <p class="text-sm text-gray-400">KRS</p>
                                         <p>0001147092</p>
@@ -84,8 +73,8 @@
                         </div>
                         
                         <!-- Godziny pracy -->
-                        <div class="border-t border-gray-600 pt-6">
-                            <h4 class="text-lg font-semibold mb-4 text-[#81f5fb]">Godziny pracy</h4>
+                        <div class="pt-6">
+                            <h4 class="text-lg font-semibold mb-4 neon-title">Godziny pracy</h4>
                             <div class="space-y-2 text-sm">
                                 <div class="flex justify-between">
                                     <span class="text-gray-400">Poniedziałek - Piątek</span>
@@ -108,28 +97,30 @@
                 <div class="lg:col-span-2">
                     <div class="grid md:grid-cols-2 gap-6">
                         <!-- Osoba 1 -->
-                        <div class="contact-card glass-effect rounded-2xl p-8">
+                        <div class="neon-card rounded-2xl p-8">
                             <div class="text-center mb-6">
-                                <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 shadow-lg border-4 border-white">
-                                    <img src="./daniel.webp" alt="Daniel" class="w-full h-full object-cover" />
+                                <div class="neon-card w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 shadow-lg border-4 border-white">
+                                  <a href="https://www.linkedin.com/in/daniel-handzlik-nexaut/" target="_blank" rel="noopener noreferrer"> 
+                                  <img src="./daniel.webp" alt="Daniel" class="w-full h-full object-cover" />
+                                  </a> 
                                 </div>
-                                <h4 class="text-xl font-bold mb-2">Daniel Handzlik</h4>
-                                <p class="text-[#81f5fb] text-sm">Kierownik Projektów</p>
-                                <p class="text-gray-400 text-sm mt-1">Starszy Programista PLC</p>
+                                <h4 class="neon-title text-xl font-bold mb-2">Daniel Handzlik</h4>
+                                <p class="text-white text-sm">Kierownik Projektów</p>
+                                <p class="text-white text-sm mt-1">Starszy Programista PLC</p>
                             </div>
                             
                             <div class="space-y-3">
-                                <a href="mailto:daniel.handzlik@nexaut.pl" class="flex items-center p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+                                <a href="mailto:daniel.handzlik@nexaut.pl" class="neon-card flex items-center p-3 rounded-lg ">
                                     <i class="fas fa-envelope text-blue-400 w-5 mr-3"></i>
                                     <span class="text-sm">daniel.handzlik@nexaut.pl</span>
                                 </a>
                                 
-                                <a href="tel:+48517280644" class="flex items-center p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+                                <a href="tel:+48517280644" class="neon-card flex items-center p-3 rounded-lg ">
                                     <i class="fas fa-phone text-green-400 w-5 mr-3"></i>
                                     <span class="text-sm">+48 517 280 644</span>
                                 </a>
                                 
-                                <a href="https://www.linkedin.com/in/daniel-handzlik-nexaut/" class="flex items-center p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+                                <a href="https://www.linkedin.com/in/daniel-handzlik-nexaut/" target="_blank" rel="noopener noreferrer" class="neon-card flex items-center p-3 rounded-lg ">
                                     <i class="fab fa-linkedin text-blue-500 w-5 mr-3"></i>
                                     <span class="text-sm">LinkedIn</span>
                                 </a>
@@ -137,28 +128,31 @@
                         </div>
 
                         <!-- Osoba 2 -->
-                        <div class="contact-card glass-effect rounded-2xl p-8">
+                        <div class="neon-card rounded-2xl p-8">
                             <div class="text-center mb-6">
-                                <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 shadow-lg border-4 border-white">
-                                    <img src="./kamil.webp" alt="Kamil" class="w-full h-full object-cover" />
+                                
+                                <div class="neon-card w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 shadow-lg border-4 border-white">
+                                    <a href="https://www.linkedin.com/in/kamil-krawczyk-nexaut/" target="_blank" rel="noopener noreferrer">
+                                      <img src="./kamil.webp" alt="Kamil" class="w-full h-full object-cover" />
+                                    </a>
                                 </div>
-                                <h4 class="text-xl font-bold mb-2">Kamil Krawczyk</h4>
-                                <p class="text-[#81f5fb] text-sm">Kierownik Projektów</p>
-                                <p class="text-gray-400 text-sm mt-1">Starszy Programista PLC</p>
+                                <h4 class="neon-title text-xl font-bold mb-2">Kamil Krawczyk</h4>
+                                <p class="text-white text-sm">Kierownik Projektów</p>
+                                <p class="text-white text-sm mt-1">Starszy Programista PLC</p>
                             </div>
                             
                             <div class="space-y-3">
-                                <a href="mailto:kamil.krawczyk@nexaut.pl" class="flex items-center p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+                                <a href="mailto:kamil.krawczyk@nexaut.pl" class="neon-card flex items-center p-3 rounded-lg ">
                                     <i class="fas fa-envelope text-blue-400 w-5 mr-3"></i>
                                     <span class="text-sm">kamil.krawczyk@nexaut.pl</span>
                                 </a>
                                 
-                                <a href="tel:+48664880158" class="flex items-center p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+                                <a href="tel:+48664880158" class="neon-card flex items-center p-3 rounded-lg ">
                                     <i class="fas fa-phone text-green-400 w-5 mr-3"></i>
                                     <span class="text-sm">+48 664 880 158</span>
                                 </a>
                                 
-                                <a href="https://www.linkedin.com/in/kamil-krawczyk-nexaut/" class="flex items-center p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+                                <a href="https://www.linkedin.com/in/kamil-krawczyk-nexaut/" target="_blank" rel="noopener noreferrer" class="neon-card flex items-center p-3 rounded-lg">
                                     <i class="fab fa-linkedin text-blue-500 w-5 mr-3"></i>
                                     <span class="text-sm">LinkedIn</span>
                                 </a>
@@ -171,7 +165,6 @@
         </div>
     </section>
 
-
     </main>
 
     <!-- Footer -->
@@ -179,6 +172,7 @@
 
     <!-- Skrypty -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
