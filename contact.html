@@ -1,27 +1,57 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html>
   <head>
+  <!-- Podstawowe meta dane -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kontakt – NEXAUT</title>
+  <meta name="description" data-i18n-meta="about_meta_description" content="NEXAUT – Eksperci w automatyzacji przemysłowej, robotyce i systemach sterowania. Kompleksowe rozwiązania dla przemysłu 4.0." />
+  <meta name="keywords" content="automatyzacja przemysłowa, robotyka, systemy sterowania, przemysł 4.0, NEXAUT" />
+  <meta name="author" content="NEXAUT" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Tytuł strony -->
+  <title data-i18n="contact_meta_title">NEXAUT - Kontakt</title>
+
+  <!-- Wersje językowe -->
+  <link rel="alternate" hreflang="pl" href="https://nexaut.pl/pl/" />
+  <link rel="alternate" hreflang="en" href="https://nexaut.pl/en/" />
+  <link rel="alternate" hreflang="de" href="https://nexaut.pl/de/" />
 
   <!-- Favicon -->
-  <link rel="icon" href="./logo-nb.png" type="image/png" />
+  <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
+  <link rel="preload" href="/logo-nb-icon.webp" as="image" />
 
-  <!-- Preconnect -->
-  <link rel="preconnect" href="https://unpkg.com" crossorigin />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <!-- Style lokalne -->
+  <link rel="preload" href="/style.css" />
+  <link rel="stylesheet" href="/style.css" />
 
-  <!-- Preload main style -->
-  <link rel="preload" href="./style.css" as="style" />
-  <link rel="stylesheet" href="./style.css" />
-
-  <!-- External styles -->
+  <!-- Style zewnętrzne -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- Prevent FOUC (optional) -->
+  <!-- Skrypty -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      AOS.init();
+      document.body.style.visibility = "visible";
+    });
+  </script>
+
+  <!-- Zapobieganie FOUC -->
   <style>body { visibility: hidden; }</style>
+
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:title" data-i18n-meta="about_og_title" content="NEXAUT – Automatyzacja Przemysłowa i Robotyka" />
+  <meta property="og:description" data-i18n-meta="about_og_description" content="Kompleksowe rozwiązania dla przemysłu: automatyzacja, robotyka, systemy sterowania." />
+  <meta property="og:image" content="https://nexaut.pl/og-image.webp" />
+  <meta property="og:url" content="https://nexaut.pl" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" data-i18n-meta="about_twitter_title" content="NEXAUT – Automatyzacja Przemysłowa i Robotyka" />
+  <meta name="twitter:description" data-i18n-meta="about_twitter_description" content="Nowoczesne rozwiązania dla przemysłu. Sprawdź ofertę NEXAUT." />
+  <meta name="twitter:image" content="https://nexaut.pl/og-image.webp" />
 </head>
   <body class="bg-nexaut-gray text-white font-sans">
         <canvas id="cosmos"></canvas>
@@ -32,138 +62,127 @@
     <!-- Główna treść -->
     <main class="pt-24 relative overflow-hidden">
       
-      
-      <!-- Sekcja Kontaktu -->
-    <section class="py-20 relative overflow-hidden">
-        
-        <div class="container mx-auto px-6 relative z-10">
-            <!-- Nagłówek -->
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold mb-6 text-[#81f5fb] pb-[50px]">
-                    Skontaktuj się z nami
-                </h2>
+      <!-- Sekcja Kontakt --> 
+       <section class="py-20 relative overflow-hidden"> 
+        <div class="container mx-auto px-6 relative z-10"> 
+          <!-- Nagłówek --> 
+           <div class="text-center mb-16"> 
+        <h2 class="text-5xl font-bold mb-6 text-[#81f5fb] pb-[50px]" data-i18n="kontakt_title"> Skontaktuj się z nami </h2> </div>
+     <div class="grid lg:grid-cols-3 gap-8">
+  <!-- Informacje o firmie -->
+  <div class="neon-card rounded-2xl p-8">
+    <div class="rounded-2xl p-8 h-full">
+      <div class="mb-8">
+        <h3 class="text-2xl font-bold mb-6 neon-title" data-i18n="kontakt_company_name">NexAut sp. z o.o.</h3>
+
+        <div class="space-y-4">
+          <div class="flex items-center">
+            <i class="fas fa-map-marker-alt w-6 text-center mr-4 neon-icon"></i>
+            <div>
+              <p class="text-sm text-gray-400" data-i18n="kontakt_address_label">Adres</p>
+              <p>Bielsko-Biała</p>
             </div>
+          </div>
 
-            <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Informacje o firmie -->
-                <div class="neon-card lg:col-span-1">
-                    <div class="rounded-2xl p-8 h-full">
-                        <div class="mb-8">
-                            <h3 class="text-2xl font-bold mb-6 neon-title ">NexAut sp. z o.o.</h3>
-                            
-                            <div class="space-y-4">
-                                <div class="flex items-center">
-                                    <i class="fas fa-map-marker-alt w-6 text-center mr-4 neon-icon"></i>
-                                    <div>
-                                        <p class="text-sm text-gray-400">Adres</p>
-                                        <p>Bielsko- Biała</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-center">
-                                    <i class="fas fa-building neon-icon w-6 text-center mr-4"></i>
-                                    <div>
-                                        <p class="text-sm text-gray-400">KRS</p>
-                                        <p>0001147092</p>
-                                    </div>
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
-                        
-                        <!-- Godziny pracy -->
-                        <div class="pt-6">
-                            <h4 class="text-lg font-semibold mb-4 neon-title">Godziny pracy</h4>
-                            <div class="space-y-2 text-sm">
-                                <div class="flex justify-between">
-                                    <span class="text-gray-400">Poniedziałek - Piątek</span>
-                                    <span>8:00 - 18:00</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-gray-400">Sobota</span>
-                                    <span>9:00 - 14:00</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-gray-400">Niedziela</span>
-                                    <span class="text-red-400">Zamknięte</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Osoby kontaktowe -->
-                <div class="lg:col-span-2">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <!-- Osoba 1 -->
-                        <div class="neon-card rounded-2xl p-8">
-                            <div class="text-center mb-6">
-                                <div class="neon-card w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 shadow-lg border-4 border-white">
-                                  <a href="https://www.linkedin.com/in/daniel-handzlik-nexaut/" target="_blank" rel="noopener noreferrer"> 
-                                  <img src="./daniel.webp" alt="Daniel" class="w-full h-full object-cover" />
-                                  </a> 
-                                </div>
-                                <h4 class="neon-title text-xl font-bold mb-2">Daniel Handzlik</h4>
-                                <p class="text-white text-sm">Kierownik Projektów</p>
-                                <p class="text-white text-sm mt-1">Starszy Programista PLC</p>
-                            </div>
-                            
-                            <div class="space-y-3">
-                                <a href="mailto:daniel.handzlik@nexaut.pl" class="neon-card flex items-center p-3 rounded-lg ">
-                                    <i class="fas fa-envelope text-blue-400 w-5 mr-3"></i>
-                                    <span class="text-sm">daniel.handzlik@nexaut.pl</span>
-                                </a>
-                                
-                                <a href="tel:+48517280644" class="neon-card flex items-center p-3 rounded-lg ">
-                                    <i class="fas fa-phone text-green-400 w-5 mr-3"></i>
-                                    <span class="text-sm">+48 517 280 644</span>
-                                </a>
-                                
-                                <a href="https://www.linkedin.com/in/daniel-handzlik-nexaut/" target="_blank" rel="noopener noreferrer" class="neon-card flex items-center p-3 rounded-lg ">
-                                    <i class="fab fa-linkedin text-blue-500 w-5 mr-3"></i>
-                                    <span class="text-sm">LinkedIn</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Osoba 2 -->
-                        <div class="neon-card rounded-2xl p-8">
-                            <div class="text-center mb-6">
-                                
-                                <div class="neon-card w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 shadow-lg border-4 border-white">
-                                    <a href="https://www.linkedin.com/in/kamil-krawczyk-nexaut/" target="_blank" rel="noopener noreferrer">
-                                      <img src="./kamil.webp" alt="Kamil" class="w-full h-full object-cover" />
-                                    </a>
-                                </div>
-                                <h4 class="neon-title text-xl font-bold mb-2">Kamil Krawczyk</h4>
-                                <p class="text-white text-sm">Kierownik Projektów</p>
-                                <p class="text-white text-sm mt-1">Starszy Programista PLC</p>
-                            </div>
-                            
-                            <div class="space-y-3">
-                                <a href="mailto:kamil.krawczyk@nexaut.pl" class="neon-card flex items-center p-3 rounded-lg ">
-                                    <i class="fas fa-envelope text-blue-400 w-5 mr-3"></i>
-                                    <span class="text-sm">kamil.krawczyk@nexaut.pl</span>
-                                </a>
-                                
-                                <a href="tel:+48664880158" class="neon-card flex items-center p-3 rounded-lg ">
-                                    <i class="fas fa-phone text-green-400 w-5 mr-3"></i>
-                                    <span class="text-sm">+48 664 880 158</span>
-                                </a>
-                                
-                                <a href="https://www.linkedin.com/in/kamil-krawczyk-nexaut/" target="_blank" rel="noopener noreferrer" class="neon-card flex items-center p-3 rounded-lg">
-                                    <i class="fab fa-linkedin text-blue-500 w-5 mr-3"></i>
-                                    <span class="text-sm">LinkedIn</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-            
-            
+          <div class="flex items-center">
+            <i class="fas fa-building neon-icon w-6 text-center mr-4"></i>
+            <div>
+              <p class="text-sm text-gray-400">NIP</p>
+              <p>5472250037</p>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+
+      <!-- Godziny pracy -->
+      <div class="pt-6">
+        <h4 class="text-lg font-semibold mb-4 neon-title" data-i18n="kontakt_hours_title">Godziny pracy</h4>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-400" data-i18n="kontakt_hours_weekdays">Poniedziałek - Piątek</span>
+            <span>8:00 - 18:00</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-400" data-i18n="kontakt_hours_saturday">Sobota</span>
+            <span>9:00 - 14:00</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-400" data-i18n="kontakt_hours_sunday">Niedziela</span>
+            <span class="text-red-400" data-i18n="kontakt_hours_sunday_closed">Zamknięte</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Osoby kontaktowe -->
+  <div class="lg:col-span-2">
+    <div class="grid md:grid-cols-2 gap-6 h-full">
+      <!-- Osoba 1 -->
+      <div class="neon-card rounded-2xl p-8">
+        <div class="text-center mb-6">
+          <div class="neon-card w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 shadow-lg border-4 border-white">
+            <a href="https://www.linkedin.com/in/daniel-handzlik-nexaut/" target="_blank" rel="noopener noreferrer">
+              <img src="./daniel.webp" rel="preload" alt="Daniel" class="w-full h-full object-cover" />
+            </a>
+          </div>
+          <h4 class="neon-title text-xl font-bold mb-2">Daniel Handzlik</h4>
+          <p class="text-white text-sm" data-i18n="kontakt_os1_pos1">Kierownik Projektów</p>
+          <p class="text-white text-sm mt-1" data-i18n="kontakt_os1_pos2">Starszy Programista PLC</p>
+        </div>
+
+        <div class="space-y-3">
+          <a href="mailto:daniel.handzlik@nexaut.pl" class="neon-card flex items-center p-3 rounded-lg">
+            <i class="fas fa-envelope text-blue-400 w-5 mr-3"></i>
+            <span class="text-sm">daniel.handzlik@nexaut.pl</span>
+          </a>
+
+          <a href="tel:+48517280644" class="neon-card flex items-center p-3 rounded-lg">
+            <i class="fas fa-phone text-green-400 w-5 mr-3"></i>
+            <span class="text-sm">+48 517 280 644</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/daniel-handzlik-nexaut/" target="_blank" rel="noopener noreferrer" class="neon-card flex items-center p-3 rounded-lg">
+            <i class="fab fa-linkedin text-blue-500 w-5 mr-3"></i>
+            <span class="text-sm">LinkedIn</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Osoba 2 -->
+      <div class="neon-card rounded-2xl p-8">
+        <div class="text-center mb-6">
+          <div class="neon-card w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 shadow-lg border-4 border-white">
+            <a href="https://www.linkedin.com/in/kamil-krawczyk-nexaut/" target="_blank" rel="noopener noreferrer">
+              <img src="./kamil.webp" rel="preload" alt="Kamil" class="w-full h-full object-cover" />
+            </a>
+          </div>
+          <h4 class="neon-title text-xl font-bold mb-2">Kamil Krawczyk</h4>
+          <p class="text-white text-sm" data-i18n="kontakt_os2_pos1">Kierownik Projektów</p>
+          <p class="text-white text-sm mt-1" data-i18n="kontakt_os2_pos2">Starszy Programista PLC</p>
+        </div>
+
+        <div class="space-y-3">
+          <a href="mailto:kamil.krawczyk@nexaut.pl" class="neon-card flex items-center p-3 rounded-lg">
+            <i class="fas fa-envelope text-blue-400 w-5 mr-3"></i>
+            <span class="text-sm">kamil.krawczyk@nexaut.pl</span>
+          </a>
+
+          <a href="tel:+48664880158" class="neon-card flex items-center p-3 rounded-lg">
+            <i class="fas fa-phone text-green-400 w-5 mr-3"></i>
+            <span class="text-sm">+48 664 880 158</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/kamil-krawczyk-nexaut/" target="_blank" rel="noopener noreferrer" class="neon-card flex items-center p-3 rounded-lg">
+            <i class="fab fa-linkedin text-blue-500 w-5 mr-3"></i>
+            <span class="text-sm">LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div> </section>
 
     </main>
 

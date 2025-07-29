@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
-  base: '/nexautsite/',
+  base: './',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

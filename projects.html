@@ -1,13 +1,58 @@
 <!DOCTYPE html>
-<html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="./logo-nb.png" type="image/png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oferta – NEXAUT</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-  </head>
+<html>
+   <head>
+  <!-- Podstawowe meta dane -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-meta="about_meta_description" content="NEXAUT – Eksperci w automatyzacji przemysłowej, robotyce i systemach sterowania. Kompleksowe rozwiązania dla przemysłu 4.0." />
+  <meta name="keywords" content="automatyzacja przemysłowa, robotyka, systemy sterowania, przemysł 4.0, NEXAUT" />
+  <meta name="author" content="NEXAUT" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Tytuł strony -->
+  <title data-i18n="projects_meta_title">NEXAUT - Projekty</title>
+
+  <!-- Wersje językowe -->
+  <link rel="alternate" hreflang="pl" href="https://nexaut.pl/pl/" />
+  <link rel="alternate" hreflang="en" href="https://nexaut.pl/en/" />
+  <link rel="alternate" hreflang="de" href="https://nexaut.pl/de/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
+  <link rel="preload" href="/logo-nb-icon.webp" as="image" />
+
+  <!-- Style lokalne -->
+  <link rel="preload" href="/style.css" />
+  <link rel="stylesheet" href="/style.css" />
+
+  <!-- Style zewnętrzne -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Skrypty -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      AOS.init();
+      document.body.style.visibility = "visible";
+    });
+  </script>
+
+  <!-- Zapobieganie FOUC -->
+  <style>body { visibility: hidden; }</style>
+
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:title" data-i18n-meta="about_og_title" content="NEXAUT – Automatyzacja Przemysłowa i Robotyka" />
+  <meta property="og:description" data-i18n-meta="about_og_description" content="Kompleksowe rozwiązania dla przemysłu: automatyzacja, robotyka, systemy sterowania." />
+  <meta property="og:image" content="https://nexaut.pl/og-image.webp" />
+  <meta property="og:url" content="https://nexaut.pl" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" data-i18n-meta="about_twitter_title" content="NEXAUT – Automatyzacja Przemysłowa i Robotyka" />
+  <meta name="twitter:description" data-i18n-meta="about_twitter_description" content="Nowoczesne rozwiązania dla przemysłu. Sprawdź ofertę NEXAUT." />
+  <meta name="twitter:image" content="https://nexaut.pl/og-image.webp" />
+</head>
   <body class="bg-nexaut-gray text-white font-sans">
         <canvas id="cosmos"></canvas>
 
@@ -21,126 +66,163 @@
       <!-- Sekcja: Nasze projekty -->
 <section class="py-24 text-gray-300" id="projekty" data-aos="fade-up" data-aos-delay="100">
   <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-5xl font-bold mb-6 text-[#81f5fb] pb-[50px] text-center">
-      Nasze doświadczenie
-    </h2>
+    <h2 class="text-5xl font-bold mb-6 text-[#81f5fb] pb-[50px] text-center" data-i18n="doswiadczenie_title">
+  Nasze doświadczenie
+</h2>
+
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
       <!-- Projekt 1 -->
-      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
-        <div class="h-48 overflow-hidden">
-          <img src="./automotive/car-camera.jpg" alt="Projekt 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-        </div>
-        <div class="p-6">
-          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Montaż kamer samochodowych<br>Niemcy</h3>
-          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
-            Kompleksowa automatyzacja linii produkcyjnych kamer samochodowych. Zastosowanie PLC Siemens S7-1500, robotów Staubli, systemów wizyjnych KEYENCE 2D/3D, skanerów kodów, stacji skręcających, nitujących, spawających, grawerujących oraz komunikacji z LabVIEW.
-          </p>
-        </div>
-      </div>
+<div class="card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+  <div class="h-48 overflow-hidden">
+    <img src="./automotive/car-camera.webp" rel="preload" alt="projekt1_title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="p-6">
+    <h3 class="card-title text-xl font-semibold mb-2 h-16 flex flex-col items-center justify-center">
+      <span data-i18n="projekt1_title">Montaż kamer samochodowych</span>
+      <span data-i18n="projekt1_country" class="block">Niemcy</span>
+    </h3>
+    <p class="text-sm text-gray-300 h-35 flex items-center justify-center" data-i18n="projekt1_text">
+      Kompleksowa automatyzacja linii produkcyjnych kamer samochodowych. Zastosowanie PLC Siemens S7-1500, robotów Staubli, systemów wizyjnych KEYENCE 2D/3D, skanerów kodów, stacji skręcających, nitujących, spawających, grawerujących oraz komunikacji z LabVIEW.
+    </p>
+  </div>
+</div>
+
+
 
       <!-- Projekt 2 -->
-      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
-        <div class="h-48 overflow-hidden">
-          <img src="./automotive/motor.jpg" alt="Projekt 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-        </div>
-        <div class="p-6">
-          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Linie montażowe i VIBN<br>Hiszpania</h3>
-          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
-Integracja oraz uruchomienie linii zgodnie ze standardem VASS 6. Wykorzystanie PLC Siemens TIA Portal v17, komunikacji z robotami KUKA, napędów SEW MoviDrive oraz skanerów bezpieczeństwa SICK.          </p>
-        </div>
-      </div>
+<div class="card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+  <div class="h-48 overflow-hidden">
+    <img src="./automotive/motor.webp" rel="preload" alt="projekt2_title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="p-6">
+    <h3 class="card-title text-xl font-semibold mb-2 h-16 flex flex-col items-center justify-center">
+      <span data-i18n="projekt2_title">Linie montażowe i VIBN</span>
+      <span data-i18n="projekt2_country" class="block">Hiszpania</span>
+    </h3>
+    <p class="text-sm text-gray-300 h-35 flex items-center justify-center" data-i18n="projekt2_text">
+      Integracja oraz uruchomienie linii zgodnie ze standardem VASS 6. Wykorzystanie PLC Siemens TIA Portal v17, komunikacji z robotami KUKA, napędów SEW MoviDrive oraz skanerów bezpieczeństwa SICK.
+    </p>
+  </div>
+</div>
+
 
       <!-- Projekt 3 -->
-      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
-        <div class="h-48 overflow-hidden">
-          <img src="./automotive/car-body.jpg" alt="Projekt 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-        </div>
-        <div class="p-6">
-          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Zrobotyzowane linie karoserii<br>Słowacja</h3>
-          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
-Implementacja sekcji linii montażowych w standardzie VASS 6 (STIL, STIR, STAL, STAR). Wykorzystanie PLC Siemens, robotów FANUC, napędów SEW oraz systemów bezpieczeństwa SICK.          </p>
-        </div>
-      </div>
+<div class="card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+  <div class="h-48 overflow-hidden">
+    <img src="./automotive/car-body.webp" rel="preload" alt="projekt3_title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="p-6">
+    <h3 class="card-title text-xl font-semibold mb-2 h-16 flex flex-col items-center justify-center">
+      <span data-i18n="projekt3_title">Zrobotyzowane linie karoserii</span>
+      <span data-i18n="projekt3_country" class="block">Słowacja</span>
+    </h3>
+    <p class="text-sm text-gray-300 h-35 flex items-center justify-center" data-i18n="projekt3_text">
+      Implementacja sekcji linii montażowych w standardzie VASS 6 (STIL, STIR, STAL, STAR). Wykorzystanie PLC Siemens, robotów FANUC, napędów SEW oraz systemów bezpieczeństwa SICK.
+    </p>
+  </div>
+</div>
+
 
       <!-- Projekt 4 -->
-      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
-        <div class="h-48 overflow-hidden">
-          <img src="./automotive/engine.jpg" alt="Projekt 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-        </div>
-        <div class="p-6">
-          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Linie produkcyjne<br>Węgry</h3>
-          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
-Realizacja integracji linii w standardzie VASS 6 (ESF6, ESF7) z użyciem Phoenix Contact PLCnext. Zastosowanie robotów KUKA, napędów SEW MoviDrive oraz systemów SICK. Wykonanie testów VIBN oraz pełnej konfiguracji.
-          </p>
-        </div>
-      </div>
+<div class="card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+  <div class="h-48 overflow-hidden">
+    <img src="./automotive/engine.webp" rel="preload" alt="projekt4_title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="p-6">
+    <h3 class="card-title text-xl font-semibold mb-2 h-16 flex flex-col items-center justify-center">
+      <span data-i18n="projekt4_title">Linie produkcyjne</span>
+      <span data-i18n="projekt4_country" class="block">Węgry</span>
+    </h3>
+    <p class="text-sm text-gray-300 h-35 flex items-center justify-center" data-i18n="projekt4_text">
+      Realizacja integracji linii w standardzie VASS 6 (ESF6, ESF7) z użyciem Phoenix Contact PLCnext. Zastosowanie robotów KUKA, napędów SEW MoviDrive oraz systemów SICK. Wykonanie testów VIBN oraz pełnej konfiguracji.
+    </p>
+  </div>
+</div>
+
 
       <!-- Projekt 5 -->
-      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
-        <div class="h-48 overflow-hidden">
-          <img src="./automotive/welding1.jpg" alt="Projekt 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-        </div>
-        <div class="p-6">
-          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Transport karoserii w spawalni<br>Polska</h3>
-          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
-Implementacja systemu transportu karoserii w hali spawalni. Wykorzystanie Allen-Bradley, napędów SEW MoviDrive, identyfikacji RFID Balluff, szkolenie operatorów i wsparcie uruchomieniowe.
+<div class="card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+  <div class="h-48 overflow-hidden">
+    <img src="./automotive/welding1.webp" rel="preload" alt="projekt5_title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="p-6">
+    <h3 class="card-title text-xl font-semibold mb-2 h-16 flex flex-col items-center justify-center">
+      <span data-i18n="projekt5_title">Transport karoserii w spawalni</span>
+      <span data-i18n="projekt5_country" class="block">Polska</span>
+    </h3>
+    <p class="text-sm text-gray-300 h-35 flex items-center justify-center" data-i18n="projekt5_text">
+      Implementacja systemu transportu karoserii w hali spawalni. Wykorzystanie Allen-Bradley, napędów SEW MoviDrive, identyfikacji RFID Balluff, szkolenie operatorów i wsparcie uruchomieniowe.
+    </p>
+  </div>
+</div>
 
-          </p>
-        </div>
-      </div>
 
       <!-- Projekt 6 -->
-      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
-        <div class="h-48 overflow-hidden">
-          <img src="./automotive/power-plant.jpg" alt="Projekt 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-        </div>
-        <div class="p-6">
-          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Programowanie PLC offline<br>Chiny</h3>
-          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
-Opracowanie programu PLC w standardzie VASS 6 z wykorzystaniem Phoenix Contact PLCnext na potrzeby nowej fabryki. Przygotowanie i weryfikacja kodu w środowisku offline.
+<div class="card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+  <div class="h-48 overflow-hidden">
+    <img src="./automotive/power.webp" rel="preload" alt="projekt6_title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="p-6">
+    <h3 class="card-title text-xl font-semibold mb-2 h-16 flex flex-col items-center justify-center">
+      <span data-i18n="projekt6_title">Programowanie PLC offline</span>
+      <span data-i18n="projekt6_country" class="block">Chiny</span>
+    </h3>
+    <p class="text-sm text-gray-300 h-35 flex items-center justify-center" data-i18n="projekt6_text">
+      Opracowanie programu PLC w standardzie VASS 6 z wykorzystaniem Phoenix Contact PLCnext na potrzeby nowej fabryki. Przygotowanie i weryfikacja kodu w środowisku offline.
+    </p>
+  </div>
+</div>
 
-          </p>
-        </div>
-      </div>
       
       <!-- Projekt 7 -->
-      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
-        <div class="h-48 overflow-hidden">
-          <img src="./automotive/work.jpg" alt="Projekt 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-        </div>
-        <div class="p-6">
-          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Modernizacja maszyny przemysłowej<br>Polska</h3>
-          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
-Przeprowadzenie kompleksowej modernizacji maszyny przemysłowej. Zastosowanie PLC VisiLogic, projektowanie w EPLAN, konfiguracja systemów bezpieczeństwa Mosaic oraz przygotowanie dokumentacji i komponentów.
+<div class="card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+  <div class="h-48 overflow-hidden">
+    <img src="./automotive/work.webp" rel="preload" alt="projekt7_title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="p-6">
+    <h3 class="card-title text-xl font-semibold mb-2 h-16 flex flex-col items-center justify-center">
+      <span data-i18n="projekt7_title">Modernizacja maszyny przemysłowej</span>
+      <span data-i18n="projekt7_country" class="block">Polska</span>
+    </h3>
+    <p class="text-sm text-gray-300 h-35 flex items-center justify-center" data-i18n="projekt7_text">
+      Przeprowadzenie kompleksowej modernizacji maszyny przemysłowej. Zastosowanie PLC VisiLogic, projektowanie w EPLAN, konfiguracja systemów bezpieczeństwa Mosaic oraz przygotowanie dokumentacji i komponentów.
+    </p>
+  </div>
+</div>
 
-          </p>
-        </div>
-      </div>
+<!-- Projekt 8 -->
+<div class="card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+  <div class="h-48 overflow-hidden">
+    <img src="./automotive/welding.webp" rel="preload" alt="projekt8_title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="p-6">
+    <h3 class="card-title text-xl font-semibold mb-2 h-16 flex flex-col items-center justify-center">
+      <span data-i18n="projekt8_title">Cele spawalnicze</span>
+      <span data-i18n="projekt8_country" class="block">Polska</span>
+    </h3>
+    <p class="text-sm text-gray-300 h-35 flex items-center justify-center" data-i18n="projekt8_text">
+      Automatyzacja cel spawalniczych z wykorzystaniem Allen-Bradley Studio 5000 v33, interfejsów FactoryTalk View v12, robotów FANUC, napędów SEW oraz systemów bezpieczeństwa SICK.
+    </p>
+  </div>
+</div>
 
-      <!-- Projekt 8 -->
-      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
-        <div class="h-48 overflow-hidden">
-          <img src="./automotive/welding.jpg" alt="Projekt 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-        </div>
-        <div class="p-6">
-          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Cele spawalnicze<br>Polska</h3>
-          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
-Automatyzacja cel spawalniczych z wykorzystaniem Allen-Bradley Studio 5000 v33, interfejsów FactoryTalk View v12, robotów FANUC, napędów SEW oraz systemów bezpieczeństwa SICK.          </p>
-        </div>
-      </div>
+<!-- Projekt 9 -->
+<div class="card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+  <div class="h-48 overflow-hidden">
+    <img src="./automotive/industry.webp" rel="preload" alt="projekt9_title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+  </div>
+  <div class="p-6">
+    <h3 class="card-title text-xl font-semibold mb-2 h-16 flex flex-col items-center justify-center">
+      <span data-i18n="projekt9_title">Zrobotyzowany załadunek materiału</span>
+      <span data-i18n="projekt9_country" class="block">Niemcy</span>
+    </h3>
+    <p class="text-sm text-gray-300 h-35 flex items-center justify-center" data-i18n="projekt9_text">
+      Modernizacja zrobotyzowanej linii załadunku rolek materiału. Zastosowanie Allen-Bradley Studio 5000 v32, FactoryTalk View v11 oraz integracja z systemem HMI.
+    </p>
+  </div>
+</div>
 
-      <!-- Projekt 9 -->
-      <div class="neon-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
-        <div class="h-48 overflow-hidden">
-          <img src="./automotive/industry.jpg" alt="Projekt 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-        </div>
-        <div class="p-6">
-          <h3 class="neon-title text-xl font-semibold mb-2 h-16 flex items-center justify-center">Zrobotyzowany załadunek materiału<br>Niemcy</h3>
-          <p class="text-sm text-gray-300 h-35 flex items-center justify-center">
-Modernizacja zrobotyzowanej linii załadunku rolek materiału. Zastosowanie Allen-Bradley Studio 5000 v32, FactoryTalk View v11 oraz integracja z systemem HMI.          </p>
-        </div>
-      </div>
       
       
     </div>

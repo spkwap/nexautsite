@@ -1,13 +1,60 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="./logo-nb.png" type="image/png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oferta – NEXAUT</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-  </head>
+  <!-- Podstawowe meta dane -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" data-i18n-meta="about_meta_description" content="NEXAUT – Eksperci w automatyzacji przemysłowej, robotyce i systemach sterowania. Kompleksowe rozwiązania dla przemysłu 4.0." />
+  <meta name="keywords" content="automatyzacja przemysłowa, robotyka, systemy sterowania, przemysł 4.0, NEXAUT" />
+  <meta name="author" content="NEXAUT" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Tytuł strony -->
+  <title data-i18n="about_meta_title">NEXAUT - O nas</title>
+
+  <!-- Wersje językowe -->
+  <link rel="alternate" hreflang="pl" href="https://nexaut.pl/pl/" />
+  <link rel="alternate" hreflang="en" href="https://nexaut.pl/en/" />
+  <link rel="alternate" hreflang="de" href="https://nexaut.pl/de/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
+  <link rel="preload" href="/logo-nb-icon.webp" as="image" />
+
+  <!-- Style lokalne -->
+  <link rel="preload" href="/style.css" />
+  <link rel="stylesheet" href="/style.css" />
+
+  <!-- Style zewnętrzne -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Skrypty -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      AOS.init();
+      document.body.style.visibility = "visible";
+    });
+  </script>
+
+  <!-- Zapobieganie FOUC -->
+  <style>body { visibility: hidden; }</style>
+
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:title" data-i18n-meta="about_og_title" content="NEXAUT – Automatyzacja Przemysłowa i Robotyka" />
+  <meta property="og:description" data-i18n-meta="about_og_description" content="Kompleksowe rozwiązania dla przemysłu: automatyzacja, robotyka, systemy sterowania." />
+  <meta property="og:image" content="https://nexaut.pl/og-image.webp" />
+  <meta property="og:url" content="https://nexaut.pl" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" data-i18n-meta="about_twitter_title" content="NEXAUT – Automatyzacja Przemysłowa i Robotyka" />
+  <meta name="twitter:description" data-i18n-meta="about_twitter_description" content="Nowoczesne rozwiązania dla przemysłu. Sprawdź ofertę NEXAUT." />
+  <meta name="twitter:image" content="https://nexaut.pl/og-image.webp" />
+</head>
+
+
   <body class="bg-nexaut-gray text-white font-sans">
         <canvas id="cosmos"></canvas>
 
@@ -26,61 +73,63 @@
 
     <!-- Nagłówek -->
     <div class="text-center" data-aos="fade-up">
-      <h2 class="text-5xl font-bold mb-6 text-[#81f5fb] pb-[50px]">NexAut Sp. z o.o.</h2>
-      <p class="text-xl max-w-3xl mx-auto text-white">
-        Poznaj NexAut – firmę tworzoną przez pasjonatów automatyki przemysłowej.
-      </p>
+<h2 class="text-5xl font-bold mb-6 text-[#81f5fb] pb-[50px]" data-i18n="nazwa_firmy">NexAut</h2>
+      <p class="text-xl max-w-3xl mx-auto text-white" data-i18n="about_intro">
+  Poznaj NexAut – firmę tworzoną przez pasjonatów automatyki przemysłowej.
+</p>
+
     </div>
 
     <!-- Misja -->
-    <div class="flex items-center flex-col md:flex-row gap-12 text-right" data-aos="fade-up" data-aos-delay="100">
-      <div class="md:w-1/2 space-y-4">
-        <h3 class="text-3xl font-semibold text-white">Nasza misja</h3>
-        <p class="text-gray-300 leading-relaxed">
-          W NexAut sp. z o.o. wierzymy, że prawdziwa innowacja rodzi się na styku wiedzy, doświadczenia i zrozumienia potrzeb klienta. Naszą misją jest dostarczanie inteligentnych, zautomatyzowanych rozwiązań, które wspierają rozwój nowoczesnych zakładów produkcyjnych i zwiększają ich konkurencyjność.
-        </p>
-      </div>
-      <div class="md:w-1/2" data-aos="zoom-in">
-        <img src="./automotive/aut3.jpg" alt="Nasza misja" class="rounded-xl shadow-xl w-full h-60 object-cover" />
-      </div>
-    </div>
+<div class="flex items-center flex-col md:flex-row gap-12 text-right" data-aos="fade-up" data-aos-delay="100">
+  <div class="md:w-1/2 space-y-4">
+    <h3 class="text-3xl font-semibold text-white" data-i18n="mission_title">Nasza misja</h3>
+    <p class="text-gray-300 leading-relaxed" data-i18n="mission_text">
+      W NexAut sp. z o.o. wierzymy, że prawdziwa innowacja rodzi się na styku wiedzy, doświadczenia i zrozumienia potrzeb klienta. Naszą misją jest dostarczanie inteligentnych, zautomatyzowanych rozwiązań, które wspierają rozwój nowoczesnych zakładów produkcyjnych i zwiększają ich konkurencyjność.
+    </p>
+  </div>
+  <div class="md:w-1/2" data-aos="zoom-in">
+    <img src="./automotive/aut3.webp" rel="preload" alt="Nasza misja" class="rounded-xl shadow-xl w-120 h-60 object-cover" />
+  </div>
+</div>
+
 
     <!-- Doświadczenie -->
-    <div class="flex flex-col md:flex-row-reverse items-center gap-12 text-left" data-aos="fade-up" data-aos-delay="200">
-      <div class="md:w-1/2 space-y-4">
-        <h3 class="text-3xl font-semibold text-white">Doświadczenie</h3>
-        <p class="text-gray-300 leading-relaxed">
-          Kadra zarządzająca NexAut posiada ponad 5-letnie doświadczenie w projektowaniu i uruchamianiu systemów automatyki przemysłowej. Nasze kompetencje obejmują szerokie spektrum projektów – od prostych stacji montażowych po rozbudowane linie produkcyjne zintegrowane z systemami nadrzędnymi.
-        </p>
-      </div>
-      <div class="md:w-1/2" data-aos="zoom-in">
-        <img src="./automotive/factory.jpg" alt="Doświadczenie" class="rounded-xl shadow-xl w-full h-60 object-cover" />
-      </div>
-    </div>
+<div class="flex flex-col md:flex-row-reverse items-center gap-12 text-left" data-aos="fade-up" data-aos-delay="200">
+  <div class="md:w-1/2 space-y-4">
+    <h3 class="text-3xl font-semibold text-white" data-i18n="experience_title">Doświadczenie</h3>
+    <p class="text-gray-300 leading-relaxed" data-i18n="experience_text">
+      Kadra zarządzająca NexAut posiada ponad 5-letnie doświadczenie w projektowaniu i uruchamianiu systemów automatyki przemysłowej. Nasze kompetencje obejmują szerokie spektrum projektów – od prostych stacji montażowych po rozbudowane linie produkcyjne zintegrowane z systemami nadrzędnymi.
+    </p>
+  </div>
+  <div class="md:w-1/2" data-aos="zoom-in">
+    <img src="./automotive/factory.webp" rel="preload" alt="Doświadczenie" class="rounded-xl shadow-xl w-120 h-60 object-cover" />
+  </div>
+</div>
+
 
     <!-- Kompetencje -->
-    <div class="flex flex-col md:flex-row items-center gap-12 text-right" data-aos="fade-up" data-aos-delay="300">
-      <div class="md:w-1/2 space-y-4">
-        <h3 class="text-3xl font-semibold text-white">Nasze kompetencje</h3>
-        <p class="text-gray-300 leading-relaxed">
-          Specjalizujemy się w programowaniu sterowników PLC, systemów HMI/SCADA, integracjach systemów automatyki oraz analizie danych procesowych. Działamy kompleksowo – od konsultacji i projektu, po realizację, uruchomienie i serwis. Każde rozwiązanie dopasowujemy indywidualnie do wymagań klienta.
-        </p>
-      </div>
-      <div class="md:w-1/2" data-aos="zoom-in">
-        <img src="./automotive/plc.jpg" alt="Kompetencje" class="rounded-xl shadow-xl w-full h-60 object-cover" />
-      </div>
-    </div>
+<div class="flex flex-col md:flex-row items-center gap-12 text-right" data-aos="fade-up" data-aos-delay="300">
+  <div class="md:w-1/2 space-y-4">
+    <h3 class="text-3xl font-semibold text-white" data-i18n="kompetencje_title">Nasze kompetencje</h3>
+    <p class="text-gray-300 leading-relaxed" data-i18n="kompetencje_text">Specjalizujemy się w programowaniu sterowników PLC, systemów HMI/SCADA, integracjach systemów automatyki oraz analizie danych procesowych. Działamy kompleksowo – od konsultacji i projektu, po realizację, uruchomienie i serwis. Każde rozwiązanie dopasowujemy indywidualnie do wymagań klienta.</p>
+  </div>
+  <div class="md:w-1/2" data-aos="zoom-in">
+    <img src="./automotive/plc.webp" rel="preload" alt="" data-i18n-alt="kompetencje_title" class="rounded-xl shadow-xl w-120 h-60 object-cover" />
+  </div>
+</div>
+
 
     <!-- Rozwój -->
     <div class="flex flex-col md:flex-row-reverse items-center gap-12 text-left" data-aos="fade-up" data-aos-delay="400">
       <div class="md:w-1/2 space-y-4">
-        <h3 class="text-3xl font-semibold text-white">Rozwój i innowacja</h3>
-        <p class="text-gray-300 leading-relaxed">
+        <h3 class="text-3xl font-semibold text-white" data-i18n="rozwoj_title">Rozwój i innowacja</h3>
+        <p class="text-gray-300 leading-relaxed" data-i18n="rozwoj_text">
           Nieustannie udoskonalamy nasze procesy oraz poszerzamy zakres świadczonych usług, dostosowując się do zmieniających się potrzeb rynku przemysłowego. Stawiamy na ciągły rozwój kompetencji naszego zespołu oraz wprowadzanie nowoczesnych rozwiązań technicznych, które wspierają naszych klientów w osiąganiu większej efektywności i niezawodności procesów produkcyjnych.
         </p>
       </div>
       <div class="md:w-1/2" data-aos="zoom-in">
-        <img src="./automotive/future.jpg" alt="Rozwój" class="rounded-xl shadow-xl w-full h-60 object-cover" />
+        <img src="./automotive/future.webp" rel="preload" alt="Rozwój" class="rounded-xl shadow-xl w-120 h-60 object-cover" />
       </div>
     </div>
 

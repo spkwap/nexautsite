@@ -1,22 +1,39 @@
 import './style.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { pl } from './lang/pl.js';
+import { en } from './lang/en.js';
+import { de } from './lang/de.js';
+
+export const translations = { pl, en, de };
+// Ustaw język i ukryj body przed tłumaczeniem
+const earlyLang = localStorage.getItem('language') || (navigator.language.startsWith('de') ? 'de' : navigator.language.startsWith('en') ? 'en' : 'pl');
+document.documentElement.setAttribute('lang', earlyLang);
+document.documentElement.classList.add(`lang-${earlyLang}`);
+document.body.style.visibility = 'hidden';
+
+
 
 async function loadPartial(id, url) {
-  const container = document.getElementById(id)
+  const container = document.getElementById(id);
   try {
-    const res = await fetch(url)
-    if (!res.ok) throw new Error('Failed to load ' + url)
-    const html = await res.text()
-    container.innerHTML = html
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Failed to load ' + url);
+    const html = await res.text();
+    container.innerHTML = html;
+
+    const currentLang = localStorage.getItem('language') || getBrowserLanguage();
+    applyTranslations(currentLang);
   } catch (err) {
-    console.error('Error loading partial:', err)
+    console.error('Error loading partial:', err);
   }
 }
+
 
 document.addEventListener('DOMContentLoaded', async () => {
   await loadPartial('header-container', './partials/header.html')
   await loadPartial('footer-container', './partials/footer.html')
+  setupLanguageSwitcher()
 
   requestAnimationFrame(() => {
     setupNavbarLogic?.()
@@ -236,8 +253,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  const currentLang = localStorage.getItem('language') || getBrowserLanguage();
+  applyTranslations(currentLang);
+  updatePartnerLinks(currentLang);
   document.body.style.visibility = "visible";
 });
+
 
 lucide.createIcons();
 
@@ -374,3 +395,75 @@ if (canvas) {
     createStars();
   });
 }
+
+
+
+function getBrowserLanguage() {
+  const lang = navigator.language || navigator.userLanguage;
+  if (lang.startsWith('de')) return 'de';
+  if (lang.startsWith('en')) return 'en';
+  return 'pl';
+}
+
+function applyTranslations(lang) {
+  const elements = document.querySelectorAll('[data-i18n]');
+  elements.forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+}
+
+function setLanguage(lang) {
+  localStorage.setItem('language', lang);
+  applyTranslations(lang);
+  updatePartnerLinks(lang);
+}
+
+
+function setupLanguageSwitcher() {
+  const savedLang = localStorage.getItem('language') || getBrowserLanguage();
+  setLanguage(savedLang);
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedLang = btn.getAttribute('data-lang');
+      setLanguage(selectedLang);
+    });
+  });
+}
+
+const partnerLinks = {
+  pl: {
+    zf: "https://www.zf.com/poland/pl/home/home.html",
+    audi: "https://www.audi.pl/pl/",
+    valeo: "https://www.valeo.com/pl/polska/",
+    stellantis: "https://www.stellantis.com/en",
+    vw: "https://www.volkswagen.pl/pl.html"
+  },
+  en: {
+    zf: "https://www.zf.com/poland/en/home/home.html",
+    audi: "https://www.audi.com/en.html",
+    valeo: "https://www.valeo.com/en/",
+    stellantis: "https://www.stellantis.com/en",
+    vw: "https://www.vw.com"
+  },
+  de: {
+    zf: "https://www.zf.com/poland/en/home/home.html",
+    audi: "https://www.audi.de/de/",
+    valeo: "https://www.valeo.com/de/",
+    stellantis: "https://www.stellantis.com/en",
+    vw: "https://www.volkswagen.de"
+  }
+};
+
+function updatePartnerLinks(lang) {
+  document.querySelectorAll('[data-lang-link]').forEach(el => {
+    const key = el.getAttribute('data-lang-link');
+    if (partnerLinks[lang] && partnerLinks[lang][key]) {
+      el.href = partnerLinks[lang][key];
+    }
+  });
+}
+

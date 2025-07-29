@@ -256,26 +256,6 @@ canvas#cosmos {
   white-space: nowrap;
 }
 
-.partner-carousel:before,
-.partner-carousel:after {
-  position: absolute;
-  top: 0;
-  width: 100px;
-  height: 100%;
-  content: "";
-  z-index: 2;
-  pointer-events: none;
-}
-
-.partner-carousel:before {
-  left: 0;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0), #000);
-}
-
-.partner-carousel:after {
-  right: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0), #000);
-}
 
 .partner-carousel:hover .logos-slide {
   animation-play-state: paused;
@@ -288,16 +268,42 @@ canvas#cosmos {
 
 .logos-slide a {
   display: inline-block;
-  margin: 0 40px;
+  margin: 0 5vw; /* dynamiczne marginesy na mobile */
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 .logos-slide img {
-  height: 80px;
+  height: 10vw; /* elastyczna wysokość loga */
+  max-height: 80px; /* ale nie więcej niż wcześniej */
   object-fit: contain;
 }
+
 
 .logos-slide a:hover {
   transform: scale(1.2);
   opacity: 0.85;
 }
+
+@media (max-width: 768px) {
+  .logos-slide {
+    animation: none !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6vw;
+    padding: 0 10px;
+  }
+
+  .logos-slide a {
+    margin: 0;
+    flex: 1 1 40%;
+    max-width: 40%;
+  }
+
+  .logos-slide img {
+    height: auto;
+    max-height: 50px;
+    width: 100%;
+  }
+}
+

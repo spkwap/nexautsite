@@ -1,53 +1,76 @@
-<header id="navbar" class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-4 bg-black/60 transition-all duration-500 z-40">
-  <img id="logo" src="./logo-nb.png" alt="Logo NEXAUT" class="h-22 w-auto transition-all duration-500" />
+<header id="navbar"
+  class="fixed top-0 left-0 w-full px-6 py-4 bg-black/60 transition-all duration-500 z-40 flex flex-wrap items-center justify-between">
 
-  <div class="flex items-center space-x-4">
-    <nav id="nav-full" class="hidden md:flex font-mono text-lg transition-opacity duration-300 space-x-6 items-center">
-      <a href="./index.html" class="nav-link flex items-center group">
+  <!-- Logo -->
+  <img id="logo" src="./logo-nb.webp" alt="Logo NEXAUT"
+       class="h-22 w-auto transition-all duration-500" />
+
+  <!-- Nawigacja tylko na desktop -->
+  <nav id="nav-full"
+       class="hidden md:flex font-mono text-lg gap-18 items-center order-1">
+    <a href="./index.html" class="nav-link flex items-center group">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 transition group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 22V12h6v10" />
         </svg>
       </a>
-      <a href="./about.html" class="nav-link">O nas</a>
-      <a href="./offer.html" class="nav-link">Oferta</a>
-      <a href="./projects.html" class="nav-link">Projekty</a>
-      <a href="./career.html" class="nav-link">Kariera</a>
-      <a href="./contact.html" class="nav-link">Kontakt</a>
-    </nav>
+    <a href="./about.html" data-i18n="about" class="nav-link">O nas</a>
+    <a href="./offer.html" data-i18n="offer" class="nav-link">Oferta</a>
+    <a href="./projects.html" data-i18n="projects" class="nav-link">Projekty</a>
+    <a href="./career.html" data-i18n="career" class="nav-link">Kariera</a>
+     <!--<a href="./courses.html" data-i18n="courses" class="nav-link">Szkolenia</a>-->
+    <a href="./contact.html" data-i18n="contact" class="nav-link">Kontakt</a>
+  </nav>
 
+  <!-- Wrapper: hamburger i języki razem -->
+  <div class="flex items-center justify-end md:order-3 gap-6">
 
-    <button id="hamburger" class="block md:hidden text-nexaut-blue text-3xl focus:outline-none z-60 absolute top-1/2 -translate-y-1/2 right-0">
+    <!-- Hamburger – tylko na mobile -->
+    <button id="hamburger"
+            class="block md:hidden text-nexaut-blue text-3xl focus:outline-none">
       ☰
     </button>
+
+    <!-- Language switcher -->
+    <div id="language-switcher"
+         class="flex space-x-2 items-center gap-2">
+      <button data-lang="pl" class="lang-btn text-white hover:underline">PL</button>
+      <button data-lang="en" class="lang-btn text-white hover:underline">EN</button>
+      <button data-lang="de" class="lang-btn text-white hover:underline">DE</button>
+    </div>
   </div>
 </header>
+
 
 <!-- Mobile Menu -->
 <div id="mobile-menu"
   class="hidden fixed top-20 right-4 z-50 flex-col space-y-4 rounded-2xl bg-white/10 p-4 text-white shadow-xl backdrop-blur-md ring-1 ring-white/20">
   <nav class="flex flex-col items-start space-y-4 text-lg font-mono w-64">
-    <a href="./index.html"
+    <a href="./index.html" data-i18n="home"
        class="block w-full rounded-xl bg-white/10 bg-opacity-40 px-5 py-3 text-center text-nexaut-blue hover:bg-white/20 hover:text-shadow shadow transition">
       Strona Główna
     </a>
-    <a href="./about.html"
+    <a href="./about.html" data-i18n="about"
        class="block w-full rounded-xl bg-white/10 bg-opacity-40 px-5 py-3 text-center text-nexaut-blue hover:bg-white/20 hover:text-shadow shadow transition">
       O nas
     </a>
-    <a href="./offer.html"
+    <a href="./offer.html" data-i18n="offer"
        class="block w-full rounded-xl bg-white/10 bg-opacity-40 px-5 py-3 text-center text-nexaut-blue hover:bg-white/20 hover:text-shadow shadow transition">
       Oferta
     </a>
-    <a href="./projects.html"
+    <a href="./projects.html" data-i18n="projects"
        class="block w-full rounded-xl bg-white/10 bg-opacity-40 px-5 py-3 text-center text-nexaut-blue hover:bg-white/20 hover:text-shadow shadow transition">
       Projekty
     </a>
-    <a href="./career.html"
+    <a href="./career.html" data-i18n="career"
        class="block w-full rounded-xl bg-white/10 bg-opacity-40 px-5 py-3 text-center text-nexaut-blue hover:bg-white/20 hover:text-shadow shadow transition">
       Kariera
-    </a>
-    <a href="./contact.html"
+    <!-- </a>
+        <a href="./courses.html" data-i18n="courses"
+       class="block w-full rounded-xl bg-white/10 bg-opacity-40 px-5 py-3 text-center text-nexaut-blue hover:bg-white/20 hover:text-shadow shadow transition">
+      Szkolenia
+    </a> -->
+    <a href="./contact.html" data-i18n="contact"
        class="block w-full rounded-xl bg-white/10 bg-opacity-40 px-5 py-3 text-center text-nexaut-blue hover:bg-white/20 hover:text-shadow shadow transition">
       Kontakt
     </a>
