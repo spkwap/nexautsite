@@ -181,62 +181,6 @@
 
     </section>
 
-
-<section id="partners" data-aos="fade-up" class="text-center pt-20 bg-transparent">
-  <h2 class="w-full px-6 md:px-12 text-4xl md:text-7xl font-mono text-white mb-12" data-i18n="partners_title" data-aos="fade-up">Zaufali nam</h2>
-
-  <div class="partner-carousel">
-    <div class="logos-slide">
-      <a href="#" target="_blank" rel="noopener noreferrer" data-lang-link="zf">
-        <img src="./ZF_logo.svg" rel="preload" alt="ZF" />
-      </a>
-      <a href="#" target="_blank" rel="noopener noreferrer" data-lang-link="audi">
-        <img src="./aud.webp" rel="preload" alt="Audi" />
-      </a>
-      <a href="#" target="_blank" rel="noopener noreferrer" data-lang-link="valeo">
-        <img src="./val.webp" rel="preload" alt="Valeo" />
-      </a>
-      <a href="#" target="_blank" rel="noopener noreferrer" data-lang-link="stellantis">
-        <img src="./stell.webp" rel="preload" alt="Stellantis" />
-      </a>
-      <a href="#" target="_blank" rel="noopener noreferrer" data-lang-link="vw">
-        <img src="./wol.webp" rel="preload" alt="Volkswagen" />
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<script>
-  function updateLogoClones() {
-    const container = document.querySelector(".partner-carousel");
-    const slides = container.querySelectorAll(".logos-slide");
-
-    if (window.innerWidth < 768) {
-      document.body.classList.add('mobile');
-      if (slides.length > 1) {
-        slides.forEach((slide, index) => {
-          if (index > 0) slide.remove();
-        });
-      }
-    } else {
-      document.body.classList.remove('mobile');
-      if (slides.length === 1) {
-        const clone = slides[0].cloneNode(true);
-        container.appendChild(clone);
-      }
-    }
-  }
-
-  updateLogoClones();
-
-  window.addEventListener('resize', updateLogoClones);
-</script>
-
-
-
-
-
       <div class="relative h-24 w-full overflow-hidden">
         <div
             class="absolute inset-0 bg-cover bg-center"
