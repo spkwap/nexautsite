@@ -30,15 +30,17 @@ async function loadPartial(id, url) {
 }
 
 
-document.addEventListener('DOMContentLoaded', async () => {
-  await loadPartial('header-container', './partials/header.html')
-  await loadPartial('footer-container', './partials/footer.html')
-  setupLanguageSwitcher()
-
-  requestAnimationFrame(() => {
+document.addEventListener('DOMContentLoaded', () => {
+  requestAnimationFrame(async () => {
+    await loadPartial('header-container', './partials/header.html')
+    setupLanguageSwitcher()
     setupNavbarLogic?.()
     setupMobileMenuCloseOnClick?.()
     setActiveNavItem?.()
+
+    // Załaduj stopkę dopiero po pierwszym renderze,
+    // aby skrócić krytyczną ścieżkę ładowania strony.
+    loadPartial('footer-container', './partials/footer.html')
   })
 })
 
