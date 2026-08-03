@@ -21,8 +21,17 @@
   <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
 
   <!-- Style lokalne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </noscript>
   <link rel="preload" href="./src/style.css" as="style" />
   <link rel="stylesheet" href="./src/style.css" />
+  <link rel="preload" as="image" href="./ind1.webp">
 
   <!-- Style zewnętrzne (asynchroniczne, nie blokujące renderowania) -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" media="print" onload="this.media='all'" />
@@ -55,7 +64,8 @@
 
     <section id="hero-slider" class="relative h-[80vh] overflow-hidden">
       <!-- Slajdy -->
-      <div class="absolute inset-0 transition-opacity duration-1000 bg-cover bg-center slider-slide opacity-100" style="background-image: url('./ind1.webp');">
+      <div class="absolute inset-0 transition-opacity duration-1000 bg-cover bg-center slider-slide opacity-100">
+        <img src="./ind1.webp" fetchpriority="high" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover" />
         <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
           <h2 data-i18n="hero_title_1" class="text-4xl md:text-6xl font-poppins text-white text-center drop-shadow-lg">AUTOMATYZACJA PRODUKCJI</h2>
         </div>
