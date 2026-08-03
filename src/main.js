@@ -14,34 +14,13 @@ document.body.style.visibility = 'hidden';
 
 
 
-async function loadPartial(id, url) {
-  const container = document.getElementById(id);
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error('Failed to load ' + url);
-    const html = await res.text();
-    container.innerHTML = html;
-
-    const currentLang = localStorage.getItem('language') || getBrowserLanguage();
-    applyTranslations(currentLang);
-  } catch (err) {
-    console.error('Error loading partial:', err);
-  }
-}
-
-
-document.addEventListener('DOMContentLoaded', async () => {
-  await loadPartial('header-container', './partials/header.html')
-  await loadPartial('footer-container', './partials/footer.html')
-  setupLanguageSwitcher()
-
+document.addEventListener('DOMContentLoaded', () => {
   requestAnimationFrame(() => {
     setupNavbarLogic?.()
     setupMobileMenuCloseOnClick?.()
     setActiveNavItem?.()
   })
 })
-
 
 function setupNavbarLogic() {
   const logo = document.getElementById('logo')
