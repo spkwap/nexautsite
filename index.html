@@ -24,12 +24,11 @@
   <link rel="preload" href="./src/style.css" as="style" />
   <link rel="stylesheet" href="./src/style.css" />
 
-  <!-- Style zewnętrzne -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- Zapobieganie FOUC -->
-  <style>body { visibility: hidden; }</style>
+  <!-- Style zewnętrzne (asynchroniczne, nie blokujące renderowania) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 
   <!-- Open Graph (Facebook, LinkedIn) -->
   <meta property="og:title" data-i18n-meta="about_og_title" content="NEXAUT – Automatyzacja Przemysłowa i Robotyka" />
@@ -219,7 +218,7 @@
 
     </main>
 
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <script type="module" src="./src/main.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
   </body>
 </html>
