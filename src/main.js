@@ -202,9 +202,9 @@ document.addEventListener("DOMContentLoaded", () => {
   AOS.init({ duration: 1000, once: true });
 });
 
-if (window.lucide && typeof window.lucide.createIcons === 'function') {
-  window.lucide.createIcons();
-}
+
+lucide.createIcons();
+
 
 // Cosmos background
 const canvas = document.getElementById('cosmos');
