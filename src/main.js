@@ -200,10 +200,11 @@ document.addEventListener("DOMContentLoaded", () => {
   updatePartnerLinks(currentLang);
   document.body.style.visibility = "visible";
   AOS.init({ duration: 1000, once: true });
+
+  if (window.lucide?.createIcons) {
+    window.lucide.createIcons();
+  }
 });
-
-
-lucide.createIcons();
 
 
 // Cosmos background
