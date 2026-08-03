@@ -143,48 +143,77 @@ function setActiveNavItem() {
   })
 }
 
-// Slider logic
+// Accessible slider logic: updates ARIA states and supports keyboard
 const slides = document.querySelectorAll('.slider-slide');
-const dots = document.querySelectorAll('.slider-dot');
+const tabs = document.querySelectorAll('.slider-dot');
 let currentIndex = 0;
 let timer;
 
-function showSlide(index) {
+function updateAriaStates(index) {
   slides.forEach((slide, i) => {
+    const hidden = i === index ? 'false' : 'true';
     slide.style.opacity = i === index ? '1' : '0';
+    slide.setAttribute('aria-hidden', hidden);
   });
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('opacity-100', i === index);
-    dot.classList.toggle('opacity-50', i !== index);
+
+  tabs.forEach((tab, i) => {
+    const selected = i === index;
+    tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+    tab.setAttribute('tabindex', selected ? '0' : '-1');
+    tab.classList.toggle('opacity-100', selected);
+    tab.classList.toggle('opacity-50', !selected);
   });
   currentIndex = index;
 }
 
+function showSlide(index) {
+  if (!slides.length) return;
+  const idx = ((index % slides.length) + slides.length) % slides.length;
+  updateAriaStates(idx);
+}
+
 function nextSlide() {
-  const newIndex = (currentIndex + 1) % slides.length;
-  showSlide(newIndex);
+  showSlide(currentIndex + 1);
 }
 
 function startSlider() {
+  stopSlider();
   timer = setInterval(nextSlide, 3000);
 }
 
 function stopSlider() {
-  clearInterval(timer);
+  if (timer) clearInterval(timer);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (slides.length > 0 && dots.length > 0) {
-    showSlide(currentIndex);
-    startSlider();
 
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
+document.addEventListener('DOMContentLoaded', () => {
+  if (slides.length > 0 && tabs.length > 0) {
+    // initialize attributes
+    tabs.forEach((tab, i) => {
+      tab.setAttribute('role', 'tab');
+      tab.dataset.index = tab.dataset.index ?? i;
+      tab.addEventListener('click', () => {
         stopSlider();
-        showSlide(+dot.dataset.index);
+        showSlide(Number(tab.dataset.index));
         startSlider();
       });
     });
+
+    slides.forEach((slide, i) => {
+      slide.setAttribute('role', 'tabpanel');
+      slide.setAttribute('aria-hidden', i === currentIndex ? 'false' : 'true');
+      slide.setAttribute('aria-labelledby', `tab-${i}`);
+      slide.id = slide.id || `slide-${i}`;
+    });
+
+    // Ensure tabs have ids and link to panels
+    tabs.forEach((tab, i) => {
+      tab.id = tab.id || `tab-${i}`;
+      tab.setAttribute('aria-controls', `slide-${i}`);
+    });
+
+    showSlide(currentIndex);
+    startSlider();
   }
 });
 
