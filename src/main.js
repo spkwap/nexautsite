@@ -43,6 +43,70 @@ document.addEventListener('DOMContentLoaded', async () => {
 })
 
 
+  const intro = document.getElementById('intro')
+  const mainContent = document.getElementById('main-content')
+  const logostart = document.querySelector('.logo-intro')
+  let alreadyHidden = false
+
+  if (logostart && logostart.complete) {
+    startLogoAnimation()
+  } else if (logostart) {
+    logostart.addEventListener('load', startLogoAnimation)
+  }
+
+  function startLogoAnimation() {
+    logostart.style.visibility = 'visible'
+    logostart.classList.add('fade-in-anim')
+  }
+
+  function hideIntro() {
+    if (alreadyHidden) return
+    alreadyHidden = true
+
+    logostart?.classList.add('fade-out')
+
+    logostart?.addEventListener(
+      'animationend',
+      () => {
+        intro?.style.setProperty('display', 'none')
+        mainContent?.style.setProperty('display', 'block')
+
+        setTimeout(() => {
+          mainContent?.classList.add('visible')
+          AOS.init({ duration: 1000, once: true })
+        }, 50)
+      },
+      { once: true }
+    )
+  }
+
+  const hasSeenIntro = sessionStorage.getItem('introSeen') === 'true'
+
+if (intro && !hasSeenIntro) {
+  setTimeout(() => {
+    hideIntro()
+    sessionStorage.setItem('introSeen', 'true')
+  }, 3000)
+
+  window.addEventListener('wheel', () => {
+    hideIntro()
+    sessionStorage.setItem('introSeen', 'true')
+  }, { once: true })
+
+  window.addEventListener('touchstart', () => {
+    hideIntro()
+    sessionStorage.setItem('introSeen', 'true')
+  }, { once: true })
+
+} else {
+  intro?.style.setProperty('display', 'none')
+  mainContent?.style.setProperty('display', 'block')
+  setTimeout(() => {
+    mainContent?.classList.add('visible')
+    AOS.init({ duration: 1000, once: true })
+  }, 50)
+}
+
 function setupNavbarLogic() {
   const logo = document.getElementById('logo')
   const header = document.getElementById('header')
@@ -189,22 +253,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const mainContent = document.getElementById('main-content');
-  if (mainContent) {
-    mainContent.style.display = 'block';
-    mainContent.classList.add('visible');
-  }
-
   const currentLang = localStorage.getItem('language') || getBrowserLanguage();
   applyTranslations(currentLang);
   updatePartnerLinks(currentLang);
   document.body.style.visibility = "visible";
-  AOS.init({ duration: 1000, once: true });
 });
 
-if (window.lucide && typeof window.lucide.createIcons === 'function') {
-  window.lucide.createIcons();
-}
+
+lucide.createIcons();
+
 
 // Cosmos background
 const canvas = document.getElementById('cosmos');
