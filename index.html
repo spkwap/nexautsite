@@ -84,10 +84,10 @@
       </div>
 
       <!-- Kropki -->
-      <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
-        <button class="slider-dot w-3 h-3 rounded-full bg-white transition-opacity opacity-100" data-index="0"></button>
-        <button class="slider-dot w-3 h-3 rounded-full bg-white transition-opacity opacity-50" data-index="1"></button>
-        <button class="slider-dot w-3 h-3 rounded-full bg-white transition-opacity opacity-50" data-index="2"></button>
+      <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10" role="tablist" aria-label="Nawigacja slajdera">
+        <button class="slider-dot w-3 h-3 rounded-full bg-white transition-opacity opacity-100" data-index="0" aria-label="Pokaż slajd 1" aria-controls="hero-slider"></button>
+        <button class="slider-dot w-3 h-3 rounded-full bg-white transition-opacity opacity-50" data-index="1" aria-label="Pokaż slajd 2" aria-controls="hero-slider"></button>
+        <button class="slider-dot w-3 h-3 rounded-full bg-white transition-opacity opacity-50" data-index="2" aria-label="Pokaż slajd 3" aria-controls="hero-slider"></button>
       </div>
     </section>
 
@@ -211,9 +211,9 @@
   <!-- Kontakt: koperta i e-mail -->
   <div class="flex flex-col items-center gap-4 pb-10" data-aos="fade-up">
     <div class="w-20 h-20 bg-nexaut-blue rounded-full flex items-center justify-center">
-      <a href="mailto:info@nexaut.pl">
-      <i data-lucide="mail" class="w-15 h-15 text-nexaut-blue transition duration-300 transform hover:scale-110 hover:opacity-80 cursor-pointer"></i>
-    </a>
+      <a href="mailto:info@nexaut.pl" aria-label="Wyślij e-mail do info@nexaut.pl">
+        <i data-lucide="mail" class="w-15 h-15 text-nexaut-blue transition duration-300 transform hover:scale-110 hover:opacity-80 cursor-pointer" aria-hidden="true"></i>
+      </a>
     </div>
     <a href="mailto:info@nexaut.pl" class="text-white text-2xl font-semibold hover:scale-110 hover:opacity-80 transition-all">
       info@nexaut.pl
