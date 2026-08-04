@@ -21,11 +21,8 @@
   <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
 
   <!-- Style lokalne -->
-  <!-- <link rel="preload" href="./src/style.css" as="style" /> -->
-  <!-- <link rel="stylesheet" href="./src/style.css" /> -->
-
-  <link rel="preload" href="./src/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-<noscript><link rel="stylesheet" href="./src/style.css" /></noscript>
+  <link rel="preload" href="./src/style.css" as="style" />
+  <link rel="stylesheet" href="./src/style.css" />
 
   <!-- Style zewnętrzne -->
   <!-- <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" media="print" onload="this.media='all'" />
@@ -55,7 +52,7 @@
 </head>
   <body class="bg-nexaut-gray text-white font-sans">
         <canvas id="cosmos"></canvas>
-
+      <div id="main-content">
     <!-- Header -->
     <!-- <div id="header-container"></div> -->
      <load src="./public/partials/header.html" />
@@ -194,5 +191,6 @@
     <!-- Skrypty -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script type="module" src="./src/main.js" defer></script>
+    </div>
   </body>
 </html>
