@@ -1,6 +1,7 @@
 import './style.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import { pl } from './lang/pl.js';
 import { en } from './lang/en.js';
 import { de } from './lang/de.js';
@@ -10,7 +11,7 @@ export const translations = { pl, en, de };
 const earlyLang = localStorage.getItem('language') || (navigator.language.startsWith('de') ? 'de' : navigator.language.startsWith('en') ? 'en' : 'pl');
 document.documentElement.setAttribute('lang', earlyLang);
 document.documentElement.classList.add(`lang-${earlyLang}`);
-document.body.style.visibility = 'hidden';
+// document.body.style.visibility = 'hidden';
 
 
 
@@ -236,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentLang = localStorage.getItem('language') || getBrowserLanguage();
   applyTranslations(currentLang);
   updatePartnerLinks(currentLang);
-  document.body.style.visibility = "visible";
+  // document.body.style.visibility = "visible";
   AOS.init({ duration: 1000, once: true });
 
   if (window.lucide?.createIcons) {

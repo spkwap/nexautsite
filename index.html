@@ -34,10 +34,10 @@
   <link rel="preload" as="image" href="./ind1.webp">
 
   <!-- Style zewnętrzne (asynchroniczne, nie blokujące renderowania) -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" media="print" onload="this.media='all'" />
+  <!-- <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"></noscript>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript> -->
 
   <!-- Open Graph (Facebook, LinkedIn) -->
   <meta property="og:title" data-i18n-meta="about_og_title" content="NEXAUT – Automatyzacja Przemysłowa i Robotyka" />
@@ -59,7 +59,8 @@
     <div id="main-content" class="pt-24 relative overflow-hidden" style="display:block;">
       <!-- Header -->
        
-    <div id="header-container"></div>
+    <!-- <div id="header-container"></div> -->
+     <load src="./public/partials/header.html" />
       
 
     <section id="hero-slider" class="relative h-[80vh] overflow-hidden">
@@ -140,7 +141,7 @@
           </div>
         </div>
         <div class="md:w-3/5 relative" data-aos="fade-left" data-aos-duration="600">
-          <img src="./automotive/aut1.webp"  loading="lazy" alt="Systemy" class="w-full h-full object-cover shadow-xl" />
+          <img width="6000" height="4000" src="./automotive/aut1.webp"  loading="lazy" alt="Systemy" class="w-full h-full object-cover shadow-xl" />
         </div>
       </div>
 
@@ -155,7 +156,7 @@
     </div>
   </div>
   <div class="md:w-3/5 relative" data-aos="fade-right" data-aos-duration="600">
-    <img src="./automotive/aut8.webp"  loading="lazy" alt="Serwis" class="w-full h-full object-cover shadow-xl" />
+    <img width="4597" height="3456" src="./automotive/aut8.webp"  loading="lazy" alt="Serwis" class="w-full h-full object-cover shadow-xl" />
   </div>
 </div>
 
@@ -171,7 +172,7 @@
     </div>
   </div>
   <div class="md:w-3/5 relative" data-aos="fade-left" data-aos-duration="600">
-    <img src="./automotive/aut2.webp"  loading="lazy" alt="Programowanie PLC" class="w-full h-full object-cover shadow-xl" />
+    <img width="3000" height="2000" src="./automotive/aut2.webp"  loading="lazy" alt="Programowanie PLC" class="w-full h-full object-cover shadow-xl" />
   </div>
 </div>
 
@@ -225,7 +226,8 @@
 
 
 <!-- Footer -->
-    <div id="footer-container"></div>
+    <!-- <div id="footer-container"></div> -->
+     <load src="./public/partials/footer.html" />
 </div>
 
     </main>
