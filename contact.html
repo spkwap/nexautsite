@@ -21,8 +21,11 @@
   <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
 
   <!-- Style lokalne -->
-  <link rel="preload" href="./src/style.css" as="style" />
-  <link rel="stylesheet" href="./src/style.css" />
+  <!-- <link rel="preload" href="./src/style.css" as="style" /> -->
+  <!-- <link rel="stylesheet" href="./src/style.css" /> -->
+
+  <link rel="preload" href="./src/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="./src/style.css" /></noscript>
 
   <!-- Style zewnętrzne -->
   <!-- <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" media="print" onload="this.media='all'" />
