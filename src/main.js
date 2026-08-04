@@ -245,14 +245,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Cosmos background (disabled on mobile to improve performance)
+// Cosmos background with reduced intensity on mobile
 const canvas = document.getElementById('cosmos');
 if (canvas) {
-  const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-  if (isMobile) {
-    canvas.style.display = 'none';
-  } else {
-    const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d');
+
+  if (ctx) {
+    const isMobile = window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent);
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const numStars = isMobile ? 24 : 90;
+    const tailLength = isMobile ? 24 : 60;
+    const motionFactor = isMobile ? 0.04 : 0.3;
+    const baseAlpha = isMobile ? 0.45 : 0.22;
+    const fillAlpha = isMobile ? 0.8 : 0.55;
+    const stars = [];
+    let mouseX = 0.5;
+    let mouseY = 0.5;
 
     function setCanvasSize() {
       const dpi = window.devicePixelRatio || 1;
@@ -266,11 +274,6 @@ if (canvas) {
 
     setCanvasSize();
 
-    const numStars = 100;
-    const tailLength = 75;
-    const stars = [];
-    let mouseX = 0.5, mouseY = 0.5;
-
     class Star {
       constructor() {
         this.reset();
@@ -279,7 +282,7 @@ if (canvas) {
         this.x = Math.random() * window.innerWidth;
         this.y = Math.random() * window.innerHeight;
         this.z = Math.random() * window.innerWidth;
-        this.speed = Math.random() * 0.27 + 0.03;
+        this.speed = (isMobile ? 0.11 : 0.27) + Math.random() * (isMobile ? 0.04 : 0.03);
         this.prevX = this.x;
         this.prevY = this.y;
         this.hue = 0;
@@ -315,14 +318,12 @@ if (canvas) {
         let prevYAdj = this.prevY;
 
         if (dist > tailLength) {
-          let ratio = tailLength / dist;
+          const ratio = tailLength / dist;
           prevXAdj = sx - dx * ratio;
           prevYAdj = sy - dy * ratio;
         }
 
-        const alpha = 0.2 * (1 - this.z / window.innerWidth);
-        const fillAlpha = 0.5;
-
+        const alpha = baseAlpha * (1 - this.z / window.innerWidth);
         const strokeColor = this.colorShift ? `hsla(${this.hue}, 80%, 80%, ${alpha})` : `rgba(255,255,255,${alpha})`;
         const fillColor = this.colorShift ? `hsla(${this.hue}, 80%, 80%, ${fillAlpha})` : `rgba(255,255,255,${fillAlpha})`;
 
@@ -349,16 +350,39 @@ if (canvas) {
 
     createStars();
 
-    function animate() {
-      ctx.fillStyle = 'rgba(10, 10, 10, 0.2)';
+    function drawBackground() {
+      const gradient = ctx.createLinearGradient(0, 0, 0, window.innerHeight);
+      gradient.addColorStop(0, isMobile ? '#03060a' : '#06090d');
+      gradient.addColorStop(0.6, isMobile ? '#07101b' : '#0b1016');
+      gradient.addColorStop(1, isMobile ? '#02040a' : '#04060a');
+      ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+
+      const glow = ctx.createRadialGradient(
+        window.innerWidth * 0.5,
+        window.innerHeight * 0.2,
+        0,
+        window.innerWidth * 0.5,
+        window.innerHeight * 0.2,
+        window.innerWidth * 0.45
+      );
+      glow.addColorStop(0, isMobile ? 'rgba(129, 245, 251, 0.15)' : 'rgba(129, 245, 251, 0.08)');
+      glow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = glow;
+      ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+    }
+
+    function animate() {
+      drawBackground();
       stars.forEach(star => {
-        star.x += (mouseX - 0.5) * 0.5;
-        star.y += (mouseY - 0.5) * 0.5;
+        star.x += (mouseX - 0.5) * motionFactor;
+        star.y += (mouseY - 0.5) * motionFactor;
         star.update();
         star.draw();
       });
-      requestAnimationFrame(animate);
+      if (!prefersReducedMotion) {
+        requestAnimationFrame(animate);
+      }
     }
 
     animate();
