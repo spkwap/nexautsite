@@ -15,25 +15,25 @@ document.documentElement.classList.add(`lang-${earlyLang}`);
 
 
 
-// async function loadPartial(id, url) {
-//   const container = document.getElementById(id);
-//   try {
-//     const res = await fetch(url);
-//     if (!res.ok) throw new Error('Failed to load ' + url);
-//     const html = await res.text();
-//     container.innerHTML = html;
+async function loadPartial(id, url) {
+  const container = document.getElementById(id);
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Failed to load ' + url);
+    const html = await res.text();
+    container.innerHTML = html;
 
-//     const currentLang = localStorage.getItem('language') || getBrowserLanguage();
-//     applyTranslations(currentLang);
-//   } catch (err) {
-//     console.error('Error loading partial:', err);
-//   }
-// }
+    const currentLang = localStorage.getItem('language') || getBrowserLanguage();
+    applyTranslations(currentLang);
+  } catch (err) {
+    console.error('Error loading partial:', err);
+  }
+}
 
 
 document.addEventListener('DOMContentLoaded', async () => {
-  // await loadPartial('header-container', './partials/header.html')
-  // await loadPartial('footer-container', './partials/footer.html')
+  await loadPartial('header-container', './partials/header.html')
+  await loadPartial('footer-container', './partials/footer.html')
   setupLanguageSwitcher()
 
   requestAnimationFrame(() => {
