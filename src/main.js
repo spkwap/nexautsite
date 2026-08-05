@@ -1,7 +1,7 @@
 // import './style.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import '@fortawesome/fontawesome-free/css/all.min.css';
+// import '@fortawesome/fontawesome-free/css/all.min.css';
 
 // Pamięć podręczna dla pobranych tłumaczeń
 const loadedTranslations = {};

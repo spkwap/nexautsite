@@ -29,9 +29,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </noscript>
-  <link rel="preload" href="./src/style.css" as="style" />
-  <link rel="stylesheet" href="./src/style.css" />
-  
+  <!-- <link rel="preload" href="./src/style.css" as="style" />
+  <link rel="stylesheet" href="./src/style.css" /> -->
+  <link rel="preload" href="./src/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="./src/style.css"></noscript>
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+<!-- Asynchroniczne ładowanie FontAwesome -->
+<link 
+  rel="preload" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+  as="style" 
+  onload="this.onload=null;this.rel='stylesheet'" 
+/>
+<noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</noscript>
+
   <!-- <link rel="preload" as="image" href="./ind1_jkbetv_c_scale,w_1380.webp"> -->
 
   <!-- Style zewnętrzne (asynchroniczne, nie blokujące renderowania) -->
