@@ -21,8 +21,10 @@
   <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
 
   <!-- Style lokalne -->
-  <link rel="preload" href="./src/style.css" as="style" />
-  <link rel="stylesheet" href="./src/style.css" />
+  <!-- <link rel="preload" href="./src/style.css" as="style" />
+  <link rel="stylesheet" href="./src/style.css" /> -->
+  <link rel="preload" href="./src/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="./src/style.css"></noscript>
 
   <!-- Style zewnętrzne -->
   <!-- <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" media="print" onload="this.media='all'" />
@@ -121,7 +123,7 @@
         <div class="text-center mb-6">
           <div class="neon-card w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 shadow-lg border-4 border-white">
             <a href="https://www.linkedin.com/in/daniel-handzlik-nexaut/" target="_blank" rel="noopener noreferrer">
-              <img src="./daniel.webp" loading="lazy" alt="Daniel" class="w-full h-full object-cover" />
+              <img src="./daniel_small.webp" loading="lazy" alt="Daniel" class="w-full h-full object-cover" />
             </a>
           </div>
           <h4 class="neon-title text-xl font-bold mb-2">Daniel Handzlik</h4>
@@ -152,7 +154,7 @@
         <div class="text-center mb-6">
           <div class="neon-card w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 shadow-lg border-4 border-white">
             <a href="https://www.linkedin.com/in/kamil-krawczyk-nexaut/" target="_blank" rel="noopener noreferrer">
-              <img src="./kamil.webp" loading="lazy" alt="Kamil" class="w-full h-full object-cover" />
+              <img src="./kamil_small.webp" loading="lazy" alt="Kamil" class="w-full h-full object-cover" />
             </a>
           </div>
           <h4 class="neon-title text-xl font-bold mb-2">Kamil Krawczyk</h4>
