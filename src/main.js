@@ -70,7 +70,7 @@ function setupNavbarLogic() {
 
         nav?.classList.remove('hidden');
         hamburger?.classList.add('hidden');
-        mobileMenu?.classList.add('translate-x-full');
+        mobileMenu?.classList.add('translate-x-[102%]');
         hamburger?.classList.remove('open'); 
       }
     }
@@ -90,9 +90,8 @@ function setupNavbarLogic() {
 
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', (e) => {
-      // KLUCZOWE: Zatrzymujemy bąbelkowanie kliknięcia do dokumentu
       e.stopPropagation(); 
-      mobileMenu.classList.toggle('translate-x-full');
+      mobileMenu.classList.toggle('translate-x-[102%]');
       hamburger.classList.toggle('open');
     });
   }
@@ -106,14 +105,13 @@ function setupMobileMenuCloseOnClick() {
 
   document.addEventListener('click', (e) => {
     const target = e.target;
-    // KLUCZOWE: Używamy .closest() dla większego bezpieczeństwa
     if (
       mobileMenu &&
-      !mobileMenu.classList.contains('translate-x-full') &&
+      !mobileMenu.classList.contains('translate-x-[102%]') &&
       !mobileMenu.contains(target) &&
       !target.closest('#hamburger') 
     ) {
-      mobileMenu.classList.add('translate-x-full');
+      mobileMenu.classList.add('translate-x-[102%]');
       hamburger?.classList.remove('open');
     }
   });
