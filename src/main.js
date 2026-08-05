@@ -70,7 +70,8 @@ function setupNavbarLogic() {
 
         nav?.classList.remove('hidden');
         hamburger?.classList.add('hidden');
-        mobileMenu?.classList.add('hidden');
+        mobileMenu?.classList.add('translate-x-full');
+        hamburger?.classList.remove('open'); 
       }
     }
   }
@@ -88,8 +89,11 @@ function setupNavbarLogic() {
   window.addEventListener('scroll', scheduleUpdate, { passive: true });
 
   if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    hamburger.addEventListener('click', (e) => {
+      // KLUCZOWE: Zatrzymujemy bąbelkowanie kliknięcia do dokumentu
+      e.stopPropagation(); 
+      mobileMenu.classList.toggle('translate-x-full');
+      hamburger.classList.toggle('open');
     });
   }
 
@@ -102,14 +106,15 @@ function setupMobileMenuCloseOnClick() {
 
   document.addEventListener('click', (e) => {
     const target = e.target;
+    // KLUCZOWE: Używamy .closest() dla większego bezpieczeństwa
     if (
       mobileMenu &&
-      hamburger &&
-      !mobileMenu.classList.contains('hidden') &&
+      !mobileMenu.classList.contains('translate-x-full') &&
       !mobileMenu.contains(target) &&
-      !hamburger.contains(target)
+      !target.closest('#hamburger') 
     ) {
-      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.add('translate-x-full');
+      hamburger?.classList.remove('open');
     }
   });
 }

@@ -120,13 +120,11 @@ a.hover\:underline:hover {
   opacity: 1;
   padding-top: 120px;
 }
-
-
-
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden; /* <--- Dodana linijka chroniąca przed przewijaniem w poziomie */
   background-color: #04070a;
   background-image:
     radial-gradient(circle at top, rgba(129, 245, 251, 0.12), transparent 28%),
@@ -134,6 +132,20 @@ body {
   color: #fff;
   line-height: 1.5;
   font-weight: 400;
+}
+
+/* Animacja ikony hamburgera na "X" */
+#hamburger.open .line-1 {
+  transform: translateY(10.5px) rotate(45deg);
+}
+
+#hamburger.open .line-2 {
+  opacity: 0;
+  transform: scale(0);
+}
+
+#hamburger.open .line-3 {
+  transform: translateY(-10.5px) rotate(-45deg);
 }
 
 /* Podświetlenie aktywnego elementu menu */
