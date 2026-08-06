@@ -255,14 +255,20 @@ if (canvas) {
     let mouseY = 0.5;
 
     function setCanvasSize() {
-      const dpi = window.devicePixelRatio || 1;
-      canvas.width = window.innerWidth * dpi;
-      canvas.height = window.innerHeight * dpi;
-      canvas.style.width = window.innerWidth + 'px';
-      canvas.style.height = window.innerHeight + 'px';
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.scale(dpi, dpi);
-    }
+  const dpi = window.devicePixelRatio || 1;
+  // Tworzymy zapas wysokości (minimum wysokość całego ekranu telefonu + 250px)
+  const targetHeight = Math.max(window.innerHeight + 250, window.screen.height);
+  const targetWidth = window.innerWidth;
+
+  canvas.width = targetWidth * dpi;
+  canvas.height = targetHeight * dpi;
+  canvas.style.width = targetWidth + 'px';
+  canvas.style.height = targetHeight + 'px';
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.scale(dpi, dpi);
+}
+
+
 
     setCanvasSize();
 
@@ -343,26 +349,30 @@ if (canvas) {
     createStars();
 
     function drawBackground() {
-      const gradient = ctx.createLinearGradient(0, 0, 0, window.innerHeight);
-      gradient.addColorStop(0, isMobile ? '#03060a' : '#06090d');
-      gradient.addColorStop(0.6, isMobile ? '#07101b' : '#0b1016');
-      gradient.addColorStop(1, isMobile ? '#02040a' : '#04060a');
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+  // Pobieramy faktyczną wysokość canvasa przeliczoną o DPI
+  const currentCanvasH = canvas.height / (window.devicePixelRatio || 1);
+  const currentCanvasW = canvas.width / (window.devicePixelRatio || 1);
 
-      const glow = ctx.createRadialGradient(
-        window.innerWidth * 0.5,
-        window.innerHeight * 0.2,
-        0,
-        window.innerWidth * 0.5,
-        window.innerHeight * 0.2,
-        window.innerWidth * 0.45
-      );
-      glow.addColorStop(0, isMobile ? 'rgba(129, 245, 251, 0.15)' : 'rgba(129, 245, 251, 0.08)');
-      glow.addColorStop(1, 'rgba(0, 0, 0, 0)');
-      ctx.fillStyle = glow;
-      ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
-    }
+  const gradient = ctx.createLinearGradient(0, 0, 0, currentCanvasH);
+  gradient.addColorStop(0, isMobile ? '#03060a' : '#06090d');
+  gradient.addColorStop(0.6, isMobile ? '#07101b' : '#0b1016');
+  gradient.addColorStop(1, isMobile ? '#02040a' : '#04060a');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, currentCanvasW, currentCanvasH);
+
+  const glow = ctx.createRadialGradient(
+    currentCanvasW * 0.5,
+    currentCanvasH * 0.2,
+    0,
+    currentCanvasW * 0.5,
+    currentCanvasH * 0.2,
+    currentCanvasW * 0.45
+  );
+  glow.addColorStop(0, isMobile ? 'rgba(129, 245, 251, 0.15)' : 'rgba(129, 245, 251, 0.08)');
+  glow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, 0, currentCanvasW, currentCanvasH);
+}
 
     function animate() {
       drawBackground();
