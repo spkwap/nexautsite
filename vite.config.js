@@ -10,6 +10,7 @@ export default defineConfig({
   ],
   appType: 'mpa',
   base: '/',
+  // base: '/nexautsite/' albo base: './', zeby dzialalo na github pages
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

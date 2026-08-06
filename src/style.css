@@ -211,6 +211,16 @@ canvas#cosmos {
   opacity: 0.95;
 }
 
+html, body {
+  /* Domyślny ciemny kolor tła (taki sam jak spód Twojego gwiazdkowego canvasa) */
+  background-color: #02040a !important; 
+  
+  /* Zapobiega "odbijaniu" i odsłanianiu tła przeglądarki przy skrolowaniu w dół i w górę */
+  overscroll-behavior-y: auto;
+  
+  /* Pewność, że tło wypełnia cały ekran */
+  min-height: 100%;
+}
 
 /* Alternative - Intense neon effect */
 .neon-card {
@@ -324,4 +334,21 @@ canvas#cosmos {
     width: 100%;
   }
 }
+/* STICKY FOOTER - Stopka zawsze na dnie ekranu */
+#main-content {
+  display: flex !important;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+#app {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+footer {
+  margin-top: auto;
+}
+/* END STICKY FOOTER */

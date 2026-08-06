@@ -72,6 +72,8 @@ function setupNavbarLogic() {
         hamburger?.classList.add('hidden');
         mobileMenu?.classList.add('translate-x-[102%]');
         hamburger?.classList.remove('open'); 
+        // ODBLOKOWUJEMY SCROLL, gdy powracamy do pełnego nawigatora:
+        document.body.classList.remove('overflow-hidden');
       }
     }
   }
@@ -93,6 +95,14 @@ function setupNavbarLogic() {
       e.stopPropagation(); 
       mobileMenu.classList.toggle('translate-x-[102%]');
       hamburger.classList.toggle('open');
+
+      // BLOKOWANIE / ODBLOKOWANIE SCROLLOWANIA:
+      const isOpen = !mobileMenu.classList.contains('translate-x-[102%]');
+      if (isOpen) {
+        document.body.classList.add('overflow-hidden');
+      } else {
+        document.body.classList.remove('overflow-hidden');
+      }
     });
   }
 
@@ -103,16 +113,19 @@ function setupMobileMenuCloseOnClick() {
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
 
+  if (!mobileMenu) return;
+
+  // Zamknięcie TYLKO po kliknięciu poza obszar menu
   document.addEventListener('click', (e) => {
     const target = e.target;
     if (
-      mobileMenu &&
       !mobileMenu.classList.contains('translate-x-[102%]') &&
       !mobileMenu.contains(target) &&
       !target.closest('#hamburger') 
     ) {
       mobileMenu.classList.add('translate-x-[102%]');
       hamburger?.classList.remove('open');
+      document.body.classList.remove('overflow-hidden');
     }
   });
 }
