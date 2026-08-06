@@ -423,7 +423,7 @@ async function applyTranslations(lang) {
   elements.forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (translationData[key]) {
-      el.textContent = translationData[key];
+      el.innerHTML = translationData[key];
     }
   });
 }
