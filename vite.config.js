@@ -8,18 +8,19 @@ export default defineConfig({
     tailwindcss(),
     inject(),
   ],
-  base: './',
+  appType: 'mpa',
+  base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
-        about: path.resolve(__dirname, 'about.html'),
-        offer: path.resolve(__dirname, 'offer.html'),
-        projects: path.resolve(__dirname, 'projects.html'),
-        career: path.resolve(__dirname, 'career.html'),
-        contact: path.resolve(__dirname, 'contact.html'),
+        about: path.resolve(__dirname, 'o-nas/index.html'),
+        offer: path.resolve(__dirname, 'oferta/index.html'),
+        projects: path.resolve(__dirname, 'projekty/index.html'),
+        career: path.resolve(__dirname, 'kariera/index.html'),
+        contact: path.resolve(__dirname, 'kontakt/index.html'),
       }
     }
   },

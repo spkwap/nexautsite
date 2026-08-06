@@ -118,30 +118,20 @@ function setupMobileMenuCloseOnClick() {
 }
 
 function setActiveNavItem() {
-  const currentPath = window.location.pathname;
+  const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
   const navLinks = document.querySelectorAll('.nav-link');
   
   navLinks.forEach(link => {
-    const href = link.getAttribute('href');
+    const href = link.getAttribute('href').replace(/\/$/, '') || '/';
     
-    if (href === currentPath || 
-        (currentPath === '/' && href === './index.html') ||
-        (currentPath === './index.html' && href === './index.html') ||
-        (currentPath.endsWith(href.substring(1)))) {
-      
+    if (currentPath === href) {
       link.classList.add('active');
-      
       const svg = link.querySelector('svg');
-      if (svg) {
-        svg.classList.add('text-white');
-      }
+      if (svg) svg.classList.add('text-white');
     } else {
       link.classList.remove('active');
-      
       const svg = link.querySelector('svg');
-      if (svg) {
-        svg.classList.remove('text-white');
-      }
+      if (svg) svg.classList.remove('text-white');
     }
   });
 }
