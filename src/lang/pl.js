@@ -13,6 +13,7 @@ export const pl = {
   about: "O&nbsp;nas",
   offer: "Oferta",
   projects: "Projekty",
+  blog: "Blog",
   career: "Kariera",
   courses: "Szkolenia",
   contact: "Kontakt",
@@ -208,4 +209,10 @@ export const pl = {
   robotyka_cta_title: "Chcesz zrobotyzować swój proces produkcyjny?",
   robotyka_cta_desc: "Skontaktuj się z&nbsp;nami – wykonamy analizę wykonalności i&nbsp;optymalne symulacje.",
   robotyka_cta_btn: "Zamów konsultację",
+  // Blog
+  blog_title: "BLOG&nbsp;& BAZA WIEDZY",
+  blog_subtitle: "Aktualności, analizy przypadków i&nbsp;nowinki techniczne ze&nbsp;świata automatyki oraz robotyki.",
+  blog_latest: "Najnowsze wpisy",
+  blog_read_more: "Przeczytaj więcej",
+  blog_back: "Powrót do&nbsp;artykułów",
 };

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" data-i18n-meta="blog_meta_description" content="NEXAUT Blog – Artykuły i&nbsp;wiedza z&nbsp;zakresu automatyki przemysłowej, robotyki i&nbsp;systemów sterowania." />
+    <meta name="author" content="NEXAUT" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#81f5fb">
+
+    <title>Blog – NEXAUT</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+    <!-- Style lokalne -->
+    <link rel="preload" href="/src/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/src/style.css"></noscript>
+
+    <!-- FontAwesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  </head>
+
+  <body class="bg-nexaut-gray text-white font-sans min-h-screen flex flex-col relative">
+    <canvas id="cosmos"></canvas>
+
+    <div id="main-content" class="pt-24 relative overflow-hidden flex-grow flex flex-col justify-between">
+      
+      <!-- Nagłówek serwisu -->
+      <load src="/public/partials/header.html" />
+
+      <!-- Główny kontener bloga -->
+      <main id="app" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 w-full relative z-10 flex-grow">
+        
+        <!-- Nagłówek sekcji (wyśrodkowany) -->
+        <div class="text-center mb-12">
+          <h1 data-i18n="blog_title" class="text-4xl sm:text-6xl font-mono font-bold text-white mb-4">
+            BLOG &nbsp;& BAZA WIEDZY
+          </h1>
+          <p data-i18n="blog_subtitle" class="text-gray-300 max-w-2xl mx-auto text-lg">
+            Aktualności, analizy przypadków i&nbsp;nowinki techniczne ze&nbsp;świata automatyki oraz robotyki.
+          </p>
+          <div class="w-24 h-1 bg-[#81f5fb] mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- WYSRODKOWANY KONTENER GŁÓWNY -->
+        <div class="relative max-w-[1020px] mx-auto">
+          
+          <!-- LEWY BLOK: "Najnowsze wpisy" (odczepiony na szerokich ekranach, wisi po lewej stronie kart) -->
+          <aside class="w-full xl:w-72 xl:absolute xl:right-full xl:mr-8 xl:top-0 mb-8 xl:mb-0">
+            <div class="bg-black/60 border border-[#81f5fb]/30 rounded-2xl p-6 backdrop-blur-md shadow-xl xl:sticky xl:top-28">
+              <h2 class="text-xl font-mono font-bold text-[#81f5fb] mb-4 pb-2 border-b border-[#81f5fb]/20 flex items-center gap-2">
+                <i data-lucide="zap" class="w-5 h-5 text-[#81f5fb]"></i>
+                <span data-i18n="blog_latest">Najnowsze wpisy</span>
+              </h2>
+              <ul id="sidebar-latest" class="space-y-4">
+                <!-- Generowane przez blog.js -->
+              </ul>
+            </div>
+          </aside>
+
+          <!-- ŚRODKOWY BLOK: Idealnie wyśrodkowana siatka kart (3 w rzędzie) -->
+          <section class="w-full flex flex-col items-center">
+            
+            <!-- Siatka na karty (1 na telefonie, 2 na tablecie, 3 na komputerze) -->
+            <div id="blog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+              <!-- Generowane przez blog.js -->
+            </div>
+
+            <!-- Numery stron -->
+            <div id="pagination" class="mt-12 flex justify-center items-center gap-2 font-mono text-sm">
+              <!-- Generowane przez blog.js -->
+            </div>
+
+          </section>
+
+        </div>
+
+      </main>
+
+      <!-- Stopka serwisu -->
+      <load src="/public/partials/footer.html" />
+    </div>
+
+    <!-- Skrypty -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="module" src="/src/main.js" defer></script>
+  </body>
+</html>

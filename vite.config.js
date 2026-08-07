@@ -22,11 +22,13 @@ export default defineConfig({
         projects: path.resolve(__dirname, 'projekty/index.html'),
         career: path.resolve(__dirname, 'kariera/index.html'),
         contact: path.resolve(__dirname, 'kontakt/index.html'),
-        oferta: path.resolve(__dirname, 'oferta/index.html'),
         ofertaProjektowanie: path.resolve(__dirname, 'oferta/projektowanie/index.html'),
         ofertaPlc: path.resolve(__dirname, 'oferta/programowanie-plc/index.html'),
         ofertaRobotyka: path.resolve(__dirname, 'oferta/robotyka/index.html'),
         ofertaScada: path.resolve(__dirname, 'oferta/hmi-scada/index.html'),
+        blog: path.resolve(__dirname, 'blog/index.html'),
+        blogPrzykladowyWpis: path.resolve(__dirname, 'blog/przykladowy-wpis/index.html'),
+        blogPrzykladowyWpis2: path.resolve(__dirname, 'blog/przykladowy-wpis-2/index.html'),
       }
     }
   },

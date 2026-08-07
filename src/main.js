@@ -1,6 +1,7 @@
 // import './style.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { renderBlog } from '/blog/blog.js';
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 
 // Pamięć podręczna dla pobranych tłumaczeń
@@ -458,6 +459,8 @@ async function setLanguage(lang) {
   localStorage.setItem('language', lang);
   await applyTranslations(lang);
   updatePartnerLinks(lang);
+
+  renderBlog(lang);
 }
 
 function setupLanguageSwitcher() {
