@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   requestAnimationFrame(() => {
     setupNavbarLogic?.();
+    setupMobileOfferDropdown?.(); // <-- [DODANE] Wywołanie akordeonu oferty
     setupMobileMenuCloseOnClick?.();
     setActiveNavItem?.();
   });
@@ -109,6 +110,31 @@ function setupNavbarLogic() {
   updateNavbarBySize();
 }
 
+// <-- [DODANE] Obsługa rozwijania podmenu Oferty w menu mobilnym
+function setupMobileOfferDropdown() {
+  const offerToggle = document.getElementById('mobile-offer-toggle');
+  const offerSubmenu = document.getElementById('mobile-offer-submenu');
+  const offerArrow = document.getElementById('mobile-offer-arrow');
+
+  if (offerToggle && offerSubmenu) {
+    offerToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const isHidden = offerSubmenu.classList.contains('hidden');
+      if (isHidden) {
+        offerSubmenu.classList.remove('hidden');
+        offerSubmenu.classList.add('flex');
+        if (offerArrow) offerArrow.classList.add('rotate-180');
+      } else {
+        offerSubmenu.classList.add('hidden');
+        offerSubmenu.classList.remove('flex');
+        if (offerArrow) offerArrow.classList.remove('rotate-180');
+      }
+    });
+  }
+}
+
 function setupMobileMenuCloseOnClick() {
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -130,14 +156,18 @@ function setupMobileMenuCloseOnClick() {
   });
 }
 
+// <-- [ZMIENIONE] Obsługa aktywnego linku również dla podkatalogów
 function setActiveNavItem() {
   const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.nav-link, #mobile-menu a');
   
   navLinks.forEach(link => {
-    const href = link.getAttribute('href').replace(/\/$/, '') || '/';
+    const href = link.getAttribute('href')?.replace(/\/$/, '') || '/';
     
-    if (currentPath === href) {
+    // Sprawdzamy czy ścieżka się zgadza (np. dla /oferta/projektowanie/ rodzic /oferta/ też będzie aktywny)
+    const isActive = (href !== '/' && currentPath.startsWith(href)) || currentPath === href;
+
+    if (isActive) {
       link.classList.add('active');
       const svg = link.querySelector('svg');
       if (svg) svg.classList.add('text-white');
@@ -255,20 +285,17 @@ if (canvas) {
     let mouseY = 0.5;
 
     function setCanvasSize() {
-  const dpi = window.devicePixelRatio || 1;
-  // Tworzymy zapas wysokości (minimum wysokość całego ekranu telefonu + 250px)
-  const targetHeight = Math.max(window.innerHeight + 250, window.screen.height);
-  const targetWidth = window.innerWidth;
+      const dpi = window.devicePixelRatio || 1;
+      const targetHeight = Math.max(window.innerHeight + 250, window.screen.height);
+      const targetWidth = window.innerWidth;
 
-  canvas.width = targetWidth * dpi;
-  canvas.height = targetHeight * dpi;
-  canvas.style.width = targetWidth + 'px';
-  canvas.style.height = targetHeight + 'px';
-  ctx.setTransform(1, 0, 0, 1, 0, 0);
-  ctx.scale(dpi, dpi);
-}
-
-
+      canvas.width = targetWidth * dpi;
+      canvas.height = targetHeight * dpi;
+      canvas.style.width = targetWidth + 'px';
+      canvas.style.height = targetHeight + 'px';
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.scale(dpi, dpi);
+    }
 
     setCanvasSize();
 
@@ -349,30 +376,29 @@ if (canvas) {
     createStars();
 
     function drawBackground() {
-  // Pobieramy faktyczną wysokość canvasa przeliczoną o DPI
-  const currentCanvasH = canvas.height / (window.devicePixelRatio || 1);
-  const currentCanvasW = canvas.width / (window.devicePixelRatio || 1);
+      const currentCanvasH = canvas.height / (window.devicePixelRatio || 1);
+      const currentCanvasW = canvas.width / (window.devicePixelRatio || 1);
 
-  const gradient = ctx.createLinearGradient(0, 0, 0, currentCanvasH);
-  gradient.addColorStop(0, isMobile ? '#03060a' : '#06090d');
-  gradient.addColorStop(0.6, isMobile ? '#07101b' : '#0b1016');
-  gradient.addColorStop(1, isMobile ? '#02040a' : '#04060a');
-  ctx.fillStyle = gradient;
-  ctx.fillRect(0, 0, currentCanvasW, currentCanvasH);
+      const gradient = ctx.createLinearGradient(0, 0, 0, currentCanvasH);
+      gradient.addColorStop(0, isMobile ? '#03060a' : '#06090d');
+      gradient.addColorStop(0.6, isMobile ? '#07101b' : '#0b1016');
+      gradient.addColorStop(1, isMobile ? '#02040a' : '#04060a');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, currentCanvasW, currentCanvasH);
 
-  const glow = ctx.createRadialGradient(
-    currentCanvasW * 0.5,
-    currentCanvasH * 0.2,
-    0,
-    currentCanvasW * 0.5,
-    currentCanvasH * 0.2,
-    currentCanvasW * 0.45
-  );
-  glow.addColorStop(0, isMobile ? 'rgba(129, 245, 251, 0.15)' : 'rgba(129, 245, 251, 0.08)');
-  glow.addColorStop(1, 'rgba(0, 0, 0, 0)');
-  ctx.fillStyle = glow;
-  ctx.fillRect(0, 0, currentCanvasW, currentCanvasH);
-}
+      const glow = ctx.createRadialGradient(
+        currentCanvasW * 0.5,
+        currentCanvasH * 0.2,
+        0,
+        currentCanvasW * 0.5,
+        currentCanvasH * 0.2,
+        currentCanvasW * 0.45
+      );
+      glow.addColorStop(0, isMobile ? 'rgba(129, 245, 251, 0.15)' : 'rgba(129, 245, 251, 0.08)');
+      glow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = glow;
+      ctx.fillRect(0, 0, currentCanvasW, currentCanvasH);
+    }
 
     function animate() {
       drawBackground();

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" data-i18n-meta="scada_meta_desc" content="Projektowanie systemów SCADA, WinCC, Ignition oraz paneli operatorskich HMI. NEXAUT." />
+    <meta name="theme-color" content="#81f5fb" />
+    <title data-i18n="scada_meta_title">Systemy HMI i&nbsp;SCADA - NEXAUT</title>
+    
+    <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
+    <link rel="preload" href="/src/style.css" as="style" />
+    <link rel="stylesheet" href="/src/style.css" />
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof AOS !== "undefined") AOS.init();
+      });
+    </script>
+  </head>
+  <body class="bg-nexaut-gray text-white font-sans">
+    <canvas id="cosmos"></canvas>
+    <div id="main-content">
+      <load src="/public/partials/header.html" />
+
+      <main class="pt-24 relative overflow-hidden">
+        <section class="text-white py-16 px-6 md:px-20">
+          <div class="max-w-7xl mx-auto space-y-16">
+            
+            <!-- Powrót + Nagłówek -->
+            <div data-aos="fade-up">
+              <a href="/oferta/" class="inline-flex items-center gap-2 text-[#81f5fb] hover:underline mb-6 font-medium text-sm">
+                <i data-lucide="arrow-left" class="h-4 w-4"></i>
+                <span data-i18n="back_to_offer">Powrót do&nbsp;oferty</span>
+              </a>
+              <div class="flex items-center gap-4 mb-4">
+                <div class="p-3 rounded-xl bg-[#81f5fb]/10 text-[#81f5fb]">
+                  <i data-lucide="monitor" class="h-10 w-10"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-[#81f5fb]" data-i18n="hmi_scada_heading">Systemy HMI i&nbsp;SCADA</h1>
+              </div>
+              <p class="text-gray-300 text-lg leading-relaxed max-w-3xl" data-i18n="scada_main_desc">
+                Dostarczamy przejrzyste i&nbsp;intuicyjne interfejsy dla&nbsp;operatorów (HMI) oraz rozbudowane systemy nadzoru i&nbsp;archiwizacji danych procesowych (SCADA).
+              </p>
+            </div>
+
+            <!-- Funkcjonalności -->
+            <div data-aos="fade-up" data-aos-delay="100" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              
+              <div class="neon-card rounded-xl p-8">
+                <h3 class="text-2xl font-bold mb-4 text-[#81f5fb]" data-i18n="hmi_card_title">Wizualizacja HMI</h3>
+                <ul class="space-y-3 text-gray-300">
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="h-5 w-5 text-[#81f5fb] shrink-0 mt-1"></i>
+                    <span data-i18n="hmi_li_1">Ergonomiczny interfejs graficzny zgodny z&nbsp;dobrymi praktykami UX/UI.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="h-5 w-5 text-[#81f5fb] shrink-0 mt-1"></i>
+                    <span data-i18n="hmi_li_2">Obsługa nowoczesnych paneli dotykowych Siemens Comfort/Unified, Pro-face, Weintek.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="h-5 w-5 text-[#81f5fb] shrink-0 mt-1"></i>
+                    <span data-i18n="hmi_li_3">Szybki dostęp do&nbsp;diagnostyki awarii i&nbsp;nawigacji po&nbsp;maszynie.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="neon-card rounded-xl p-8">
+                <h3 class="text-2xl font-bold mb-4 text-[#81f5fb]" data-i18n="scada_card_title">Systemy Nadzoru SCADA</h3>
+                <ul class="space-y-3 text-gray-300">
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="h-5 w-5 text-[#81f5fb] shrink-0 mt-1"></i>
+                    <span data-i18n="scada_li_1">Monitorowanie parametrów produkcji w&nbsp;czasie rzeczywistym (WinCC, Ignition, AVEVA).</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="h-5 w-5 text-[#81f5fb] shrink-0 mt-1"></i>
+                    <span data-i18n="scada_li_2">Archiwizacja danych procesowych, wykresy trendów, raportowanie KPI / OEE.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle" class="h-5 w-5 text-[#81f5fb] shrink-0 mt-1"></i>
+                    <span data-i18n="scada_li_3">Integracja z&nbsp;bazami danych SQL oraz systemami wyższego poziomu MES / ERP.</span>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- CTA -->
+            <div data-aos="fade-up" class="neon-card rounded-xl p-8 text-center max-w-3xl mx-auto space-y-4">
+              <h3 class="text-3xl font-bold text-white" data-i18n="scada_cta_title">Chcesz usprawnić monitoring na&nbsp;swojej hali?</h3>
+              <p class="text-gray-300" data-i18n="scada_cta_desc">Zbudujemy nowoczesny system wizualizacji dopasowany do&nbsp;Twojego zakładu.</p>
+              <a href="/kontakt/" class="inline-block px-8 py-3 rounded-lg bg-[#81f5fb] text-black font-bold hover:bg-white transition-colors duration-300" data-i18n="contact_us_btn">
+                Skontaktuj się z&nbsp;nami
+              </a>
+            </div>
+
+          </div>
+        </section>
+      </main>
+
+      <load src="/public/partials/footer.html" />
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="module" src="/src/main.js" defer></script>
+  </body>
+</html>

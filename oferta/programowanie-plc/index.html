@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" data-i18n-meta="plc_meta_desc"
+        content="Programowanie sterowników PLC Siemens, Allen-Bradley, Phoenix Contact, Beckhoff. Standardy OEM/VASS. NEXAUT." />
+    <meta name="theme-color" content="#81f5fb" />
+    <title data-i18n="plc_title">Programowanie PLC - NEXAUT</title>
+
+    <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
+    <link rel="preload" href="/src/style.css" as="style" />
+    <link rel="stylesheet" href="/src/style.css" />
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof AOS !== "undefined") AOS.init();
+        });
+    </script>
+</head>
+
+<body class="bg-nexaut-gray text-white font-sans">
+    <canvas id="cosmos"></canvas>
+    <div id="main-content">
+        <load src="/public/partials/header.html" />
+
+        <main class="pt-24 relative overflow-hidden">
+            <section class="text-white py-16 px-6 md:px-20">
+                <div class="max-w-7xl mx-auto space-y-16">
+
+                    <!-- Powrót + Nagłówek -->
+                    <div data-aos="fade-up">
+                        <a href="/oferta/"
+                            class="inline-flex items-center gap-2 text-[#81f5fb] hover:underline mb-6 font-medium text-sm">
+                            <i data-lucide="arrow-left" class="h-4 w-4"></i> <span data-i18n="plc_back_to_offer">Powrót
+                                do oferty</span>
+                        </a>
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="p-3 rounded-xl bg-[#81f5fb]/10 text-[#81f5fb]">
+                                <i data-lucide="cpu" class="h-10 w-10"></i>
+                            </div>
+                            <h1 class="text-4xl md:text-5xl font-bold text-[#81f5fb]" data-i18n="plc_heading">
+                                Programowanie Sterowników PLC</h1>
+                        </div>
+                        <p class="text-gray-300 text-lg leading-relaxed max-w-3xl" data-i18n="plc_desc">
+                            Tworzymy stabilne, czytelne i bezpieczne oprogramowanie dla sterowników logiki
+                            programowalnej stosowanych w zaawansowanych liniach produkcyjnych.
+                        </p>
+                    </div>
+
+                    <!-- Wspierane platformy -->
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-2xl font-bold mb-6 text-center text-[#81f5fb]" data-i18n="plc_platforms_title">
+                            Wspierane platformy i sterowniki</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                            <div class="neon-card rounded-xl p-6 text-center">
+                                <i data-lucide="layers" class="h-8 w-8 mx-auto mb-3 text-[#81f5fb]"></i>
+                                <h4 class="text-xl font-bold mb-2" data-i18n="plc_platform_siemens_title">Siemens</h4>
+                                <p class="text-gray-400 text-sm" data-i18n="plc_platform_siemens_desc">TIA Portal
+                                    (S7-1200, S7-1500, Safety Integrated), STEP 7, WinCC.</p>
+                            </div>
+
+                            <div class="neon-card rounded-xl p-6 text-center">
+                                <i data-lucide="cpu" class="h-8 w-8 mx-auto mb-3 text-[#81f5fb]"></i>
+                                <h4 class="text-xl font-bold mb-2" data-i18n="plc_platform_ab_title">Allen-Bradley /
+                                    Rockwell</h4>
+                                <p class="text-gray-400 text-sm" data-i18n="plc_platform_ab_desc">Studio 5000,
+                                    ControlLogix, CompactLogix, GuardLogix.</p>
+                            </div>
+
+                            <div class="neon-card rounded-xl p-6 text-center">
+                                <i data-lucide="boxes" class="h-8 w-8 mx-auto mb-3 text-[#81f5fb]"></i>
+                                <h4 class="text-xl font-bold mb-2" data-i18n="plc_platform_other_title">Inne systemy
+                                </h4>
+                                <p class="text-gray-400 text-sm" data-i18n="plc_platform_other_desc">Phoenix Contact
+                                    PLCnext, Unitronics, Beckhoff (TwinCAT), Mitsubishi.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Standardy i usługi -->
+                    <div data-aos="fade-up" data-aos-delay="200" class="neon-card rounded-xl p-8">
+                        <h3 class="text-2xl font-bold mb-6 text-[#81f5fb]" data-i18n="plc_features_title">Co zapewniamy
+                            w ramach wdrożenia PLC?</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-300">
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="check-circle" class="h-5 w-5 text-[#81f5fb] shrink-0 mt-1"></i>
+                                <span data-i18n="plc_feature_1"><strong>Pisanie kodu według standardów
+                                        koncernowych</strong> (np. VASS, BMW, Daimler, Stellantis).</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="check-circle" class="h-5 w-5 text-[#81f5fb] shrink-0 mt-1"></i>
+                                <span data-i18n="plc_feature_2"><strong>Konfiguracja sieci przemysłowych:</strong>
+                                    Profinet, Profibus, EtherNet/IP, Modbus TCP, AS-Interface.</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="check-circle" class="h-5 w-5 text-[#81f5fb] shrink-0 mt-1"></i>
+                                <span data-i18n="plc_feature_3"><strong>Uruchomienia wirtualne (Virtual
+                                        Commissioning)</strong> oraz testy wyciekowe / funkcjonalne offline.</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="check-circle" class="h-5 w-5 text-[#81f5fb] shrink-0 mt-1"></i>
+                                <span data-i18n="plc_feature_4"><strong>Optymalizacja taktowania (Cycle Time)</strong>
+                                    oraz asysta przy rozruchu na obiekcie (SAT).</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div data-aos="fade-up" class="neon-card rounded-xl p-8 text-center max-w-3xl mx-auto space-y-4">
+                        <h3 class="text-3xl font-bold text-white" data-i18n="plc_cta_title">Szukasz programistów PLC do
+                            swojego projektu?</h3>
+                        <p class="text-gray-300" data-i18n="plc_cta_desc">Nasze oprogramowanie steruje liniami w
+                            największych zakładach produkcyjnych na świecie.</p>
+                        <a href="/kontakt/"
+                            class="inline-block px-8 py-3 rounded-lg bg-[#81f5fb] text-black font-bold hover:bg-white transition-colors duration-300"
+                            data-i18n="plc_cta_btn">
+                            Omów Twój projekt
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <load src="/public/partials/footer.html" />
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="module" src="/src/main.js" defer></script>
+</body>
+
+</html>
