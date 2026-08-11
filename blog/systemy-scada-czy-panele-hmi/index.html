@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" data-i18n-meta="scada_meta_desc" content="System SCADA czy panel HMI? Poznaj różnice architektoniczne, koszty licencji, możliwości archiwizacji danych i skalowalność obu rozwiązań w automatyce przemysłowej." />
+    
+    <title data-i18n="scada_page_title">System SCADA czy panel HMI? Co wybrać do wizualizacji procesu? – NEXAUT</title>
+
+    <!-- Ładujemy lokalne tłumaczenia tego artykułu -->
+    <script type="module" src="./article-lang.js"></script>
+
+    <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
+
+    <!-- Google Fonts & Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+
+  <body class="bg-nexaut-gray text-white font-sans min-h-screen flex flex-col relative">
+    <canvas id="cosmos"></canvas>
+
+    <div id="main-content" class="pt-24 relative overflow-hidden flex-grow flex flex-col justify-between">
+      
+      <load src="/public/partials/header.html" />
+
+      <main id="app" class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 w-full relative z-10 flex-grow">
+        
+        <a href="/blog/" onclick="if (document.referrer && document.referrer.includes(window.location.host)) { history.back(); return false; }" class="inline-flex items-center gap-2 text-[#81f5fb] font-mono text-sm mb-8 hover:underline">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="blog_back_btn">Powrót do artykułów</span>
+        </a>
+
+        <!-- Treść artykułu -->
+        <header class="mb-8">
+          <span class="text-sm font-mono text-[#81f5fb] block mb-2">10 SIERPNIA 2026</span>
+          <h1 data-i18n="scada_h1" class="text-3xl sm:text-5xl font-mono font-bold text-white mb-6 leading-tight">
+            System SCADA czy panel HMI? Co wybrać do&nbsp;wizualizacji procesu?
+          </h1>
+        </header>
+
+        <!-- Obrazek 1 (Główny) -->
+        <div class="rounded-2xl overflow-hidden border border-[#81f5fb]/30 mb-10 shadow-2xl bg-black/50">
+          <img src="/blognormal/scada-czy-hmi-main.webp" alt="Inżynier obsługujący system wizualizacji procesów SCADA oraz panel operatorski HMI na linii produkcyjnej" class="w-full h-auto max-h-[480px] object-cover" />
+        </div>
+
+        <article class="prose prose-invert max-w-none text-gray-300 space-y-6 text-lg leading-relaxed">
+          
+          <p class="text-xl text-gray-200 font-light border-l-4 border-[#81f5fb] pl-4 italic" data-i18n="scada_intro">
+            Planując modernizację lub budowę nowej linii produkcyjnej, inżynierowie stają przed fundamentalnym wyborem systemu wizualizacji i nadrzędnej kontroli. Choć zarówno panel HMI (Human-Machine Interface), jak i system SCADA (Supervisory Control and Data Acquisition) służą do interakcji człowieka z maszyną, ich architektura, cele oraz koszty wdrożenia znacząco się różnią.
+          </p>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="scada_h2_1">1. Czym różni się panel HMI od systemu SCADA?</h2>
+          <p data-i18n="scada_p1_1">
+            Główna różnica sprowadza się do skali i poziomu nadrzędności. **Panel HMI** to zazwyczaj dedykowane urządzenie sprzętowe (ekran dotykowy montowany na elewacji szafy), połączone bezpośrednio z jednym sterownikiem PLC. Jego zadaniem jest umożliwienie lokalnej obsługi maszyny (start/stop, zmiana parametrów, podgląd alarmów).
+          </p>
+          <p data-i18n="scada_p1_2">
+            **System SCADA** to z kolei zaawansowane oprogramowanie działające na serwerze lub stacjach PC, które zbiera dane z wielu sterowników PLC, wysp I/O i urządzeń pomiarowych rozmieszczonych na terenie całego zakładu. SCADA odpowiada za długoterminową archiwizację danych w bazach SQL, raportowanie, zaawansowane trendy oraz integrację z systemami klasy MES/ERP.
+          </p>
+          
+          <ul class="list-disc pl-6 space-y-2 text-gray-300 font-mono text-sm sm:text-base">
+            <li><strong class="text-[#81f5fb]">Zasięg:</strong> HMI = jedna maszyna/stanowisko; SCADA = cała hala produkcyjna lub fabryka.</li>
+            <li><strong class="text-[#81f5fb]">Gromadzenie danych:</strong> HMI ma ograniczoną pamięć buforową; SCADA zapisuje miliony rekordów w zewnętrznych bazach danych.</li>
+            <li><strong class="text-[#81f5fb]">Redundancja:</strong> Systemy SCADA oferują pełną redundancję serwerów i sieci, gwarantując pracę ciągłą.</li>
+          </ul>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="scada_h2_2">2. Koszty licencji i sprzętu – Gdzie kryją się pułapki?</h2>
+          <p data-i18n="scada_p2_1">
+            W przypadku paneli HMI płacimy głównie za pojedyncze urządzenie fizyczne, a oprogramowanie runtime jest wbudowane w cenę panela. Licencjonowanie systemów SCADA opiera się natomiast na liczbie zmiennych procesowych (tzw. Tagów / PowerTags), liczbie stanowisk klienckich (Web Client / Client RT) oraz dodatkowych modułach (np. receptury, archiwizacja SQL, alarmowanie SMS).
+          </p>
+
+          <!-- Boks wyróżniający (Pro-Tip) -->
+          <div class="my-8 p-6 bg-black/40 border-l-4 border-[#81f5fb] rounded-r-xl shadow-lg">
+            <h3 class="text-xl font-mono font-bold text-[#81f5fb] mb-2" data-i18n="scada_callout_title">Złota Zasada Inżyniera NEXAUT</h3>
+            <p class="text-gray-300 text-base leading-relaxed" data-i18n="scada_callout_text">
+              Nie traktuj wyboru jako „HMI albo SCADA”. Najbardziej niezawodna architektura to hybryda: lokalny panel HMI na szafie sterowniczej zapewnia operatorowi szybkie sterowanie bezpośrednie bez opóźnień sieciowych, podczas gdy serwer SCADA zbiera dane ze wszystkich paneli do nadrzędnej analityki!
+            </p>
+          </div>
+
+          <!-- Drugie Zdjęcie (Czyste zdjęcie ze stocka) -->
+          <div class="my-8 rounded-xl overflow-hidden border border-[#81f5fb]/30 shadow-2xl bg-black/50">
+            <img src="/blognormal/scada-czy-hmi-second.webp" alt="Przemysłowy panel operatorski HMI zamontowany na elewacji szafy sterowniczej z widokiem na schemat procesu" class="w-full h-auto object-cover" />
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="scada_h2_3">3. Kiedy wybrać HMI, a kiedy zaawansowaną SCADĘ?</h2>
+          <p data-i18n="scada_p3_1">
+            **Wybierz panel HMI, gdy:** budujesz autonomiczną maszynę, budżet projektu jest mocno ograniczony, środowisko pracy wymaga wysokiego stopnia ochrony IP (np. strefa zmywania w przemyśle spożywczym), a sterowanie nie wymaga rozbudowanej analityki historycznej.
+          </p>
+          <p data-i18n="scada_p3_2">
+            **Wybierz system SCADA, gdy:** zarządzasz rozproszoną infrastrukturą (np. oczyszczalnia ścieków, elektrociepłownia, ciągła linia produkcyjna), potrzebujesz wielomonitorowej dyspozyczelni, rozbudowanego modułu raportowania do PDF/Excel oraz integracji z bazami SQL i systemami zarządzania produkcją MES.
+          </p>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="scada_h2_4">4. Nowoczesne trendy: Web HMI oraz Unifikacja (WinCC Unified, Ignition)</h2>
+          <p data-i18n="scada_p4_1">
+            Granica między HMI a SCADA zaciera się wraz z rozwojem technologii webowych (HTML5, SVG, JavaScript). Nowoczesne platformy (np. Siemens WinCC Unified, Inductive Automation Ignition czy AVEWA) pozwalają tworzyć wizualizacje raz i uruchamiać je zarówno na panelu dotykowym, jak i w przeglądarce internetowej na smartfonie, tablecie czy komputerze stacjonarnym.
+          </p>
+
+          <!-- Sekcja FAQ -->
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-8" data-i18n="scada_h2_faq">Często Zadawane Pytania (FAQ)</h2>
+          
+          <div class="space-y-6 pt-2">
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="scada_faq_q1">Czy system SCADA może całkowicie zastąpić panele HMI na hali produkcyjnej?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="scada_faq_a1">
+                Technicznie tak, jednak ze względów bezpieczeństwa i ciągłości pracy zaleca się pozostawienie lokalnych paneli HMI. W przypadku awarii sieci zakładowej lub serwera SCADA, lokalny panel HMI pozwala operatorowi bezpiecznie zatrzymać lub skontrolować maszynę.
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="scada_faq_q2">Ile kosztuje wdrożenie systemu SCADA w porównaniu do panela HMI?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="scada_faq_a2">
+                Panel HMI wraz z prostą aplikacją to koszt od kilkuset do kilku tysięcy euro. Wdrożenie licencjonowanego systemu SCADA dla całej hali z serwerem redundantnym i bazą danych SQL zaczyna się od kilkunastu tysięcy euro i rośnie wraz z liczbą punktów (Tagów).
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="scada_faq_q3">Czy inżynierowie NEXAUT tworzą i migrują aplikacje wizualizacji SCADA / HMI?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="scada_faq_a3">
+                Tak. Projektujemy nowe wizualizacje HMI/SCADA na platformach Siemens (WinCC Comfort/Advanced/Unified), Wonderware/AVEVA, Ignition, Asix oraz Weintek, a także wykonujemy migracje ze starych i wycofanych z rynku paneli na nowoczesne standardy webowe.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-6" data-i18n="scada_h2_5">Podsumowanie – Dobierz system wizualizacji skrojony na miarę</h2>
+          <p data-i18n="scada_p5_1">
+            Wybór między panelem HMI a systemem SCADA zależy od specyfiki procesu, wymogów archiwizacji danych i zaplanowanego budżetu. Prawidłowo zaprojektowany interfejs graficzny podnosi komfort pracy operatorów i skraca czas reakcji na stany awaryjne. Szukasz optymalnego rozwiązania dla swojego zakładu? Skontaktuj się z zespołem NEXAUT!
+          </p>
+
+        </article>
+
+      </main>
+
+      <load src="/public/partials/footer.html" />
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="module" src="/src/main.js" defer></script>
+  </body>
+</html>

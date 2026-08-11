@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" data-i18n-meta="vc_meta_desc" content="Testowanie kodu PLC i robotów w środowisku cyfrowego bliźniaka pozwala wyeliminować kolizje i skrócić czas rozruchu linii o 50% przed wdrożeniem na obiekcie." />
+    
+    <title data-i18n="vc_page_title">Wirtualne uruchomienie (Virtual Commissioning) – jak skrócić czas rozruchu linii o 50%? – NEXAUT</title>
+
+    <!-- Ładujemy lokalne tłumaczenia tego artykułu -->
+    <script type="module" src="./article-lang.js"></script>
+
+    <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
+
+    <!-- Google Fonts & Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+
+  <body class="bg-nexaut-gray text-white font-sans min-h-screen flex flex-col relative">
+    <canvas id="cosmos"></canvas>
+
+    <div id="main-content" class="pt-24 relative overflow-hidden flex-grow flex flex-col justify-between">
+      
+      <load src="/public/partials/header.html" />
+
+      <main id="app" class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 w-full relative z-10 flex-grow">
+        
+        <a href="/blog/" onclick="if (document.referrer && document.referrer.includes(window.location.host)) { history.back(); return false; }" class="inline-flex items-center gap-2 text-[#81f5fb] font-mono text-sm mb-8 hover:underline">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="blog_back_btn">Powrót do artykułów</span>
+        </a>
+
+        <!-- Treść polska natywnie w kodzie HTML -->
+        <header class="mb-8">
+          <span class="text-sm font-mono text-[#81f5fb] block mb-2">10 SIERPNIA 2026</span>
+          <h1 data-i18n="vc_h1" class="text-3xl sm:text-5xl font-mono font-bold text-white mb-6 leading-tight">
+            Wirtualne uruchomienie (Virtual Commissioning) – jak skrócić czas rozruchu linii o&nbsp;50%?
+          </h1>
+        </header>
+
+        <!-- Obrazek 1 (Główny) -->
+        <div class="rounded-2xl overflow-hidden border border-[#81f5fb]/30 mb-10 shadow-2xl bg-black/50">
+          <img src="/blognormal/wirtualne-uruchomienie-main.webp" alt="Wirtualne Uruchomienie Virtual Commissioning i Cyfrowy Bliźniak w automatyce" class="w-full h-auto max-h-[480px] object-cover" />
+        </div>
+
+        <article class="prose prose-invert max-w-none text-gray-300 space-y-6 text-lg leading-relaxed">
+          
+          <p class="text-xl text-gray-200 font-light border-l-4 border-[#81f5fb] pl-4 italic" data-i18n="vc_intro">
+            Testowanie kodu PLC i&nbsp;robotów w&nbsp;środowisku cyfrowym bliźniaka pozwala wyeliminować błędy logiki oraz kolizje zanim pierwsza fizyczna maszyna trafi na&nbsp;hale produkcyjną. Poznaj technologię, która rewolucjonizuje harmonogramy wdrożeń przemysłowych.
+          </p>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="vc_h2_1">Czym jest Virtual Commissioning i Cyfrowy Bliźniak (Digital Twin)?</h2>
+          <p data-i18n="vc_p1_1">
+            Tradycyjny proces uruchomienia linii zautomatyzowanej wiąże się z&nbsp;dużym ryzykiem: programiści PLC i&nbsp;robotycy wchodzą na&nbsp;obiekt dopiero po&nbsp;zakończeniu montażu mechanicznego i&nbsp;elektrycznego. Każdy błąd w&nbsp;kodzie, błędna sekwencja czy kolizja ramienia robota z&nbsp;wygrodzeniem oznacza kosztowne opóźnienia i&nbsp;ryzyko uszkodzenia sprzętu.
+          </p>
+          <p data-i18n="vc_p1_2">
+            <strong>Wirtualne Uruchomienie (Virtual Commissioning – VIBN)</strong> zmienia ten paradygmat. Polega na&nbsp;połączeniu prawdziwego sterownika PLC (lub jego symulatora PLCSIM Advanced) z&nbsp;trójwymiarowym, dynamicznym modelem CAD celi produkcyjnej – tzw. **Cyfrowym Bliźniakiem (Digital Twin)**.
+          </p>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="vc_h2_2">Główne korzyści z&nbsp;wdrożenia Wirtualnego Uruchomienia</h2>
+          <p data-i18n="vc_p2_intro">
+            Inwestycja w&nbsp;przygotowanie wirtualnego modelu celi zwraca się z&nbsp;nawiązką już podczas pierwszego tygodnia prac na&nbsp;obiekcie:
+          </p>
+          
+          <ul class="list-disc pl-6 space-y-3 text-gray-300">
+            <li data-i18n="vc_li_2_1">
+              <strong>Skrócenie czasu rozruchu na obiekcie o 50-80%:</strong> Większość błędów w&nbsp;kodzie sterującym i&nbsp;sekwencjach jest wykrywana i&nbsp;poprawiana w&nbsp;biurze inżynierskim.
+            </li>
+            <li data-i18n="vc_li_2_2">
+              <strong>Całkowite wyeliminowanie kolizji mechanicznych:</strong> Symulacja ruchu robotów i&nbsp;siłowników w&nbsp;środowisku 3D gwarantuje brak uszkodzeń chwytaków i&nbsp;detali przy pierwszym przejeździe.
+            </li>
+            <li data-i18n="vc_li_2_3">
+              <strong>Równoległe prowadzenie prac (Engineering Paralellism):</strong> Programowanie PLC i&nbsp;robotów odbywa się równolegle z&nbsp;zamawianiem komponentów i&nbsp;budową mechaniczną.
+            </li>
+            <li data-i18n="vc_li_2_4">
+              <strong>Bezpieczne testowanie stanów awaryjnych (Safety):</strong> Możliwość symulacji wciśnięcia przycisku E-STOP, otwarcia wygrodzenia czy awarii czujnika bez ryzyka dla personelu.
+            </li>
+          </ul>
+
+          <!-- Boks wyróżniający (Callout / Pro-Tip) -->
+          <div class="my-8 p-6 bg-black/40 border-l-4 border-[#81f5fb] rounded-r-xl shadow-lg">
+            <h3 class="text-xl font-mono font-bold text-[#81f5fb] mb-2" data-i18n="vc_callout_title">Wskazówka Inżyniera NEXAUT</h3>
+            <p class="text-gray-300 text-base leading-relaxed" data-i18n="vc_callout_text">
+              Virtual Commissioning to&nbsp;nie tylko symulacja CAD. Kluczem jest wygenerowanie sygnałów w&nbsp;czasie rzeczywistym – sterownik PLC musi „myśleć”, że&nbsp;jest podłączony do&nbsp;fizycznej maszyny (fizyka czujników, zaworów i&nbsp;napędów). Tylko wtedy testy logiki są&nbsp;w&nbsp;100% miarodajne.
+            </p>
+          </div>
+
+          <!-- Obrazek 2 (W środku artykułu) -->
+          <div class="rounded-xl overflow-hidden border border-[#81f5fb]/20 shadow-lg">
+              <img src="/blognormal/digital-twin-second.webp" alt="Symulacja cyfrowego bliźniaka stanowiska zrobotyzowanego w procesie wirtualnego uruchomienia" class="w-full h-auto object-cover" />
+            </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="vc_h2_3">Jak przebiega proces Virtual Commissioning krok po kroku?</h2>
+          <p data-i18n="vc_p3_1">
+            Skuteczne przeprowadzenie wirtualnego uruchomienia składa się z&nbsp;kilku przejrzystych etapów technicznych:
+          </p>
+
+          <div class="p-6 bg-gray-900/80 rounded-xl border border-gray-700 font-mono text-sm space-y-3">
+            <p class="text-[#81f5fb] font-bold text-base mb-1" data-i18n="vc_box_title">Etapy realizacji cyfrowego bliźniaka:</p>
+            <p class="text-gray-200" data-i18n="vc_box_li1"><strong>1. Przygotowanie modelu 3D:</strong> Uproszczenie geometrii CAD, zdefiniowanie kinematyki (osi, przegubów, liniowych ruchów siłowników).</p>
+            <p class="text-gray-200" data-i18n="vc_box_li2"><strong>2. Mapowanie sygnałów I/O:</strong> Przypisanie wirtualnych czujników i&nbsp;zaworów do&nbsp;adresacji w&nbsp;sterowniku PLC.</p>
+            <p class="text-gray-200" data-i18n="vc_box_li3"><strong>3. Testy automatyczne i VIBN:</strong> Uruchomienie pełnego cyklu automatycznego w&nbsp;kodzie PLC/robotów oraz weryfikacja czasów cyklu (Cycle Time).</p>
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="vc_h2_4">Narzędzia wykorzystywane w Wirtualnym Uruchomieniu</h2>
+          <p data-i18n="vc_p4_1">
+            W&nbsp;zależności od&nbsp;wymagań klienta i&nbsp;zastosowanej platformy sterowania, inżynierowie NEXAUT wykorzystują czołowe środowiska symulacyjne:
+          </p>
+
+          <ul class="list-disc pl-6 space-y-2 text-gray-300">
+            <li data-i18n="vc_li_4_1"><strong>Siemens SIMIT & Process Simulate:</strong> Przemysłowy standard w&nbsp;branży automotive do&nbsp;zaawansowanej symulacji procesów i&nbsp;kodów VASS/FAST.</li>
+            <li data-i18n="vc_li_4_2"><strong>Emulate3D / Visual Components:</strong> Elastyczne oprogramowanie do&nbsp;symulacji logistyki, intralogistyki oraz cel zautomatyzowanych.</li>
+            <li data-i18n="vc_li_4_3"><strong>S7-PLCSIM Advanced:</strong> Odpowiedzialny za&nbsp;emulację cyklu pracy sterownika S7-1500 w&nbsp;czasie rzeczywistym z&nbsp;obsługą PROFINET.</li>
+          </ul>
+
+          <!-- Sekcja FAQ -->
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-8" data-i18n="vc_h2_faq">Często Zadawane Pytania (FAQ)</h2>
+          
+          <div class="space-y-6 pt-2">
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="vc_faq_q1">Czy do Virtual Commissioning potrzebuję pełnego modelu CAD celi?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="vc_faq_a1">
+                Tak, podstawą jest model 3D. Może to&nbsp;być jednak model uproszczony – kluczowe jest zachowanie poprawnych wymiarów, kinematyki ruchomych elementów oraz pozycji czujników.
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="vc_faq_q2">O ile realnie można skrócić czas przebywania inżynierów w zakładzie klienta?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="vc_faq_a2">
+                Praktyka pokazuje, że&nbsp;czas uruchomienia na&nbsp;obiekcie skraca się o&nbsp;40% do&nbsp;60%. Wirtualne testy pozwalają wyeliminować około 90% błędów programistycznych jeszcze przed wysyłką szafy sterowniczej.
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="vc_faq_q3">Czy NEXAUT wykonuje usługi wirtualnego uruchomienia dla zewnętrznych projektów?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="vc_faq_a3">
+                Tak. Tworzymy cyfrowe bliźniaki oraz wykonujemy testy VIBN zarówno dla własnych kompleksowych wdrożeń, jak i&nbsp;na zlecenie producentów maszyn (OEM) oraz integratorów automatyki.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-6" data-i18n="vc_h2_5">Podsumowanie – Zabezpiecz termin wdrożenia z NEXAUT</h2>
+          <p data-i18n="vc_p5_1">
+            Wirtualne Uruchomienie to&nbsp;najlepsza polisę ubezpieczeniowa dla każdego projektu automatyzacji. Pozwala uniknąć opóźnień, kar umownych oraz stresu związanego z&nbsp;goniącymi terminami. Zespół NEXAUT pomoże Ci&nbsp;wdrożyć cyfrowego bliźniaka i&nbsp;zoptymalizować proces uruchomienia.
+          </p>
+
+        </article>
+
+      </main>
+
+      <load src="/public/partials/footer.html" />
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="module" src="/src/main.js" defer></script>
+  </body>
+</html>

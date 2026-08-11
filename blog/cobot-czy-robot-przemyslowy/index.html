@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" data-i18n-meta="cr_meta_desc" content="Cobot czy robot przemysłowy? Porównujemy udźwig, prędkość, wymogi bezpieczeństwa ISO/TS 15066 i koszty wdrożenia obu rozwiązań w automatyzacji produkcji." />
+    
+    <title data-i18n="cr_page_title">Robot przemysłowy czy cobot? Porównanie i analiza – NEXAUT</title>
+
+    <!-- Ładujemy lokalne tłumaczenia tego artykułu -->
+    <script type="module" src="./article-lang.js"></script>
+
+    <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
+
+    <!-- Google Fonts & Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+
+  <body class="bg-nexaut-gray text-white font-sans min-h-screen flex flex-col relative">
+    <canvas id="cosmos"></canvas>
+
+    <div id="main-content" class="pt-24 relative overflow-hidden flex-grow flex flex-col justify-between">
+      
+      <load src="/public/partials/header.html" />
+
+      <main id="app" class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 w-full relative z-10 flex-grow">
+        
+        <a href="/blog/" onclick="if (document.referrer && document.referrer.includes(window.location.host)) { history.back(); return false; }" class="inline-flex items-center gap-2 text-[#81f5fb] font-mono text-sm mb-8 hover:underline">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="blog_back_btn">Powrót do artykułów</span>
+        </a>
+
+        <!-- Treść polska natywnie w kodzie HTML -->
+        <header class="mb-8">
+          <span class="text-sm font-mono text-[#81f5fb] block mb-2">10 SIERPNIA 2026</span>
+          <h1 data-i18n="cr_h1" class="text-3xl sm:text-5xl font-mono font-bold text-white mb-6 leading-tight">
+            Robot przemysłowy czy cobot? Kiedy warto wybrać robota współpracującego?
+          </h1>
+        </header>
+
+        <!-- Obrazek 1 (Główny) -->
+        <div class="rounded-2xl overflow-hidden border border-[#81f5fb]/30 mb-10 shadow-2xl bg-black/50">
+          <img src="/blognormal/cobot-main.webp" alt="Porównanie robota przemysłowego w wygrodzeniu z elastycznym cobotem pracującym obok człowieka" class="w-full h-auto max-h-[480px] object-cover" />
+        </div>
+
+        <article class="prose prose-invert max-w-none text-gray-300 space-y-6 text-lg leading-relaxed">
+          
+          <p class="text-xl text-gray-200 font-light border-l-4 border-[#81f5fb] pl-4 italic" data-i18n="cr_intro">
+            Automatyzacja procesów produkcyjnych nie&nbsp;jest już przywilejem największych koncernów. Dziś przed wyzwaniem robotyzacji stają firmy każdej wielkości, a&nbsp;podstawowe pytanie brzmi: postawić na&nbsp;klasycznego robota przemysłowego czy elastycznego cobota? Wyjaśniamy kluczowe różnice w&nbsp;dynamice, wygrodzeniach oraz stopie zwrotu z&nbsp;inwestycji.
+          </p>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="cr_h2_1">Czym naprawdę różni się cobot od robota przemysłowego?</h2>
+          <p data-i18n="cr_p1_1">
+            Główna różnica nie tkwi wyłącznie w&nbsp;wyglądzie czy gabarytach, lecz w&nbsp;<strong>filozofii bezpieczeństwa i&nbsp;przeznaczeniu aplikacyjnym</strong>. Tradcyjne roboty przemysłowe (np. FANUC, KUKA, ABB) projektowane są&nbsp;z&nbsp;myślą o&nbsp;maksymalnej wydajności, olbrzymich prędkościach i&nbsp;dużym udźwigu. Z&nbsp;kolei coboty (Collaborative Robots) zostały stworzone do&nbsp;bezpiecznej pracy ramię w&nbsp;ramię z&nbsp;człowiekiem na&nbsp;wspólnej przestrzeni roboczej.
+          </p>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="cr_h2_2">Analiza techniczna: Kiedy wybrać poszczególne rozwiązanie?</h2>
+          <p data-i18n="cr_p2_intro">
+            Wybór odpowiedniego typu manipulatora sprowadza się do&nbsp;przeanalizowania parametrów procesu produkcyjnego:
+          </p>
+
+          <ul class="list-disc pl-6 space-y-3 text-gray-300">
+            <li data-i18n="cr_li_2_1">
+              <strong>Dynamika i takt cyklu:</strong> Jeśli Twój proces wymaga sekundowych cykli i&nbsp;przenoszenia detali z&nbsp;ogromną prędkością, klasyczny robot przemysłowy pozostaje bezkonkurencyjny. Coboty ze&nbsp;względu na&nbsp;normy bezpieczeństwa poruszają się wolniej.
+            </li>
+            <li data-i18n="cr_li_2_2">
+              <strong>Udźwig i zasięg:</strong> Roboty tradycyjne z&nbsp;łatwością radzą sobie z&nbsp;ciężarami od&nbsp;kilkunastu do&nbsp;nawet kilkuset kilogramów. Nowoczesne coboty osiągają udźwig rzędu 10–30 kg, co&nbsp;wystarcza do&nbsp;większości zadań paletyzacji i&nbsp;obsługi maszyn, ale wyklucza je&nbsp;z&nbsp;ciężkiego spawalnictwa czy odlewnictwa.
+            </li>
+            <li data-i18n="cr_li_2_3">
+              <strong>Bezpieczeństwo i klatki (Wygrodzenia):</strong> Robot przemysłowy bezkompromisowo wymaga zamkniętej strefy ochronnej (wybramowania, kurtyny świetlne, zamki ryglowane). Cobot wyposażony w&nbsp;czujniki siły i&nbsp;momentu może (po ocenie ryzyka wg&nbsp;ISO/TS 15066) pracować bez fizycznych wygrodzeń.
+            </li>
+            <li data-i18n="cr_li_2_4">
+              <strong>Elastyczność montażu i przestrzeń:</strong> Cobota można łatwo przenieść między stanowiskami (np. na&nbsp;wózku mobilnym) i&nbsp;przeprogramować w&nbsp;kilkanaście minut. Klasyczne gniazda z&nbsp;robotem przemysłowym są&nbsp;zazwyczaj instalacjami stacjonarnymi na&nbsp;stałe.
+            </li>
+          </ul>
+
+          <!-- Callout box -->
+          <div class="my-8 p-6 bg-black/40 border-l-4 border-[#81f5fb] rounded-r-xl shadow-lg">
+            <h3 class="text-xl font-mono font-bold text-[#81f5fb] mb-2" data-i18n="cr_callout_title">Pułapka myślowa: „Cobot nie wymaga żadnego zabezpieczenia”</h3>
+            <p class="text-gray-300 text-base leading-relaxed" data-i18n="cr_callout_text">
+              Pamiętaj, że&nbsp;bezpieczny jest sam manipulator, a&nbsp;nie cała aplikacja! Jeśli wyposażysz cobota w&nbsp;ostry chwytak lub będzie on&nbsp;przenosił noże czy gorące elementy, całe stanowisko nadal musi posiadać dodatkowe zabezpieczenia lub skanery bezpieczeństwa.
+            </p>
+          </div>
+
+          <!-- Obrazek 2 -->
+          <div class="rounded-xl overflow-hidden border border-[#81f5fb]/30 shadow-2xl bg-black/50">
+              <img src="/blognormal/cobot-second.webp" alt="Klasyczny robot przemysłowy w wygrodzonej strefie bezpieczeństwa na hali produkcyjnej" class="w-full h-auto object-cover" />
+            </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="cr_h2_3">Tabela Porównawcza: Robot Przemysłowy vs Cobot</h2>
+          
+          <div class="overflow-x-auto my-6">
+            <table class="w-full text-left border-collapse border border-gray-800 text-sm sm:text-base">
+              <thead>
+                <tr class="bg-black/60 text-[#81f5fb]">
+                  <th class="p-3 border border-gray-800 font-mono">Cecha</th>
+                  <th class="p-3 border border-gray-800 font-mono">Robot Przemysłowy</th>
+                  <th class="p-3 border border-gray-800 font-mono">Cobot (Robot Współpracujący)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-800">
+                <tr>
+                  <td class="p-3 font-bold text-gray-200 border border-gray-800">Wydajność / Prędkość</td>
+                  <td class="p-3 border border-gray-800">Bardzo wysoka (>2 m/s)</td>
+                  <td class="p-3 border border-gray-800">Ograniczona normami (~1 m/s)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold text-gray-200 border border-gray-800">Wygrodzenia ochronne</td>
+                  <td class="p-3 border border-gray-800">Obowiązkowe (klatki, płoty)</td>
+                  <td class="p-3 border border-gray-800">Opcjonalne (zależne od oceny ryzyka)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold text-gray-200 border border-gray-800">Czas wdrożenia i rekonfiguracji</td>
+                  <td class="p-3 border border-gray-800">Długi (wymaga inżyniera)</td>
+                  <td class="p-3 border border-gray-800">Krótki (nauka przez prowadzenie dłonią)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold text-gray-200 border border-gray-800">Wymagana powierzchnia (Footprint)</td>
+                  <td class="p-3 border border-gray-800">Duża (duża strefa bezpieczeństwa)</td>
+                  <td class="p-3 border border-gray-800">Minimalna (brak płotów)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold text-gray-200 border border-gray-800">Koszt całościowy (Capex)</td>
+                  <td class="p-3 border border-gray-800">Wyższy osprzęt wokół (ogrodzenia)</td>
+                  <td class="p-3 border border-gray-800">Wyższa cena robota, niższy koszt otoczenia</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Sekcja FAQ -->
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-8" data-i18n="cr_h2_faq">Często Zadawane Pytania (FAQ)</h2>
+          
+          <div class="space-y-6 pt-2">
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="cr_faq_q1">Czy cobot jest tańszy w zakupie od robota przemysłowego?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="cr_faq_a1">
+                Sam ramieniowy cobot bywa droższy od tradycyjnego robota o podobnym udźwigu, ponieważ posiada wbudowane skomplikowane czujniki siły. Jednak całkowity koszt wdrożenia stanowiska z cobotem bywa niższy z uwagi na brak konieczności budowania wygrodzeń ochronnych i prostszy montaż.
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="cr_faq_q2">Czy do programowania cobota potrzebny jest wykwalifikowany programista?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="cr_faq_a2">
+                Proste zadania (np. Pick & Place) na cobocie może zaprogramować operator po krótkim szkoleniu, korzystając z graficznego interfejsu lub przeciągając ramię ręcznie (hand guiding). Przy złożonych integracjach z linią i PLC nadal zalecane jest wsparcie eksperckie.
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="cr_faq_q3">Jak NEXAUT pomaga w doborze i integracji robotów?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="cr_faq_a3">
+                W NEXAUT przeprowadzamy pełny audyt wykonalności, ocenę ryzyka (norma ISO/TS 15066) oraz symulację czasów cyklu. Pomagamy dobrać idealne rozwiązanie – od doboru marki manipulatora, przez chwytaki, po pełne zaprogramowanie i certyfikację CE.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-6" data-i18n="cr_h2_5">Podsumowanie – Postaw na trafną robotyzację z NEXAUT</h2>
+          <p data-i18n="cr_p5_1">
+            Nie ma uniwersalnie „lepszego” rozwiązania – zarówno cobot, jak i klasyczny robot przemysłowy mają swoje idealne zastosowania. Zamiast kierować się panującą modą, warto przeanalizować czas cyklu, przestrzeń fabryczną oraz budżet. Skontaktuj się z NEXAUT, a przeanalizujemy Twój proces i zaproponujemy optymalny wariant robotyzacji.
+          </p>
+
+        </article>
+
+      </main>
+
+      <load src="/public/partials/footer.html" />
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="module" src="/src/main.js" defer></script>
+  </body>
+</html>

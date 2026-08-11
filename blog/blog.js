@@ -23,19 +23,24 @@ export function renderBlog(currentLang = 'pl') {
 
   // 3. Renderujemy kafelki na stronie głównej bloga
   gridContainer.innerHTML = currentPosts.map(post => `
-    <article class="bg-black/60 border border-[#81f5fb]/30 rounded-2xl overflow-hidden backdrop-blur-md hover:border-[#81f5fb]/60 transition duration-300 flex flex-col shadow-xl group">
-      <a href="/blog/${post.slug}/" class="block overflow-hidden relative h-48 bg-gray-900">
+    <article class="bg-black/60 border border-[#81f5fb]/30 rounded-2xl overflow-hidden backdrop-blur-md hover:border-[#81f5fb]/60 transition duration-300 flex flex-col shadow-xl group h-full">
+      <a href="/blog/${post.slug}/" class="block overflow-hidden relative h-48 bg-gray-900 shrink-0">
         <img src="${post.image}" alt="${post.title[currentLang] || post.title.pl}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80 group-hover:opacity-100" />
       </a>
       <div class="p-6 flex flex-col flex-grow">
         <span class="text-xs font-mono text-[#81f5fb] mb-2 block">${post.date}</span>
+        
         <h2 class="text-xl font-bold text-white mb-3 group-hover:text-[#81f5fb] transition">
           <a href="/blog/${post.slug}/">${post.title[currentLang] || post.title.pl}</a>
         </h2>
-        <p class="text-gray-400 text-sm mb-6 flex-grow line-clamp-3">
+
+        <!-- Treść z przewijaniem (scroll) -->
+        <div class="text-gray-400 text-sm mb-6 h-20 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-[#81f5fb]/30">
           ${post.excerpt[currentLang] || post.excerpt.pl}
-        </p>
-        <div>
+        </div>
+
+        <!-- mt-auto wypycha przycisk ZAWSZE na sam dół karty -->
+        <div class="mt-auto pt-2 flex justify-start"> 
           <a href="/blog/${post.slug}/" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[#81f5fb]/40 bg-[#81f5fb]/10 text-[#81f5fb] font-mono text-sm hover:bg-[#81f5fb] hover:text-black transition-all">
             <span data-i18n="blog_read_more">Przeczytaj więcej</span> <span class="text-base">›</span>
           </a>
@@ -48,18 +53,47 @@ export function renderBlog(currentLang = 'pl') {
   if (totalPages > 1 && paginationContainer) {
     let paginationHTML = '';
 
+    // Strzałka w lewo «
     if (currentPage > 1) {
       paginationHTML += `<a href="/blog/?page=${currentPage - 1}" class="w-10 h-10 flex items-center justify-center rounded-lg border border-[#81f5fb]/20 bg-black/40 text-gray-400 hover:text-[#81f5fb] hover:border-[#81f5fb]/50 transition">«</a>`;
     }
 
+    // Algorytm wyliczający strony z uwzględnieniem "..."
+    const delta = 3; // Ile stron ma być widocznych po lewej i prawej od aktywnej strony
+    const range = [];
+    const rangeWithDots = [];
+
     for (let i = 1; i <= totalPages; i++) {
-      if (i === currentPage) {
-        paginationHTML += `<span class="w-10 h-10 flex items-center justify-center rounded-lg border border-[#81f5fb] bg-[#81f5fb]/20 text-[#81f5fb] font-bold">${i}</span>`;
-      } else {
-        paginationHTML += `<a href="/blog/?page=${i}" class="w-10 h-10 flex items-center justify-center rounded-lg border border-[#81f5fb]/20 bg-black/40 text-gray-400 hover:text-[#81f5fb] hover:border-[#81f5fb]/50 transition">${i}</a>`;
+      if (i === 1 || i === totalPages || (i >= currentPage - delta && i <= currentPage + delta)) {
+        range.push(i);
       }
     }
 
+    let last = 0;
+    for (let i of range) {
+      if (last) {
+        if (i - last === 2) {
+          rangeWithDots.push(last + 1);
+        } else if (i - last > 2) {
+          rangeWithDots.push('...');
+        }
+      }
+      rangeWithDots.push(i);
+      last = i;
+    }
+
+    // Wyrenderowanie wygenerowanych elementów (numery + wielokropki)
+    rangeWithDots.forEach(page => {
+      if (page === '...') {
+        paginationHTML += `<span class="w-10 h-10 flex items-center justify-center text-gray-500 font-mono select-none">...</span>`;
+      } else if (page === currentPage) {
+        paginationHTML += `<span class="w-10 h-10 flex items-center justify-center rounded-lg border border-[#81f5fb] bg-[#81f5fb]/20 text-[#81f5fb] font-bold">${page}</span>`;
+      } else {
+        paginationHTML += `<a href="/blog/?page=${page}" class="w-10 h-10 flex items-center justify-center rounded-lg border border-[#81f5fb]/20 bg-black/40 text-gray-400 hover:text-[#81f5fb] hover:border-[#81f5fb]/50 transition">${page}</a>`;
+      }
+    });
+
+    // Strzałka w prawo »
     if (currentPage < totalPages) {
       paginationHTML += `<a href="/blog/?page=${currentPage + 1}" class="w-10 h-10 flex items-center justify-center rounded-lg border border-[#81f5fb]/20 bg-black/40 text-gray-400 hover:text-[#81f5fb] hover:border-[#81f5fb]/50 transition">»</a>`;
     }

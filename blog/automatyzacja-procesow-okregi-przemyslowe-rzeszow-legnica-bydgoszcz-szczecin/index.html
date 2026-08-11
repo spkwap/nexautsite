@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" data-i18n-meta="reg_meta_desc" content="Automatyzacja procesów w&nbsp;okręgach przemysłowych: Rzeszów, Legnica, Bydgoszcz, Szczecin. Poznaj specyfikę Doliny Lotniczej, Zagłębia Miedziowego i&nbsp;branży morskiej z&nbsp;NEXAUT." />
+    
+    <title data-i18n="reg_page_title">Automatyzacja Procesów: Rzeszów, Legnica, Bydgoszcz, Szczecin – NEXAUT</title>
+
+    <!-- Skrypt załadowany jako MODULE -->
+    <script type="module" src="./article-lang.js"></script>
+
+    <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
+
+    <!-- Google Fonts & Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+
+  <body class="bg-nexaut-gray text-white font-sans min-h-screen flex flex-col relative">
+    <canvas id="cosmos"></canvas>
+
+    <div id="main-content" class="pt-24 relative overflow-hidden flex-grow flex flex-col justify-between">
+      
+      <load src="/public/partials/header.html" />
+
+      <main id="app" class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 w-full relative z-10 flex-grow">
+        
+        <!-- Przycisk powrotu -->
+        <a href="/blog/" 
+           onclick="if (document.referrer && document.referrer.includes(window.location.host)) { history.back(); return false; }" 
+           class="inline-flex items-center gap-2 text-[#81f5fb] font-mono text-sm mb-8 hover:underline">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="blog_back_btn">Powrót do artykułów</span>
+        </a>
+
+        <!-- Nagłówek artykułu -->
+        <header class="mb-8">
+          <span class="text-sm font-mono text-[#81f5fb] block mb-2">10 SIERPNIA 2026</span>
+          <h1 data-i18n="reg_h1" class="text-3xl sm:text-5xl font-mono font-bold text-white mb-6 leading-tight">
+            Automatyzacja procesów w&nbsp;kluczowych okręgach: Rzeszów, Legnica, Bydgoszcz i&nbsp;Szczecin
+          </h1>
+        </header>
+
+        <!-- JEDYNE ZDJĘCIE (HERO) -->
+        <div class="rounded-2xl overflow-hidden border border-[#81f5fb]/30 mb-10 shadow-2xl bg-black/50">
+          <img src="/blognormal/najnow-silesia-main.webp" alt="Zaawansowane ramię robotyczne podczas precyzyjnej obróbki detalu przemysłowego w nowoczesnym zakładzie produkcyjnym" class="w-full h-auto max-h-[480px] object-cover" />
+        </div>
+
+        <article class="prose prose-invert max-w-none text-gray-300 space-y-8 text-lg leading-relaxed">
+          
+          <p class="text-xl text-gray-200 font-light border-l-4 border-[#81f5fb] pl-4 italic" data-i18n="reg_intro">
+            Polska mapa przemysłowa charakteryzuje się ogromnym zróżnicowaniem technologicznym. Od&nbsp;rygorystycznych norm bezpieczeństwa w&nbsp;rzeszowskiej Dolinie Lotniczej, przez trudne warunki środowiskowe Zagłębia Miedziowego wokół Legnicy, po&nbsp;przetwórstwo tworzyw w&nbsp;Bydgoszczy i&nbsp;przemysł morski w&nbsp;Szczecinie – automatyzacja musi być idealnie szyta na&nbsp;miarę specyfiki danego regionu.
+          </p>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb]" data-i18n="reg_h2_1">1. Regionalne huby przemysłowe i&nbsp;ich unikalne wyzwania</h2>
+          <p data-i18n="reg_p1_1">
+            Skuteczny projekt automatyzacji wymaga dogłębnego zrozumienia specyfiki lokalnego rynku przemysłowego:
+          </p>
+
+          <!-- SIATKA HUBÓW REGIONALNYCH (HUB CARDS) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8 not-prose">
+            
+            <div class="p-6 rounded-2xl border border-white/10 bg-black/50 hover:border-[#81f5fb]/50 transition">
+              <div class="text-[#81f5fb] font-mono text-xs uppercase tracking-wider mb-1">Rzeszów &amp; Podkarpacie</div>
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="reg_hub1_title">Dolina Lotnicza &amp; Mikromaszyny</h3>
+              <p class="text-sm text-gray-300 leading-relaxed" data-i18n="reg_hub1_desc">
+                Sektor lotniczy i&nbsp;precyzyjny (AS9100). Automatyczne tendrowanie maszyn CNC, robotyzacja szlifowania i&nbsp;polerowania łopatek turbin oraz&nbsp;pełna identyfikowalność (Traceability).
+              </p>
+            </div>
+
+            <div class="p-6 rounded-2xl border border-white/10 bg-black/50 hover:border-[#81f5fb]/50 transition">
+              <div class="text-[#81f5fb] font-mono text-xs uppercase tracking-wider mb-1">Legnica, Lubin &amp; Głogów</div>
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="reg_hub2_title">Zagłębie Miedziowe &amp; Ciężki Przemysł</h3>
+              <p class="text-sm text-gray-300 leading-relaxed" data-i18n="reg_hub2_desc">
+                Hutnictwo, przemysł wydobywczy oraz&nbsp;komponenty automotive. Wymagania dotyczące wysokiego udźwigu (Heavy-Duty), stopnia ochrony IP67/IP68 i&nbsp;odporności na&nbsp;wysokie temperatury.
+              </p>
+            </div>
+
+            <div class="p-6 rounded-2xl border border-white/10 bg-black/50 hover:border-[#81f5fb]/50 transition">
+              <div class="text-[#81f5fb] font-mono text-xs uppercase tracking-wider mb-1">Bydgoszcz &amp; Toruń</div>
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="reg_hub3_title">Polimerowe Zagłębie &amp; Narzędziownie</h3>
+              <p class="text-sm text-gray-300 leading-relaxed" data-i18n="reg_hub3_desc">
+                Przetwórstwo tworzyw sztucznych i&nbsp;produkcja form wtryskowych. Odbieranie wyprasek przez roboty liniowe, etykietowanie IML i&nbsp;kontrola jakości wizyjnej w&nbsp;czasie rzeczywistym.
+              </p>
+            </div>
+
+            <div class="p-6 rounded-2xl border border-white/10 bg-black/50 hover:border-[#81f5fb]/50 transition">
+              <div class="text-[#81f5fb] font-mono text-xs uppercase tracking-wider mb-1">Szczecin &amp; Pomorze Zachodnie</div>
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="reg_hub4_title">Przemysł Morski &amp; Offshore Wind</h3>
+              <p class="text-sm text-gray-300 leading-relaxed" data-i18n="reg_hub4_desc">
+                Produkcja konstrukcji wielkogabarytowych dla energetyki wiatrowej oraz&nbsp;logistyka portowa. Zrobotyzowane ukosowanie, spawanie łukowe i&nbsp;zautomatyzowany transport ciężki.
+              </p>
+            </div>
+
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb]" data-i18n="reg_h2_2">2. Odpowiedź automatyki na&nbsp;specyficzne wymagania gałęziowe</h2>
+          <p data-i18n="reg_p2_1">
+            Nowoczesne systemy sterowania i&nbsp;stanowiska zrobotyzowane dostosowuje się bezpośrednio pod profile produkcyjne poszczególnych regionów:
+          </p>
+
+          <ul class="list-disc pl-6 space-y-3 text-gray-300">
+            <li data-i18n="reg_li_1"><strong class="text-white">Integracja z&nbsp;maszynami CNC i&nbsp;centrami obróbczymi:</strong> Automatyczne załadunki i&nbsp;wyładunki detali przy użyciu robotów 6-osiowych integrowanych przez protokoły Profinet / OPC UA.</li>
+            <li data-i18n="reg_li_2"><strong class="text-white">Roboty Heavy-Duty oraz&nbsp;spawanie wielkogabarytowe:</strong> Stanowiska spawalnicze z&nbsp;torowiskami i&nbsp;pozycjonerami dedykowane do&nbsp;trudnych warunków środowiskowych.</li>
+            <li data-i18n="reg_li_3"><strong class="text-white">Autonomiczna kontrola jakości wizyjnej:</strong> Systemy oparte na&nbsp;sieciach neuronowych (Deep Learning) wyłapujące skazy powierzchniowe na&nbsp;wtryskanych elementach plastikowych czy&nbsp;odlewach.</li>
+            <li data-i18n="reg_li_4"><strong class="text-white">Systemy SCADA i&nbsp;zbieranie danych fabrycznych:</strong> Oprogramowanie monitorujące wydajność OEE w&nbsp;rozproszonych zakładach produkcyjnych.</li>
+          </ul>
+
+          <!-- Boks wyróżniający NEXAUT Insight -->
+          <div class="my-8 p-6 bg-black/60 border-l-4 border-[#81f5fb] rounded-r-xl shadow-lg not-prose">
+            <h3 class="text-xl font-mono font-bold text-[#81f5fb] mb-2" data-i18n="reg_callout_title">NEXAUT – Twój Ogólnopolski Partner w&nbsp;Integracji Automatyki</h3>
+            <p class="text-gray-300 text-base leading-relaxed" data-i18n="reg_callout_text">
+              Niezależnie od&nbsp;lokalizacji – od&nbsp;Rzeszowa i&nbsp;Legnicy po&nbsp;Bydgoszcz i&nbsp;Szczecin – inżynierowie NEXAUT dostarczają układy sterowania PLC/HMI/SCADA oraz&nbsp;kompletne stanowiska zrobotyzowane dostosowane do&nbsp;specyficznych norm Twojej branży.
+            </p>
+          </div>
+
+          <!-- Sekcja FAQ -->
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-6" data-i18n="reg_h2_faq">Często Zadawane Pytania (FAQ)</h2>
+          
+          <div class="space-y-6 pt-2 not-prose">
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="reg_faq_q1">Jakie standardy automatyki obowiązują w&nbsp;przemyśle lotniczym (np.&nbsp;Rzeszów)?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="reg_faq_a1">
+                Przemysł lotniczy wymaga pełnej powtarzalności oraz&nbsp;skrupulatnego logowania parametrów każdego procesu (traceability). Systemy PLC/SCADA muszą gwarantować zapis danych procesowych oraz&nbsp;integrację z&nbsp;systemami ERP/MES zgodnie ze&nbsp;standardami normy AS9100.
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="reg_faq_q2">Jak zabezpieczyć roboty i&nbsp;szafy sterownicze w&nbsp;warunkach ciężkiego przemysłu miedziowego?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="reg_faq_a2">
+                Stosuje się dedykowane szafy o&nbsp;klasie szczelności IP66 z&nbsp;układami chłodzenia freonowego lub&nbsp;wodnego, odporne na&nbsp;zapylenie i&nbsp;wysoką temperaturę, a&nbsp;także pokrowce ochronne na&nbsp;roboty oraz&nbsp;specjalne przewody elastyczne o&nbsp;podwyższonej wytrzymałości termicznej.
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="reg_faq_q3">Czy NEXAUT realizuje wdrożenia i&nbsp;serwis na&nbsp;terenie całej Polski?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="reg_faq_a3">
+                Tak. Nasz zespół realizuje projekty wdrożeniowe, modernizacje (Retrofit) oraz&nbsp;wsparcie serwisowe i&nbsp;diagnostykę zdalną dla zakładów przemysłowych w&nbsp;każdym województwie.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-6" data-i18n="reg_h2_5">Podsumowanie – Zoptymalizuj produkcję w&nbsp;swoim regionie</h2>
+          <p data-i18n="reg_p5_1">
+            Niezależnie od&nbsp;branży i&nbsp;unikalnych wymagań środowiskowych, nowoczesna automatyzacja jest kluczem do&nbsp;podniesienia wydajności i&nbsp;konkurencyjności zakładu. Chcesz omówić projekt dla Twojej fabryki w&nbsp;Rzeszowie, Legnicy, Bydgoszczy czy&nbsp;Szczecinie? Skontaktuj się z&nbsp;zespołem NEXAUT!
+          </p>
+
+        </article>
+
+      </main>
+
+      <load src="/public/partials/footer.html" />
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="module" src="/src/main.js" defer></script>
+  </body>
+</html>

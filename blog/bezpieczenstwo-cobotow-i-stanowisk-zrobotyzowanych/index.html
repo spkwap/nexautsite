@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" data-i18n-meta="cobot_meta_desc" content="Poznaj wytyczne norm ISO 10218 oraz ISO/TS 15066 dotyczące bezpieczeństwa cobotów. Sprawdź, jak przeprowadzić audyt i certyfikację CE stanowiska bez wygrodzeń." />
+    
+    <title data-i18n="cobot_page_title">Bezpieczeństwo cobotów – Wytyczne ISO i audyt stanowiska – NEXAUT</title>
+
+    <!-- Ładujemy lokalne tłumaczenia tego artykułu -->
+    <script type="module" src="./article-lang.js"></script>
+
+    <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
+
+    <!-- Google Fonts & Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+
+  <body class="bg-nexaut-gray text-white font-sans min-h-screen flex flex-col relative">
+    <canvas id="cosmos"></canvas>
+
+    <div id="main-content" class="pt-24 relative overflow-hidden flex-grow flex flex-col justify-between">
+      
+      <load src="/public/partials/header.html" />
+
+      <main id="app" class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 w-full relative z-10 flex-grow">
+        
+        <a href="/blog/" onclick="if (document.referrer && document.referrer.includes(window.location.host)) { history.back(); return false; }" class="inline-flex items-center gap-2 text-[#81f5fb] font-mono text-sm mb-8 hover:underline">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="blog_back_btn">Powrót do artykułów</span>
+        </a>
+
+        <!-- Treść artykułu -->
+        <header class="mb-8">
+          <span class="text-sm font-mono text-[#81f5fb] block mb-2">10 SIERPNIA 2026</span>
+          <h1 data-i18n="cobot_h1" class="text-3xl sm:text-5xl font-mono font-bold text-white mb-6 leading-tight">
+            Bezpieczeństwo cobotów – wytyczne ISO i&nbsp;audyt stanowiska pracy
+          </h1>
+        </header>
+
+        <!-- Obrazek 1 (Główny) -->
+        <div class="rounded-2xl overflow-hidden border border-[#81f5fb]/30 mb-10 shadow-2xl bg-black/50">
+          <img src="/blognormal/cobot-safety-main.webp" alt="Bezpieczne stanowisko pracy z robotem współpracującym cobot bez wygrodzeń ochronnych" class="w-full h-auto max-h-[480px] object-cover" />
+        </div>
+
+        <article class="prose prose-invert max-w-none text-gray-300 space-y-6 text-lg leading-relaxed">
+          
+          <p class="text-xl text-gray-200 font-light border-l-4 border-[#81f5fb] pl-4 italic" data-i18n="cobot_intro">
+            Wielu przedsiębiorców błędnie zakłada, że kupując „robota współpracującego” (cobota), automatycznie zwolnieni są ze stosowania osłon, kurtyn świetlnych i skanerów bezpieczeństwa. To niebezpieczny mit. Certyfikacja i bezpieczeństwo nie dotyczą samego ramienia robota, lecz całego stanowiska zrobotyzowanego wraz z chwytakiem i przenoszonym detalem.
+          </p>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="cobot_h2_1">1. Mit „bezpiecznego robota” a rzeczywistość prawna (ISO 10218 i ISO/TS 15066)</h2>
+          <p data-i18n="cobot_p1_1">
+            Sam cobot jako maszyna nieukończona spełnia normę PN-EN ISO 10218-1. Jednak z chwilą zamontowania na nim narzędzia (np. ostrego chwytaka pneumatycznego) i pobrania detalu (np. arkusza blachy), tworzymy nową maszynę w rozumieniu Dyrektywy Maszynowej (lub rozporządzenia Machinery Regulation). Integrator ma obowiązek przeprowadzić pełną ocenę ryzyka zgodną z normą specyfikacji technicznej **ISO/TS 15066**.
+          </p>
+          
+          <ul class="list-disc pl-6 space-y-2 text-gray-300 font-mono text-sm sm:text-base">
+            <li><strong class="text-[#81f5fb]">Chwytaki i detale:</strong> Nawet powolny cobot niosący ostry lub gorący element stwarza ryzyko ciężkiego uszczerbku na zdrowiu.</li>
+            <li><strong class="text-[#81f5fb]">Strefy zakleszczenia:</strong> Miejsca między ramieniem robota a konstrukcją wsporczą lub stoiskiem operatora stanowią punkty krytyczne.</li>
+            <li><strong class="text-[#81f5fb]">Prędkość i masa:</strong> Energia kinetyczna układu wzrasta proporcjonalnie do kwadratu prędkości i masy ładunku.</li>
+          </ul>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="cobot_h2_2">2. Cztery tryby współpracy człowieka z robotem</h2>
+          <p data-i18n="cobot_p2_1">
+            Norma ISO 10218 wymienia cztery dopuszczalne metody zapewnienia bezpieczeństwa na stanowiskach zrobotyzowanych. W praktyce wdrażania cobotów najistotniejsze są dwa ostatnie tryby:
+          </p>
+
+          <ol class="list-decimal pl-6 space-y-2 text-gray-300 font-mono text-sm sm:text-base">
+            <li><strong>Safety-rated Monitored Stop:</strong> Robot zatrzymuje się automatycznie, gdy operator wkracza w jego strefę roboczą.</li>
+            <li><strong>Hand Guiding:</strong> Prowadzenie ręczne robota za pomocą dedykowanego uchwytu z przyciskiem zezwalającym (Enabling Device).</li>
+            <li><strong>Speed and Separation Monitoring (SSM):</strong> Robot zwalnia lub zatrzymuje się w zależności od odległości od operatora (mierzona np. skanerami laserowymi).</li>
+            <li><strong>Power and Force Limiting (PFL):</strong> Tryb, w którym ewentualny kontakt robota z człowiekiem nie powoduje obrażeń dzięki ograniczeniu siły i nacisku.</li>
+          </ol>
+
+          <!-- Boks wyróżniający (Pro-Tip) -->
+          <div class="my-8 p-6 bg-black/40 border-l-4 border-[#81f5fb] rounded-r-xl shadow-lg">
+            <h3 class="text-xl font-mono font-bold text-[#81f5fb] mb-2" data-i18n="cobot_callout_title">Złota Zasada Inżyniera NEXAUT</h3>
+            <p class="text-gray-300 text-base leading-relaxed" data-i18n="cobot_callout_text">
+              Tryb PFL (Power and Force Limiting) bez wygrodzeń wymaga obawiązko przeprowadzenia walidacji i fizycznych pomiarów siły uderzenia za pomocą certyfikowanego siłomierza (np. GKS Gissler / PRÜFTECHNIK). Pomiary wykonuje się dla każdej wrażliwej części ciała operatora wyznaczonej w ocenie ryzyka!
+            </p>
+          </div>
+
+          <!-- Drugie Zdjęcie (Czyste zdjęcie ze stocka) -->
+          <div class="my-8 rounded-xl overflow-hidden border border-[#81f5fb]/30 shadow-2xl bg-black/50">
+            <img src="/blognormal/cobot-safety-second.webp" alt="Audyt bezpieczeństwa i pomiar sił nacisku cobota podczas certyfikacji stanowiska zrobotyzowanego" class="w-full h-auto object-cover" />
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="cobot_h2_3">3. Pomiary siły i nacisku – progi biomechaniczne</h2>
+          <p data-i18n="cobot_p3_1">
+            Załącznik A normy ISO/TS 15066 określa dopuszczalne wartości graniczne siły (N) i ciśnienia/nacisku (N/cm²) dla 29 obszarów ludzkiego ciała (z podziałem na kontakt dozwolony i niedozwolony, np. głowa i szyja są całkowicie wyłączone ze stref kolizyjnych). Jeżeli zmierzona podczas testów zderzeniowych siła przekracza limity, konieczna jest zmiana trajektorii, zmniejszenie prędkości lub zastosowanie miękkich osłon amortyzujących.
+          </p>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="cobot_h2_4">4. Certyfikacja CE stanowiska zrobotyzowanego</h2>
+          <p data-i18n="cobot_p4_1">
+            Pozytywny wynik audytu bezpieczeństwa, kompletna dokumentacja oceny ryzyka oraz protokół pomiarowy stanowią podstawę do wystawienia Deklaracji Zgodności WE/UE oraz naniesienia tabliczki ze znakiem **CE** na całe stanowisko zrobotyzowane. Tylko w ten sposób pracodawca spełnia wymagania prawne i chroni się przed konsekwencjami ewentualnych wypadków przy pracy.
+          </p>
+
+          <!-- Sekcja FAQ -->
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-8" data-i18n="cobot_h2_faq">Często Zadawane Pytania (FAQ)</h2>
+          
+          <div class="space-y-6 pt-2">
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="cobot_faq_q1">Czy do każdego cobota muszę stawiać ogrodzenie ochronne?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="cobot_faq_a1">
+                Nie do każdego, ale zależy to od oceny ryzyka. Jeśli narzędzie robota (np. nóż, palnik, ostry chwytak) lub przenoszony element stwarza zagrożenie dla zdrowia, stanowisko musi posiadać osłony lub optoelektroniczne sensory bezpieczeństwa (np. skanery laserowe).
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="cobot_faq_q2">Kto odpowiada za bezpieczeństwo i nadanie znaku CE dla stanowiska z cobotem?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="cobot_faq_a2">
+                Za bezpieczeństwo całości odpowiada Integrator (firma wdrażająca aplikację) lub Zakład Przemysłowy, jeśli buduje stanowisko we własnym zakresie. Producent samego ramienia cobota dostarcza jedynie deklarację włączenia maszyny nieukończonej.
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="cobot_faq_q3">W jaki sposób inżynierowie NEXAUT pomagają w bezpiecznym wdrażaniu cobotów?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="cobot_faq_a3">
+                Przeprowadzamy kompleksowe audyty bezpieczeństwa istniejących i nowych stanowisk zrobotyzowanych, wykonujemy pomiary siły kolizji zgodnie z ISO/TS 15066, sporządzamy ocenę ryzyka oraz przygotowujemy pełną dokumentację do deklaracji CE.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-6" data-i18n="cobot_h2_5">Podsumowanie – Zadbaj o pełne bezpieczeństwo i zgodność z przepisami</h2>
+          <p data-i18n="cobot_p5_1">
+            Coboty oferują niespotykaną dotąd elastyczność w automatyzacji procesów, jednak wyeliminowanie tradycyjnych ogrodzeń nakłada obowiązek rzetelnego audytu bezpieczeństwa. Skontaktuj się z ekspertami NEXAUT, aby upewnić się, że Twoje stanowiska zrobotyzowane są w 100% bezpieczne dla pracowników i zgodne z normami ISO!
+          </p>
+
+        </article>
+
+      </main>
+
+      <load src="/public/partials/footer.html" />
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="module" src="/src/main.js" defer></script>
+  </body>
+</html>

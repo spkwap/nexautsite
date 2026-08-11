@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" data-i18n-meta="iot_meta_desc" content="Dowiedz się, jak wdrożyć Przemysł 4.0 i Industrial IoT. Zbieranie danych z PLC przez OPC UA i MQTT, integracja z chmurą oraz Predictive Maintenance." />
+    
+    <title data-i18n="iot_page_title">Przemysł 4.0 i IoT w praktyce – Zbieranie danych z maszyn – NEXAUT</title>
+
+    <!-- Ładujemy lokalne tłumaczenia tego artykułu -->
+    <script type="module" src="./article-lang.js"></script>
+
+    <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
+
+    <!-- Google Fonts & Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+
+  <body class="bg-nexaut-gray text-white font-sans min-h-screen flex flex-col relative">
+    <canvas id="cosmos"></canvas>
+
+    <div id="main-content" class="pt-24 relative overflow-hidden flex-grow flex flex-col justify-between">
+      
+      <load src="/public/partials/header.html" />
+
+      <main id="app" class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 w-full relative z-10 flex-grow">
+        
+        <a href="/blog/" onclick="if (document.referrer && document.referrer.includes(window.location.host)) { history.back(); return false; }" class="inline-flex items-center gap-2 text-[#81f5fb] font-mono text-sm mb-8 hover:underline">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="blog_back_btn">Powrót do artykułów</span>
+        </a>
+
+        <!-- Treść artykułu -->
+        <header class="mb-8">
+          <span class="text-sm font-mono text-[#81f5fb] block mb-2">10 SIERPNIA 2026</span>
+          <h1 data-i18n="iot_h1" class="text-3xl sm:text-5xl font-mono font-bold text-white mb-6 leading-tight">
+            Przemysł 4.0&nbsp;i&nbsp;IoT – jak zbierać i&nbsp;analizować dane z&nbsp;maszyn produkcyjnych?
+          </h1>
+        </header>
+
+        <!-- Obrazek 1 (Główny) -->
+        <div class="rounded-2xl overflow-hidden border border-[#81f5fb]/30 mb-10 shadow-2xl bg-black/50">
+          <img src="/blognormal/industry40-main.webp" alt="System monitorowania danych i wizualizacja analityki Przemysłu 4.0 w nowoczesnej fabryce" class="w-full h-auto max-h-[480px] object-cover" />
+        </div>
+
+        <article class="prose prose-invert max-w-none text-gray-300 space-y-6 text-lg leading-relaxed">
+          
+          <p class="text-xl text-gray-200 font-light border-l-4 border-[#81f5fb] pl-4 italic" data-i18n="iot_intro">
+            Przemysłowy Internet Rzeczy (IIoT) i&nbsp;koncepcja Przemysłu 4.0 wykraczają daleko poza teoretyczne hasła marketingowe. Dla współczesnego zakładu produkcyjnego dane z&nbsp;maszyn stanowią cenne źródło wiedzy o&nbsp;wydajności procesów, wskaźniku OEE (Overall Equipment Effectiveness) oraz zbliżających się awariach. Sprawdź, jak prawidłowo zbudować architekturę zbierania danych z&nbsp;parku maszynowego.
+          </p>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="iot_h2_1">1. Kluczowe protokoły komunikacyjne: OPC UA oraz MQTT</h2>
+          <p data-i18n="iot_p1_1">
+            Podstawą sprawnego przesyłania danych między warstwą sterowania OT (Operational Technology) a&nbsp;warstwą IT jest wyznaczenie uniwersalnego języka komunikacji. Tradycyjne protokoły przemysłowe ustępują miejsca nowoczesnym standardom otwartym:
+          </p>
+          
+          <ul class="list-disc pl-6 space-y-2 text-gray-300 font-mono text-sm sm:text-base">
+            <li><strong class="text-[#81f5fb]">OPC UA (Open Platform Communications Unified Architecture):</strong> Standard znieczulony na&nbsp;producenta sprzętu, oferujący wbudowane szyfrowanie oraz bezproblemową strukturę obiektową.</li>
+            <li><strong class="text-[#81f5fb]">MQTT (Message Queuing Telemetry Transport):</strong> Lekki protokół typu Publish/Subscribe, stworzony do&nbsp;przesyłania olbrzymich wolumenów danych telemetrycznych przy minimalnym obciążeniu pasma sieciowego.</li>
+          </ul>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="iot_h2_2">2. Architektura Edge Computing – przetwarzanie przy maszynie</h2>
+          <p data-i18n="iot_p2_1">
+            Wysyłanie surowych sygnałów z&nbsp;czujników (np. próbkowanie drgań z&nbsp;częstotliwością 10 kHz) bezpośrednio do&nbsp;chmury jest nieefektywne i&nbsp;kosztowne. Właśnie dlatego kluczową rolę odgrywają przemysłowe komputery Edge (np. Siemens Industrial Edge, WAGO Edge Controller). Urządzenia te wstępnie filtrują, agregują i&nbsp;anonimizują dane przed przekazaniem ich wyżej do&nbsp;systemów MES lub chmury AWS/Azure.
+          </p>
+
+          <!-- Boks wyróżniający (Pro-Tip) -->
+          <div class="my-8 p-6 bg-black/40 border-l-4 border-[#81f5fb] rounded-r-xl shadow-lg">
+            <h3 class="text-xl font-mono font-bold text-[#81f5fb] mb-2" data-i18n="iot_callout_title">Złota Zasada Inżyniera NEXAUT</h3>
+            <p class="text-gray-300 text-base leading-relaxed" data-i18n="iot_callout_text">
+              Nigdy nie obciążaj głównej pętli sterowania cyklicznego sterownika PLC (programu wykonawczego maszyny) zadaniami wysyłania skomplikowanych zapytania do&nbsp;baz danych. Dedykuj do&nbsp;tego osobny wątek w&nbsp;serwerze OPC UA lub zastosuj zewnętrzną bramkę komunikacyjną IIoT.
+            </p>
+          </div>
+
+          <!-- Drugie Zdjęcie (Czyste zdjęcie ze stocka) -->
+          <div class="my-8 rounded-xl overflow-hidden border border-[#81f5fb]/30 shadow-2xl bg-black/50">
+            <img src="/blognormal/industry40-second.webp" alt="Integracja sterownika PLC z systemem chmurowym do predykcyjnego utrzymania ruchu Predictive Maintenance" class="w-full h-auto object-cover" />
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="iot_h2_3">3. Predykcyjne utrzymanie ruchu (Predictive Maintenance)</h2>
+          <p data-i18n="iot_p3_1">
+            Zamiast reagować na&nbsp;awarię po&nbsp;jej wystąpieniu (Reagowanie) lub wymieniać sprawne komponenty na&nbsp;zaś (Służba Prewencyjna), zaawansowana analityka danych pozwala wdrożyć Predictive Maintenance. Algorytmy uczenia maszynowego (ML) analizują prądy silników, temperaturę łożysk oraz profil drgań, wykrywając symptom uszkodzenia na&nbsp;wiele tygodni przed rzeczywistym zatrzymaniem linii.
+          </p>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="iot_h2_4">4. Bezpieczeństwo IT/OT i separacja sieci (Cybersecurity)</h2>
+          <p data-i18n="iot_p4_1">
+            Połączenie środowiska produkcyjnego z&nbsp;siecią zakładową IT lub chmurą stwarza nowe wyzwania z&nbsp;zakresu cyberbezpieczeństwa. Podstawą bezpiecznej wdrożenia jest fizyczna lub logiczna separacja sieci (VLAN), stosowanie przemysłowych zapór ogniowych (Firewall) z&nbsp;głęboką inspekcją pakietów DPI oraz wdrożenie normy IEC 62443.
+          </p>
+
+          <!-- Sekcja FAQ -->
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-8" data-i18n="iot_h2_faq">Często Zadawane Pytania (FAQ)</h2>
+          
+          <div class="space-y-6 pt-2">
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="iot_faq_q1">Czy do wdrożenia IIoT wymagana jest wymiana starych maszyn i sterowników PLC?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="iot_faq_a1">
+                Nie! Koncepcja tzw. Retrofittingu pozwala doposażyć istniejące starsze maszyny w dodatkowe czujniki (np. drgań i temperatury) oraz zewnętrzne bramki IoT, które pobierają dane bez ingerencji w oryginalny program sterownika PLC.
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="iot_faq_q2">Jaka jest różnica między systemem SCADA a systemem MES i chmurą IIoT?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="iot_faq_a2">
+                SCADA służy do bieżącego sterowania i wizualizacji procesu w czasie rzeczywistym na hali. System MES zarządza zleceniami produkcyjnymi i rozlicza czas pracy, natomiast chmura IIoT integruje dane z wielu zakładów, pozwalając na zaawansowaną analitykę i predykcję awarii.
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="iot_faq_q3">Jak NEXAUT pomaga we wdrażaniu rozwiązań Przemysłu 4.0?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="iot_faq_a3">
+                Projektujemy i wdrażamy kompleksowe architektury IIoT – od integracji sterowników PLC (Siemens, Allen-Bradley), przez konfigurację serwerów OPC UA i bramek Edge, aż po przesyłanie i wizualizację danych w systemach MES oraz dashboardach analitycznych.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-6" data-i18n="iot_h2_5">Podsumowanie – Przekształć dane produkcyjne w przewagę konkurencyjną</h2>
+          <p data-i18n="iot_p5_1">
+            Prawidłowo zaplanowana infrastruktura zbierania danych z maszyn redukuje nieplanowane przestoje, podnosi wskaźnik OEE i ułatwia podejmowanie trafnych decyzji biznesowych. Chcesz cyfryzować swój park maszynowy zgodnie z najlepszymi praktykami? Skontaktuj się z zespołem inżynierów NEXAUT!
+          </p>
+
+        </article>
+
+      </main>
+
+      <load src="/public/partials/footer.html" />
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="module" src="/src/main.js" defer></script>
+  </body>
+</html>

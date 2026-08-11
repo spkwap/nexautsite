@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" data-i18n-meta="pn_meta_desc" content="Poznaj metody diagnostyki i optymalizacji sieci Profinet na obiekcie. Jak eliminować zakłócenia EMC, błędy okablowania i przeciążenia pętli komunikacyjnych?" />
+    
+    <title data-i18n="pn_page_title">Diagnostyka i optymalizacja sieci Profinet – NEXAUT</title>
+
+    <!-- Ładujemy lokalne tłumaczenia tego artykułu -->
+    <script type="module" src="./article-lang.js"></script>
+
+    <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
+
+    <!-- Google Fonts & Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+
+  <body class="bg-nexaut-gray text-white font-sans min-h-screen flex flex-col relative">
+    <canvas id="cosmos"></canvas>
+
+    <div id="main-content" class="pt-24 relative overflow-hidden flex-grow flex flex-col justify-between">
+      
+      <load src="/public/partials/header.html" />
+
+      <main id="app" class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 w-full relative z-10 flex-grow">
+        
+        <a href="/blog/" onclick="if (document.referrer && document.referrer.includes(window.location.host)) { history.back(); return false; }" class="inline-flex items-center gap-2 text-[#81f5fb] font-mono text-sm mb-8 hover:underline">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="blog_back_btn">Powrót do artykułów</span>
+        </a>
+
+        <!-- Treść artykułu -->
+        <header class="mb-8">
+          <span class="text-sm font-mono text-[#81f5fb] block mb-2">10 SIERPNIA 2026</span>
+          <h1 data-i18n="pn_h1" class="text-3xl sm:text-5xl font-mono font-bold text-white mb-6 leading-tight">
+            Prawidłowa diagnostyka i&nbsp;optymalizacja sieci Profinet na&nbsp;obiekcie
+          </h1>
+        </header>
+
+        <!-- Obrazek 1 (Główny) -->
+        <div class="rounded-2xl overflow-hidden border border-[#81f5fb]/30 mb-10 shadow-2xl bg-black/50">
+          <img src="/blognormal/profinet-main.webp" alt="Inżynier sprawdzający stan połączeń magistrali Profinet w szafie sterowniczej" class="w-full h-auto max-h-[480px] object-cover" />
+        </div>
+
+        <article class="prose prose-invert max-w-none text-gray-300 space-y-6 text-lg leading-relaxed">
+          
+          <p class="text-xl text-gray-200 font-light border-l-4 border-[#81f5fb] pl-4 italic" data-i18n="pn_intro">
+            Profinet to&nbsp;obecnie najpopularniejszy standard komunikacyjny w&nbsp;automatyce przemysłowej. Choć technologia ta&nbsp;opiera się na&nbsp;niezawodnym przemysłowym Ethernet, losowe wypatrywanie błędów w&nbsp;przypadku zatrzymania linii produkcyjnej potrafi trwać godzinami. Poznaj najważniejsze przyczyny awarii magistrali Profinet oraz skuteczne procedury diagnostyczne i&nbsp;optymalizacyjne.
+          </p>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="pn_h2_1">1. Fizyczna warstwa sieci – najczęstszy źródło problemów</h2>
+          <p data-i18n="pn_p1_1">
+            Ponad 70% awarii sieci Profinet wynika z&nbsp;zaniedbań na&nbsp;poziomie infrastruktury kablowej. Do&nbsp;najczęstszych grzechów montażowych należą zagięcia zielonych przewodów Ethernetowych przekraczające dopuszczalny promień gięcia, niewłaściwy zarobek wtyków RJ45 lub M12 oraz zbyt duży odcinek zdjętego ekranu przy uziemieniu.
+          </p>
+          
+          <ul class="list-disc pl-6 space-y-2 text-gray-300 font-mono text-sm sm:text-base">
+            <li><strong class="text-[#81f5fb]">Zakłócenia EMC:</strong> Prowadzenie kabli sygnałowych w&nbsp;jednej korycie razem z&nbsp;kablami zasilającymi falowniki.</li>
+            <li><strong class="text-[#81f5fb]">Brak ciągłości ekranu:</strong> Niewłaściwie zamontowane klamry uziemiające (Shield Connection) w&nbsp;szafie sterowniczej.</li>
+            <li><strong class="text-[#81f5fb]">Przekroczenie długości:</strong> Długość pojedynczego odcinka miedzianego skrętki przekraczająca 100 metrów bez repetera.</li>
+          </ul>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="pn_h2_2">2. Pomiary i narzędzia diagnostyki fizycznej</h2>
+          <p data-i18n="pn_p2_1">
+            Zwykły multimetr nie nadaje się do&nbsp;testowania magistrali wysokie częstotliwości. Przed uruchomieniem instalacji należy wykonać audyt za&nbsp;pomocą dedykowanych testerów okablowania (np. Fluke Networks), które sprawdzają przesłuchy, tłumienność oraz impedancję przewodu.
+          </p>
+
+          <!-- Boks wyróżniający (Pro-Tip) -->
+          <div class="my-8 p-6 bg-black/40 border-l-4 border-[#81f5fb] rounded-r-xl shadow-lg">
+            <h3 class="text-xl font-mono font-bold text-[#81f5fb] mb-2" data-i18n="pn_callout_title">Złota Zasada Inżyniera NEXAUT</h3>
+            <p class="text-gray-300 text-base leading-relaxed" data-i18n="pn_callout_text">
+              Zawsze stosuj obustronne uziemienie ekranu kabla Profinet do&nbsp;szyny wyrównania potencjałów (PE) za&nbsp;pomocą specjalnych klamer sprężynowych o&nbsp;dużej powierzchni styku. Zwykłe skręcanie ekranu w&nbsp;tzw. „pigtail” działa jak antena odbiorcza dla zakłóceń elektromagnetycznych!
+            </p>
+          </div>
+
+          <!-- Drugie Zdjęcie (Czyste zdjęcie ze stocka) -->
+          <div class="my-8 rounded-xl overflow-hidden border border-[#81f5fb]/30 shadow-2xl bg-black/50">
+            <img src="/blognormal/profinet-second.webp" alt="Przemysłowy switch Ethernet oraz zielone przewody sieciowe Profinet w szafie automatyki" class="w-full h-auto object-cover" />
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="pn_h2_3">3. Optymalizacja cyklu i czasu odświeżania (Send Clock & Update Time)</h2>
+          <p data-i18n="pn_p3_1">
+            Nieprzemyślana konfiguracja programowa w&nbsp;TIA Portal lub innym środowisku może doprowadzić do&nbsp;przeciążenia procesora sterownika PLC. Nie każde urządzenie w&nbsp;sieci wymaga odświeżania danych co&nbsp;1&nbsp;ms. Dla wysp zaworowych czy prostych czujników czas odświeżania na&nbsp;poziomie 8&nbsp;ms lub 16&nbsp;ms jest w&nbsp;zupełności wystarczający i&nbsp;znacząco odciąża ruch sieciowy.
+          </p>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="pn_h2_4">4. Analiza logiczna i monitoring stanów stacji (PN-TAP & Wireshark)</h2>
+          <p data-i18n="pn_p4_1">
+            Podczas trudnych do&nbsp;zdiagnozowania, sporadycznych błędów (np. pojedynczy gubiony pakiet raz na&nbsp;tydzień), warto wpiąć w&nbsp;sieć pasywny analizator (PN-TAP) i&nbsp;rejestrować ruch programem Wireshark lub dedykowanym systemem diagnostycznym (np. InduSol PROmesh / Diagnostic Tool). Pozwala to&nbsp;precyzyjnie wskazać, które urządzenie zerwało połączenie jako pierwsze.
+          </p>
+
+          <!-- Sekcja FAQ -->
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-8" data-i18n="pn_h2_faq">Często Zadawane Pytania (FAQ)</h2>
+          
+          <div class="space-y-6 pt-2">
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="pn_faq_q1">Co oznacza błąd BF (Bus Fault) na sterowniku PLC lub wyspie I/O?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="pn_faq_a1">
+                Dioda BF sygnalizuje brak komunikacji z przynajmniej jednym skonfigurowanym urządzeniem Profinet. Przyczyną może być fizyczne uszkodzenie przewodu, brak zasilania węzła, uszkodzony switch lub niezgodność nazwy Profinet Name/IP.
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="pn_faq_q2">Jaka jest różnica między Profinet RT (Real-Time) a IRT (Isochronous Real-Time)?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="pn_faq_a2">
+                Profinet RT służy do standardowej komunikacji na linii (czasy reakcji 1-10 ms). Profinet IRT to komunikacja deterministyczna z synchronizacją zegarową poniżej 1 ms, wymagana przy wieloosiowym sterowaniu serwonapędami (Motion Control).
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="pn_faq_q3">Czy NEXAUT świadczy usługi audytu i pomiarów sieci Profinet?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="pn_faq_a3">
+                Tak. Inżynierowie NEXAUT wykonują kompleksowe pomiary fizyczne i logiczne istniejących magistrali Profinet/Profibus, lokalizują usterki EMC, optymalizują topologię oraz wystawiają protokoły zdawcze.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-6" data-i18n="pn_h2_5">Podsumowanie – Zapewnij bezawaryjną komunikację w Twoim zakładzie</h2>
+          <p data-i18n="pn_p5_1">
+            Stabilna sieć Profinet to fundament płynnej pracy nowoczesnej fabryki. Unikanie błędów montażowych, przemyślana konfiguracja parametrów odświeżania oraz okresowe audyty sieci pozwalają całkowicie wyeliminować niespodziewane przestoje technologiczne. Potrzebujesz wsparcia w diagnostyce komunikacji na obiekcie? Skontaktuj się z zespołem NEXAUT!
+          </p>
+
+        </article>
+
+      </main>
+
+      <load src="/public/partials/footer.html" />
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="module" src="/src/main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" data-i18n-meta="cc_meta_desc"
+        content="Poznaj zasady Clean Code w programowaniu PLC. Standardyzacja tagów, architektura modułowa, maszyny stanów PackML oraz obsługa błędów wg normy IEC 61131-3." />
+
+    <title data-i18n="cc_page_title">Dobre praktyki programowania PLC – Clean Code – NEXAUT</title>
+
+    <!-- Ładujemy lokalne tłumaczenia tego artykułu -->
+    <script type="module" src="./article-lang.js"></script>
+
+    <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
+
+    <!-- Google Fonts & Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" media="print"
+        onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body class="bg-nexaut-gray text-white font-sans min-h-screen flex flex-col relative">
+    <canvas id="cosmos"></canvas>
+
+    <div id="main-content" class="pt-24 relative overflow-hidden flex-grow flex flex-col justify-between">
+
+        <load src="/public/partials/header.html" />
+
+        <main id="app" class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 w-full relative z-10 flex-grow">
+
+            <a href="/blog/" onclick="if (document.referrer && document.referrer.includes(window.location.host)) { history.back(); return false; }"
+                class="inline-flex items-center gap-2 text-[#81f5fb] font-mono text-sm mb-8 hover:underline">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="blog_back_btn">Powrót do
+                    artykułów</span>
+            </a>
+
+            <!-- Treść artykułu -->
+            <header class="mb-8">
+                <span class="text-sm font-mono text-[#81f5fb] block mb-2">10 SIERPNIA 2026</span>
+                <h1 data-i18n="cc_h1" class="text-3xl sm:text-5xl font-mono font-bold text-white mb-6 leading-tight">
+                    Dobre praktyki programowania PLC – jak pisać czysty i&nbsp;bezpieczny kod?
+                </h1>
+            </header>
+
+            <!-- Obrazek 1 (Główny) -->
+            <div class="rounded-2xl overflow-hidden border border-[#81f5fb]/30 mb-10 shadow-2xl bg-black/50">
+                <img src="/blognormal/plc-programming-main.webp"
+                    alt="Praca inżyniera automatyka nad architekturą kodu PLC dla stacji przemysłowej"
+                    class="w-full h-auto max-h-[480px] object-cover" />
+            </div>
+
+            <article class="prose prose-invert max-w-none text-gray-300 space-y-6 text-lg leading-relaxed">
+
+                <p class="text-xl text-gray-200 font-light border-l-4 border-[#81f5fb] pl-4 italic"
+                    data-i18n="cc_intro">
+                    W&nbsp;świecie automatyki przemysłowej panuje niepisana zasada: kod sterownika PLC pisze się raz,
+                    ale czyta i&nbsp;serwisuje setki razy. Dobre praktyki programowania (Clean Code) to&nbsp;nie
+                    estetyczny kaprys, lecz fundament niezawodności, skróconego czasu przestojów oraz bezpieczeństwa
+                    pracy maszyn. Sprawdź, jak pisać oprogramowanie PLC zgodnie z&nbsp;najlepszymi standardami
+                    inżynieryjnymi.
+                </p>
+
+                <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="cc_h2_1">1. Standardyzacja
+                    zmiennych i konwencje nazewnicze</h2>
+                <p data-i18n="cc_p1_1">
+                    Zatroszcz się o&nbsp;to, aby nazwa każdej zmiennej natychmiast zdradzała jej przeznaczenie
+                    i&nbsp;typ. Unikaj niejednoznacznych skrótów typu <code>temp1</code> czy <code>M0.0</code>.
+                    W&nbsp;nowoczesnym programowaniu PLC wg&nbsp;normy IEC 61131-3 stosuje się czytelne przedrostki
+                    (tzw. konwencja węgierska lub CamelCase):
+                </p>
+
+                <ul class="list-disc pl-6 space-y-2 text-gray-300 font-mono text-sm sm:text-base">
+                    <li><strong class="text-[#81f5fb]">i_ / xIn_</strong> – wejścia cyfrowe (np.
+                        <code>i_Sensor_PartPresent</code>)</li>
+                    <li><strong class="text-[#81f5fb]">q_ / xOut_</strong> – wyjścia cyfrowe (np.
+                        <code>q_Valve_CylinderExtend</code>)</li>
+                    <li><strong class="text-[#81f5fb]">r_ / rVal_</strong> – zmienne zmiennopozycyjne REAL (np.
+                        <code>r_ActualTemperature</code>)</li>
+                    <li><strong class="text-[#81f5fb]">stat_ / inst_</strong> – zmienne statyczne i&nbsp;instancje
+                        bloków funkcjonalnych</li>
+                </ul>
+
+                <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="cc_h2_2">2. Architektura
+                    modułowa i zasada DRY (Don't Repeat Yourself)</h2>
+                <p data-i18n="cc_p2_1">
+                    Pisanie całej logiki maszyny w&nbsp;jednym blokowym pliku głównym (np. OB1) to&nbsp;prosta droga
+                    do&nbsp;tzw. „Spaghetti Code”. Prawidłowa struktura opiera się na&nbsp;podziale aplikacji
+                    na&nbsp;wielokrotnie używalne bloki funkcjonalne (FB) i&nbsp;funkcje (FC). Każde fizyczne urządzenie
+                    – silnik, zawór, czujnik analogowy – powinno posiadać swój własny, przetestowany blok biblioteczny
+                    z&nbsp;wyraźnie zdefiniowanym interfejsem wejść i&nbsp;wyjść.
+                </p>
+
+                <!-- Boks wyróżniający (Pro-Tip) -->
+                <div class="my-8 p-6 bg-black/40 border-l-4 border-[#81f5fb] rounded-r-xl shadow-lg">
+                    <h3 class="text-xl font-mono font-bold text-[#81f5fb] mb-2" data-i18n="cc_callout_title">Złota
+                        Zasada Inżyniera NEXAUT</h3>
+                    <p class="text-gray-300 text-base leading-relaxed" data-i18n="cc_callout_text">
+                        Jeśli ten sam fragment kodu kopiujesz w&nbsp;projekcie więcej niż dwa razy, natychmiast zamień
+                        go w&nbsp;uniwersalny blok funkcyjny (FB). Zmiana logiki w&nbsp;jednym miejscu biblioteki
+                        automatycznie zaktualizuje działanie wszystkich obiektów na&nbsp;linii produkcyjnej.
+                    </p>
+                </div>
+
+                <!-- Drugie Zdjęcie (Czyste zdjęcie ze stocka zamiast SVG) -->
+                <div class="my-8 rounded-xl overflow-hidden border border-[#81f5fb]/30 shadow-2xl bg-black/50">
+                    <img src="/blognormal/plc-programming-second.webp"
+                        alt="Inżynier automatyk piszący przejrzysty kod dla sterownika PLC w środowisku programistycznym"
+                        class="w-full h-auto object-cover" />
+                </div>
+
+                <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="cc_h2_3">3. Maszyny stanów
+                    (State Machines) i standard PackML</h2>
+                <p data-i18n="cc_p3_1">
+                    Sterowanie sekwencją pracy stacji roboczej powinno opierać się na&nbsp;jawnej maszynie stanów (np.
+                    przy użyciu instrukcji <code>CASE...OF</code> w&nbsp;języku SCL/ST). Zamiast gubić się
+                    w&nbsp;setkach flanek i&nbsp;zazębionych warunków <code>IF-THEN</code>, program jednoznacznie
+                    przechodzi przez zdefiniowane kroki: <i>INIT, IDLE, EXECUTE, STOPPING, ERROR</i>. Powszechne
+                    stosowanie standardu PackML ułatwia integrację maszyn od&nbsp;różnych dostawców.
+                </p>
+
+                <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="cc_h2_4">4. Wbudowana
+                    diagnostyka i bezpieczna obsługa błędów</h2>
+                <p data-i18n="cc_p4_1">
+                    Czysty kod PLC nie tylko realizuje ruchy wykonawcze, ale precyzyjnie informuje operatora
+                    o&nbsp;problemach. Każdy siłownik powinien posiadać kontrolę czasu dojazdu do&nbsp;krańcówki
+                    (Timeout). W&nbsp;przypadku awarii, sterownik powinien generować konkretny komunikat błędów
+                    na&nbsp;panelu HMI (np. „Przekroczony czas wysuwu siłownika CY1”), zamiast zatrzymywać linię bez
+                    podania przyczyny.
+                </p>
+
+                <!-- Sekcja FAQ -->
+                <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-8" data-i18n="cc_h2_faq">Często Zadawane
+                    Pytania (FAQ)</h2>
+
+                <div class="space-y-6 pt-2">
+                    <div class="border-b border-gray-800 pb-4">
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="cc_faq_q1">Jaki język programowania
+                            wybrać: LAD (Drabinka) czy SCL/ST (Tekst strukturalny)?</h3>
+                        <p class="text-gray-300 text-base leading-relaxed" data-i18n="cc_faq_a1">
+                            Zgodnie z dobrymi praktykami, do prostej logiki zezwoleń, bezpieczeństwa i sekwencji
+                            idealnie nadaje się język drabinkowy (LAD), ponieważ jest czytelny dla automatyków
+                            utrzymania ruchu. Natomiast skomplikowane przeliczenia matematyczne, operacje na ciągach
+                            znaków, pętle oraz maszyny stanów warto pisać w języku SCL/ST.
+                        </p>
+                    </div>
+
+                    <div class="border-b border-gray-800 pb-4">
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="cc_faq_q2">Dlaczego nie należy stosować
+                            hardkodowanych adresów i zmiennych M (Merkerów)?</h3>
+                        <p class="text-gray-300 text-base leading-relaxed" data-i18n="cc_faq_a2">
+                            Używanie pamięci Merkerów (M) oraz sztywnych adresów sprzyja przypadkowemu nadpisaniu
+                            pamięci w innych częściach programu. Zamiast tego nowoczesne środowiska (TIA Portal, Studio
+                            5000) bazują na zmiennych symbolicznych oraz uporządkowanych blokach danych (Data Blocks
+                            DB).
+                        </p>
+                    </div>
+
+                    <div class="border-b border-gray-800 pb-4">
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="cc_faq_q3">Czy NEXAUT audytuje i
+                            standaryzuje istniejący kod PLC?</h3>
+                        <p class="text-gray-300 text-base leading-relaxed" data-i18n="cc_faq_a3">
+                            Tak. Zespół NEXAUT zajmuje się refaktoryzacją, tworzeniem dedykowanych bibliotek standardów
+                            firmowych (PLC/HMI) oraz audytowaniem kodu pod kątem wydajności, bezpieczeństwa i łatwości
+                            serwisowania.
+                        </p>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-6" data-i18n="cc_h2_5">Podsumowanie – Postaw
+                    na najwyższą jakość kodu z NEXAUT</h2>
+                <p data-i18n="cc_p5_1">
+                    Inwestycja w czysty, przejrzysty i dobrze udokumentowany kod PLC zwraca się przy pierwszym
+                    przeglądzie lub awarii na obiekcie. Profesjonalnie napisany program skraca czas uruchomienia i
+                    minimalizuje ryzyko nieplanowanych przestojów. Chcesz wdrożyć najwyższe standardy programowania w
+                    swojej firmie? Skontaktuj się z ekspertami NEXAUT.
+                </p>
+
+            </article>
+
+        </main>
+
+        <load src="/public/partials/footer.html" />
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="module" src="/src/main.js" defer></script>
+</body>
+
+</html>

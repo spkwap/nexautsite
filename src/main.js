@@ -9,21 +9,29 @@ const loadedTranslations = {};
 
 // Dynamiczne pobieranie pliku tłumaczeń na żądanie
 async function loadTranslation(lang) {
-  if (loadedTranslations[lang]) {
-    return loadedTranslations[lang];
-  }
+  let globalData = {};
 
-  try {
-    const module = await import(`./lang/${lang}.js`);
-    loadedTranslations[lang] = module[lang];
-    return module[lang];
-  } catch (err) {
-    console.error(`Nie udało się załadować języka: ${lang}`, err);
-    // Fallback do języka polskiego
-    if (lang !== 'pl') {
-      return await loadTranslation('pl');
+  // 1. Pobieramy globalne tłumaczenia (Header, Footer, Strona /blog/ itp.)
+  if (loadedTranslations[lang]) {
+    globalData = loadedTranslations[lang];
+  } else {
+    try {
+      const module = await import(`./lang/${lang}.js`);
+      loadedTranslations[lang] = module[lang];
+      globalData = module[lang];
+    } catch (err) {
+      console.error(`Nie udało się załadować języka: ${lang}`, err);
+      if (lang !== 'pl') {
+        return await loadTranslation('pl');
+      }
     }
   }
+
+  // 2. Jeśli jesteśmy na podstronie wpisu i załadowano lokalny plik article-lang.js
+  const postData = window.POST_TRANSLATIONS?.[lang] || {};
+
+  // 3. Łączymy interfejs globalny z treścią wpisu
+  return { ...globalData, ...postData };
 }
 
 // Ustawienie początkowego języka w strukturze HTML

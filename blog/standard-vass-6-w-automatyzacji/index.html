@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" data-i18n-meta="vass_meta_desc" content="Standard VASS 6 to precyzyjny zestaw wytycznych programistycznych i sprzętowych. Sprawdź, dlaczego koncern VW go wymaga i jak wpływa na projekty automotive." />
+    
+    <title data-i18n="vass_page_title">Czym jest standard VASS 6 w automatyce i dlaczego VW go wymaga? – NEXAUT</title>
+
+    <!-- Ładujemy lokalne tłumaczenia tego artykułu -->
+    <script type="module" src="./article-lang.js"></script>
+
+    <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
+
+    <!-- Google Fonts & Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+
+  <body class="bg-nexaut-gray text-white font-sans min-h-screen flex flex-col relative">
+    <canvas id="cosmos"></canvas>
+
+    <div id="main-content" class="pt-24 relative overflow-hidden flex-grow flex flex-col justify-between">
+      
+      <load src="/public/partials/header.html" />
+
+      <main id="app" class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 w-full relative z-10 flex-grow">
+        
+        <a href="/blog/" onclick="if (document.referrer && document.referrer.includes(window.location.host)) { history.back(); return false; }" class="inline-flex items-center gap-2 text-[#81f5fb] font-mono text-sm mb-8 hover:underline">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="blog_back_btn">Powrót do artykułów</span>
+        </a>
+
+        <!-- Treść polska natywnie w kodzie HTML -->
+        <header class="mb-8">
+          <span class="text-sm font-mono text-[#81f5fb] block mb-2">10 SIERPNIA 2026</span>
+          <h1 data-i18n="vass_h1" class="text-3xl sm:text-5xl font-mono font-bold text-white mb-6 leading-tight">
+            Czym jest standard VASS 6&nbsp;w&nbsp;automatyce i&nbsp;dlaczego koncern VW go wymaga?
+          </h1>
+        </header>
+
+        <!-- Obrazek 1 (Główny) -->
+        <div class="rounded-2xl overflow-hidden border border-[#81f5fb]/30 mb-10 shadow-2xl bg-black/50">
+          <img src="/blognormal/vass-main.webp" alt="Standard VASS 6 w automatyce przemysłowej i robocie KUKA VW" class="w-full h-auto max-h-[480px] object-cover" />
+        </div>
+
+        <article class="prose prose-invert max-w-none text-gray-300 space-y-6 text-lg leading-relaxed">
+          
+          <p class="text-xl text-gray-200 font-light border-l-4 border-[#81f5fb] pl-4 italic" data-i18n="vass_intro">
+            Standard VASS 6&nbsp;to jeden z&nbsp;najbardziej rygorystycznych i&nbsp;zaawansowanych standardów automatyzacji na&nbsp;świecie. Opracowany przez Grupę Volkswagen, stanowi bezwzględny wymóg dla dostawców maszyn, robotyków i&nbsp;programistów PLC budujących linie produkcyjne dla marek VW, Audi, SEAT, Škoda oraz Porsche.
+          </p>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="vass_h2_1">Geneza i definicja: Co oznacza skrót VASS?</h2>
+          <p data-i18n="vass_p1_1">
+            Nazwa standardu pochodzi od&nbsp;akronimu głównych marek koncernu: <strong>V</strong>olkswagen, <strong>A</strong>udi, <strong>S</strong>EAT oraz <strong>S</strong>koda. Najnowsza generacja – <strong>VASS 6</strong> (bazująca na&nbsp;środowisku Siemens TIA Portal oraz robotach KUKA/FANUC) – definiuje jednolitą strukturę sprzętową, programową i&nbsp;wizualizacyjną dla fabryk na&nbsp;całym świecie.
+          </p>
+          <p data-i18n="vass_p1_2">
+            Głównym celem VASS jest uniknięcie sytuacji, w&nbsp;której każda linia produkcyjna zaprojektowana przez zewnętrznego integratora ma&nbsp;unikalną, „autorską” architekturę sterowania. Dzięki standaryzacji, utrzymanie ruchu w&nbsp;dowolnej fabryce VW operuje na&nbsp;identycznych blokach funkcyjnych, diagnostyce i&nbsp;interfejsie HMI.
+          </p>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="vass_h2_2">Filary standardu VASS 6 w praktyce inżynieryjnej</h2>
+          <p data-i18n="vass_p2_intro">
+            Wdrożenie VASS 6 obejmuje kompleksowe zasady w&nbsp;czterech głównych obszarach technicznych:
+          </p>
+          
+          <ul class="list-disc pl-6 space-y-3 text-gray-300">
+            <li data-i18n="vass_li_2_1">
+              <strong>Sterowniki PLC i TIA Portal:</strong> Ściśle określona struktura bloków FB/FC, bibliotek funkcjonalnych oraz numeracji zmiennych. Zdecentralizowane sterowanie opiera się na&nbsp;sieciach PROFINET z&nbsp;wykorzystaniem profili PROFIsafe.
+            </li>
+            <li data-i18n="vass_li_2_2">
+              <strong>Robotyzacja (KUKA KRC4 / FANUC):</strong> Standaryzowane makra ruchowe, dedykowane struktury sygnałowe interfejsu PLC-Robot oraz sztywne wytyczne dotyczące konfiguracji narzędzi (chwytaków, zgrzewadeł, pistoletów klejących).
+            </li>
+            <li data-i18n="vass_li_2_3">
+              <strong>Diagnostyka i HMI (WinCC / ProDiag):</strong> Jednolity wygląd paneli operatorskich. Każdy błąd na&nbsp;linii generuje natychmiastowy komunitat diagnostyczny wskazujący precyzyjny czujnik lub napęd bez potrzeby podłączania komputera inżynierskiego.
+            </li>
+            <li data-i18n="vass_li_2_4">
+              <strong>Hardware-Freigabeliste (Lista Zatwierdzonego Sprzętu):</strong> Integrator może używać wyłącznie komponentów (czujników, zaworów, wysp zaworowych, skanerów) znajdujących się na&nbsp;oficjalnej liście zatwierdzonej przez koncern VW.
+            </li>
+          </ul>
+
+          <!-- Boks wyróżniający (Callout / Pro-Tip) -->
+          <div class="my-8 p-6 bg-black/40 border-l-4 border-[#81f5fb] rounded-r-xl shadow-lg">
+            <h3 class="text-xl font-mono font-bold text-[#81f5fb] mb-2" data-i18n="vass_callout_title">Wskazówka Inżyniera NEXAUT</h3>
+            <p class="text-gray-300 text-base leading-relaxed" data-i18n="vass_callout_text">
+              Tworzenie oprogramowania w&nbsp;standardzie VASS 6 różni się od&nbsp;klasycznego programowania PLC. Tutaj inżynier nie wymyśla architektury na&nbsp;nowo, lecz precyzyjnie składa aplikację z&nbsp;autoryzowanych bloków VASS i&nbsp;konfiguruje sekwencje. Kluczem do&nbsp;sukcesu jest bezbłędne przejście automatycznego audytu kodu (tzw. VASS-Check).
+            </p>
+          </div>
+
+          <!-- Obrazek 2 (W środku artykułu) -->
+          <div class="rounded-xl overflow-hidden border border-[#81f5fb]/20 shadow-lg">
+              <img src="/blognormal/vass6-second.webp" alt="Zautomatyzowana linia spawalnicza w zakładzie automotive zgodna ze standardem VASS" class="w-full h-auto object-cover" />
+            </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="vass_h2_3">Dlaczego koncern Volkswagen bezwzględnie wymaga VASS 6?</h2>
+          <p data-i18n="vass_p3_1">
+            Dla koncernu produkującego miliony pojazdów rocznie, priorytetem jest minimalizacja przestojów (Downtime). Zastosowanie VASS 6 niesie ze&nbsp;sobą wymierne korzyści operacyjne i&nbsp;finansowe:
+          </p>
+
+          <div class="p-6 bg-gray-900/80 rounded-xl border border-gray-700 font-mono text-sm space-y-3">
+            <p class="text-[#81f5fb] font-bold text-base mb-1" data-i18n="vass_box_title">Główne zalety biznesowe standardu VASS 6:</p>
+            <p class="text-gray-200" data-i18n="vass_box_li1"><strong>1. Błyskawiczne usuwanie awarii:</strong> Elektryk w&nbsp;fabryce w&nbsp;Poznaniu, Wolfsburgu czy Győr reaguje na&nbsp;awarię tak samo, bo&nbsp;interfejs i&nbsp;kody błędów są&nbsp;identyczne.</p>
+            <p class="text-gray-200" data-i18n="vass_box_li2"><strong>2. Skrócony czas uruchomienia (Ramp-up):</strong> Standaryzowane moduły pozwalają skrócić fazę uruchomienia linii o&nbsp;nawet 30%.</p>
+            <p class="text-gray-200" data-i18n="vass_box_li3"><strong>3. Łatwa rekonfiguracja linii:</strong> Przeniesienie celi zautomatyzowanej między zakładami nie wymaga ponownego szkolenia kadry technicznej.</p>
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-4" data-i18n="vass_h2_4">Wyzwania dla integratorów i dostawców maszyn</h2>
+          <p data-i18n="vass_p4_1">
+            Realizacja projektu w&nbsp;standardzie VASS 6 wiąże się z&nbsp;wysokim progiem wejścia dla firm automatyki. Do&nbsp;najważniejszych wyzwań należą:
+          </p>
+
+          <ul class="list-disc pl-6 space-y-2 text-gray-300">
+            <li data-i18n="vass_li_4_1"><strong>Konieczność certyfikacji personelu:</strong> Inżynierowie PLC i&nbsp;robotycy muszą posiadać aktualne certyfikaty ukończenia szkoleń VASS (często organizowanych bezpośrednio przez koncern VW).</li>
+            <li data-i18n="vass_li_4_2"><strong>Rygorystyczne odbiory techniczne:</strong> Kod jest weryfikowany specjalnymi narzędziami skanującymi. Nawet najmniejsze odstępstwo od&nbsp;standardu blokuje odbiór końcowy instalacji.</li>
+            <li data-i18n="vass_li_4_3"><strong>Ciągłe aktualizacje (VASS Release):</strong> Standard stale ewoluuje (np. przejścia między wersjami VASS 5 a&nbsp;VASS 6), co&nbsp;wymaga ciągłego podnoszenia kwalifikacji zespołu.</li>
+          </ul>
+
+          <!-- Sekcja FAQ -->
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-8" data-i18n="vass_h2_faq">Często Zadawane Pytania (FAQ)</h2>
+          
+          <div class="space-y-6 pt-2">
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="vass_faq_q1">Czym różni się VASS 5 od VASS 6?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="vass_faq_a1">
+                Główną różnicą jest przejście ze&nbsp;starszego środowiska Step7 (Classic) na&nbsp;Siemens TIA Portal, wprowadzenie zaawansowanej diagnostyki ProDiag, integracja nowszych sterowników serii S7-1500 oraz zaktualizowane biblioteki dla robotów KUKA KRC4 i&nbsp;FANUC.
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="vass_faq_q2">Czy standard VASS dotyczy tylko linii zwiastujących i spawalniczych?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="vass_faq_a2">
+                Nie. Choć wywodzi się z&nbsp;obszaru spawalni (Kボディ / Body in White), VASS 6 obowiązuje obecnie na&nbsp;większości wydziałów: w&nbsp;tłoczniach, lakierniach, montażu końcowym oraz przy produkcji napędów elektrycznych i&nbsp;baterii.
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="vass_faq_q3">Czy NEXAUT świadczy usługi programowania w standardzie VASS 6?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="vass_faq_a3">
+                Tak. Zespół inżynierów NEXAUT posiada wieloletnie doświadczenie w&nbsp;projektowaniu, programowaniu PLC/robotów oraz uruchamianiu linii produkcyjnych zgodnych ze&nbsp;standardem VASS 6 dla zakładów branży automotive.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-6" data-i18n="vass_h2_5">Podsumowanie – Postaw na doświadczenie w projektach VASS</h2>
+          <p data-i18n="vass_p5_1">
+            Standard VASS 6 to&nbsp;gwarancja najwyższej niezawodności i&nbsp;jakości w&nbsp;przemysłu motoryzacyjnym. Sukces projektu realizowanego dla koncernu Volkswagen wymaga jednak partnera, który doskonale zna niuanse tej specyfikacji. Zespół NEXAUT zapewnia pełne wsparcie programistyczne i&nbsp;wdrożeniowe zgodne z&nbsp;wymaganiami VASS 6.
+          </p>
+
+        </article>
+
+      </main>
+
+      <load src="/public/partials/footer.html" />
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="module" src="/src/main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" data-i18n-meta="diseases_meta_desc" content="Choroby zawodowe w&nbsp;fabrykach i&nbsp;jak im przeciwdziałać. Zobacz, jak robotyzacja, koboty i&nbsp;nowoczesna ergonomia eliminują hałas, pyły i&nbsp;przeciążenia kręgosłupa." />
+    
+    <title data-i18n="diseases_page_title">Choroby zawodowe w&nbsp;fabrykach – Automatyzacja i&nbsp;Ergonomia – NEXAUT</title>
+
+    <!-- Skrypt załadowany jako MODULE -->
+    <script type="module" src="./article-lang.js"></script>
+
+    <link rel="icon" href="/logo-nb-icon.webp" type="image/webp" />
+
+    <!-- Google Fonts & Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+
+  <body class="bg-nexaut-gray text-white font-sans min-h-screen flex flex-col relative">
+    <canvas id="cosmos"></canvas>
+
+    <div id="main-content" class="pt-24 relative overflow-hidden flex-grow flex flex-col justify-between">
+      
+      <load src="/public/partials/header.html" />
+
+      <main id="app" class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10 w-full relative z-10 flex-grow">
+        
+        <!-- Przycisk powrotu -->
+        <a href="/blog/" 
+           onclick="if (document.referrer && document.referrer.includes(window.location.host)) { history.back(); return false; }" 
+           class="inline-flex items-center gap-2 text-[#81f5fb] font-mono text-sm mb-8 hover:underline">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i> <span data-i18n="blog_back_btn">Powrót do artykułów</span>
+        </a>
+
+        <!-- Nagłówek artykułu -->
+        <header class="mb-8">
+          <span class="text-sm font-mono text-[#81f5fb] block mb-2">10 SIERPNIA 2026</span>
+          <h1 data-i18n="diseases_h1" class="text-3xl sm:text-5xl font-mono font-bold text-white mb-6 leading-tight">
+            Choroby zawodowe w&nbsp;fabrykach – jak automatyzacja i&nbsp;ergonomia chronią zdrowie pracowników?
+          </h1>
+        </header>
+
+        <!-- JEDYNE ZDJĘCIE (HERO) -->
+        <div class="rounded-2xl overflow-hidden border border-[#81f5fb]/30 mb-10 shadow-2xl bg-black/50">
+          <img src="/blognormal/cobot-main.webp" alt="Kobot współpracujący z pracownikiem na zautomatyzowanym i ergonomicznym stanowisku produkcyjnym" class="w-full h-auto max-h-[480px] object-cover" />
+        </div>
+
+        <article class="prose prose-invert max-w-none text-gray-300 space-y-8 text-lg leading-relaxed">
+          
+          <p class="text-xl text-gray-200 font-light border-l-4 border-[#81f5fb] pl-4 italic" data-i18n="diseases_intro">
+            Wielogodzinne przenoszenie ciężarów, praca w&nbsp;szkodliwym zapyleniu, stały hałas oraz monotypia ruchowa to&nbsp;główne przyczyny zwolnień lekarskich i&nbsp;trwałych uszczerbków na&nbsp;zdrowiu operatorów. Automatyzacja uciążliwych procesów przestała być jedynie domeną wydajności – stała się priorytetem ochrony zdrowia.
+          </p>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb]" data-i18n="diseases_h2_1">1. Statystyka schorzeń w&nbsp;przemyśle wytwórczym</h2>
+          <p data-i18n="diseases_p1_1">
+            Choroby układu mięśniowo-szkieletowego (MSD) oraz zaburzenia słuchu stanowią ponad 60% wszystkich diagnozowanych chorób zawodowych w&nbsp;sektorze przemysłowym. Odpowiedzią nowoczesnego inżynieringu jest zastępowanie pracy ludzkiej tam, gdzie jest ona najbardziej destrukcyjna dla organizmu.
+          </p>
+
+          <!-- SZABLON MODUŁOWY: Pasek Statystyk Wpływu Automatyzacji -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8 not-prose">
+            <div class="p-5 rounded-xl border border-[#81f5fb]/30 bg-black/60 backdrop-blur-md text-center">
+              <span class="text-3xl font-mono font-bold text-[#81f5fb] block mb-1">-90%</span>
+              <span class="text-sm text-gray-300 font-mono" data-i18n="diseases_stat_1">Redukcja ręcznego dźwigania ciężarów</span>
+            </div>
+            <div class="p-5 rounded-xl border border-[#81f5fb]/30 bg-black/60 backdrop-blur-md text-center">
+              <span class="text-3xl font-mono font-bold text-[#81f5fb] block mb-1">0%</span>
+              <span class="text-sm text-gray-300 font-mono" data-i18n="diseases_stat_2">Narażenia operatora na&nbsp;pyły w&nbsp;komorze</span>
+            </div>
+            <div class="p-5 rounded-xl border border-[#81f5fb]/30 bg-black/60 backdrop-blur-md text-center">
+              <span class="text-3xl font-mono font-bold text-[#81f5fb] block mb-1">100%</span>
+              <span class="text-sm text-gray-300 font-mono" data-i18n="diseases_stat_3">Zgodności z&nbsp;normami ergonomicznymi</span>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb]" data-i18n="diseases_h2_2">2. Najczęstsze choroby zawodowe i&nbsp;technologiczne metody ich eliminacji</h2>
+          
+          <!-- SZABLON MODUŁOWY: 3 Karty Schorzeń i Rozwiązań Technicznych -->
+          <div class="my-10 not-prose grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Karta 1 -->
+            <div class="p-6 rounded-2xl border border-white/10 bg-black/40 hover:border-[#81f5fb]/50 transition duration-300 flex flex-col justify-between">
+              <div>
+                <div class="text-[#81f5fb] font-mono text-xs uppercase tracking-wider mb-2">Zagrożenie #1</div>
+                <h3 class="text-lg font-bold text-white mb-3" data-i18n="diseases_c1_title">Schorzenia Kręgosłupa i&nbsp;Stawów</h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-4" data-i18n="diseases_c1_desc">
+                  Wynikają z&nbsp;ręcznej paletyzacji, schylania się i&nbsp;podnoszenia detali. <br><br><strong class="text-white">Rozwiązanie:</strong> Zrobotyzowane gniazda paletyzacji oraz podajniki z&nbsp;regulowaną wysokością HMI.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-white/10 text-xs font-mono text-[#81f5fb]" data-i18n="diseases_c1_tag">
+                Roboty Paletyzujące / Koboty
+              </div>
+            </div>
+
+            <!-- Karta 2 -->
+            <div class="p-6 rounded-2xl border border-white/10 bg-black/40 hover:border-[#81f5fb]/50 transition duration-300 flex flex-col justify-between">
+              <div>
+                <div class="text-[#81f5fb] font-mono text-xs uppercase tracking-wider mb-2">Zagrożenie #2</div>
+                <h3 class="text-lg font-bold text-white mb-3" data-i18n="diseases_c2_title">Pylica i&nbsp;Uszkodzenia Płuc</h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-4" data-i18n="diseases_c2_desc">
+                  Występują przy szlifowaniu, polerowaniu, piaskowaniu i&nbsp;spawaniu.<br><br><strong class="text-white">Rozwiązanie:</strong> Zamknięte zrobotyzowane cele obróbcze z&nbsp;automatyczną odciągową wentylacją.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-white/10 text-xs font-mono text-[#81f5fb]" data-i18n="diseases_c2_tag">
+                Zamknięte Cele Procesowe
+              </div>
+            </div>
+
+            <!-- Karta 3 -->
+            <div class="p-6 rounded-2xl border border-white/10 bg-black/40 hover:border-[#81f5fb]/50 transition duration-300 flex flex-col justify-between">
+              <div>
+                <div class="text-[#81f5fb] font-mono text-xs uppercase tracking-wider mb-2">Zagrożenie #3</div>
+                <h3 class="text-lg font-bold text-white mb-3" data-i18n="diseases_c3_title">Ubytek Słuchu i&nbsp;Zespół Wibracyjny</h3>
+                <p class="text-sm text-gray-400 leading-relaxed mb-4" data-i18n="diseases_c3_desc">
+                  Skutek długotrwałej pracy z&nbsp;narzędziami pneumatycznymi i&nbsp;udarowymi.<br><br><strong class="text-white">Rozwiązanie:</strong> Izolowane obudowy dźwiękochłonne i&nbsp;automatyczne dokręcanie wielowrzecionowe.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-white/10 text-xs font-mono text-[#81f5fb]" data-i18n="diseases_c3_tag">
+                Wyguszenie &amp; Automatyzacja
+              </div>
+            </div>
+
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb]" data-i18n="diseases_h2_3">3. Rola Kobotów (Robotów Współpracujących) w&nbsp;Ergonomii</h2>
+          <p data-i18n="diseases_p3_1">
+            Nie każdą linię da się w&nbsp;pełni odizolować od&nbsp;ludzi. W&nbsp;takich miejscach idealnie sprawdzają się roboty współpracujące (koboty). Przejmują one na&nbsp;siebie najcięższe fazy cyklu (np.&nbsp;podtrzymanie ciężkiego komponentu), podczas gdy człowiek wykonuje jedynie precyzyjne czynności kontrolne lub montażowe.
+          </p>
+
+          <!-- Boks wyróżniający NEXAUT Insight -->
+          <div class="my-8 p-6 bg-black/60 border-l-4 border-[#81f5fb] rounded-r-xl shadow-lg not-prose">
+            <h3 class="text-xl font-mono font-bold text-[#81f5fb] mb-2" data-i18n="diseases_callout_title">NEXAUT – Projektujemy Stanowiska Przyjazne Dla Człowieka</h3>
+            <p class="text-gray-300 text-base leading-relaxed" data-i18n="diseases_callout_text">
+              Tworzone przez nas linie produkcyjne i&nbsp;stanowiska zrobotyzowane projektujemy w&nbsp;oparciu o&nbsp;wytyczne inżynierii ergonomicznej. Pomagamy eliminować rutynowe, niebezpieczne i&nbsp;obciążające fizycznie operacje, zmieniając rolę operatora z&nbsp;siłowej na&nbsp;nadzorczo-sterującą.
+            </p>
+          </div>
+
+          <!-- Sekcja FAQ -->
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-6" data-i18n="diseases_h2_faq">Często Zadawane Pytania (FAQ)</h2>
+          
+          <div class="space-y-6 pt-2 not-prose">
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="diseases_faq_q1">Czy wdrożenie kobota wymaga budowania dużych wygrodzeń ochronnych?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="diseases_faq_a1">
+                Nie zawsze. Koboty posiadają wbudowane czujniki siły i&nbsp;momentu obrotowego. W&nbsp;przypadku kontaktu z&nbsp;operatorem natychmiast bezpiecznie się zatrzymują, co&nbsp;często pozwala na&nbsp;pracę bez tradycyjnych siatek wygradzających (po wykonaniu oceny ryzyka).
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="diseases_faq_q2">Jakie normy regulują ergonomię na&nbsp;stanowiskach zrobotyzowanych?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="diseases_faq_a2">
+                Kluczowe są normy ISO 11228 (dotycząca ręcznego przemieszczania ciężarów), ISO 10218 (wymagania bezpieczeństwa dla robotów) oraz specyfikacja ISO/TS 15066 odnosząca się bezpośrednio do&nbsp;robotów współpracujących.
+              </p>
+            </div>
+
+            <div class="border-b border-gray-800 pb-4">
+              <h3 class="text-xl font-bold text-white mb-2" data-i18n="diseases_faq_q3">Jak przekonać zarząd do&nbsp;inwestycji w&nbsp;automatyzację pod kątem BHP?</h3>
+              <p class="text-gray-300 text-base leading-relaxed" data-i18n="diseases_faq_a3">
+                Koszty absencji chorobowej, rekrutacji nowych pracowników oraz ewentualnych odszkodowań znacznie przewyższają koszt wdrożenia prostego gniazda zrobotyzowanego, które zwraca się również poprzez wyższą i&nbsp;powtarzalną jakość produkcji.
+              </p>
+            </div>
+          </div>
+
+          <h2 class="text-2xl font-mono font-bold text-[#81f5fb] pt-6" data-i18n="diseases_h2_5">Podsumowanie – Zdrowy pracownik to&nbsp;stabilna produkcja</h2>
+          <p data-i18n="diseases_p5_1">
+            Eliminacja czynników wywołujących choroby zawodowe to&nbsp;nie tylko obowiązek prawny, ale przede wszystkim strategiczna korzyść dla zakładu. Skontaktuj się z&nbsp;zespołem NEXAUT – pomożemy Ci zautomatyzować najbardziej wymagające stanowiska na&nbsp;Twojej hali!
+          </p>
+
+        </article>
+
+      </main>
+
+      <load src="/public/partials/footer.html" />
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="module" src="/src/main.js" defer></script>
+  </body>
+</html>
