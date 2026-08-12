@@ -1,9 +1,10 @@
 export const pl = {
-  about_meta_title: "NEXAUT - O&nbsp;nas",
-  offer_meta_title: "NEXAUT - Oferta",
-  projects_meta_title: "NEXAUT - Projekty",
-  career_meta_title: "NEXAUT - Kariera",
-  contact_meta_title: "NEXAUT - Kontakt",
+  main_meta_title: "NexAut - Automatyka Przemysłowa i Robotyka dla Produkcji",
+  about_meta_title: "NexAut - O&nbsp;nas",
+  offer_meta_title: "NexAut - Oferta",
+  projects_meta_title: "NexAut - Projekty",
+  career_meta_title: "NexAut - Kariera",
+  contact_meta_title: "NexAut - Kontakt",
   about_meta_description: "Poznaj zespół NEXAUT i&nbsp;nasze podejście do&nbsp;automatyzacji przemysłowej.",
   about_og_title: "NEXAUT – Kim jesteśmy",
   about_og_description: "Dowiedz się więcej o&nbsp;NEXAUT, naszych wartościach i&nbsp;doświadczeniu.",
@@ -132,7 +133,7 @@ export const pl = {
   kontakt_os2_pos2: "Starszy Programista PLC",
 
   // Podstrona HMI / SCADA
-  scada_meta_title: "Systemy HMI i&nbsp;SCADA - NEXAUT",
+  scada_meta_title: "NexAut - Systemy HMI i&nbsp;SCADA",
   scada_meta_desc: "Projektowanie systemów SCADA, WinCC, Ignition oraz paneli operatorskich HMI. NEXAUT.",
   back_to_offer: "Powrót do&nbsp;oferty",
   hmi_scada_heading: "Systemy HMI i&nbsp;SCADA",

@@ -1,9 +1,10 @@
 export const en = {
-  about_meta_title: "NEXAUT - About Us",
-  offer_meta_title: "NEXAUT - Offer",
-  projects_meta_title: "NEXAUT - Projects",
-  career_meta_title: "NEXAUT - Career",
-  contact_meta_title: "NEXAUT - Contact",
+  main_meta_title: "NexAut - Industrial Automation & Robotics for Manufacturing",
+  about_meta_title: "NexAut - About Us",
+  offer_meta_title: "NexAut - Offer",
+  projects_meta_title: "NexAut - Projects",
+  career_meta_title: "NexAut - Career",
+  contact_meta_title: "NexAut - Contact",
 
   about_meta_description: "Meet the NEXAUT team and our approach to industrial automation.",
   about_og_title: "NEXAUT – Who We Are",
@@ -139,7 +140,7 @@ export const en = {
   kontakt_os2_pos2: "Senior PLC Programmer",
 
   // HMI / SCADA Subpage
-  scada_meta_title: "HMI and SCADA Systems - NEXAUT",
+  scada_meta_title: "NexAut - HMI and SCADA Systems",
   scada_meta_desc: "Design of SCADA systems, WinCC, Ignition, and HMI operator panels. NEXAUT.",
   back_to_offer: "Back to offer",
   hmi_scada_heading: "HMI and SCADA Systems",
